@@ -306,25 +306,63 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               The Three-Stage Journey
             </h2>
 
+            {/* Progress Indicator */}
+            <div className="flex justify-center items-center mb-16">
+              <div className="flex items-center space-x-4 text-slate-400">
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+                  <span className="ml-2 text-blue-400 font-medium">Learn</span>
+                </div>
+                <ArrowRight className="w-4 h-4" />
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+                  <span className="ml-2 text-purple-400 font-medium">Prepare</span>
+                </div>
+                <ArrowRight className="w-4 h-4" />
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+                  <span className="ml-2 text-green-400 font-medium">Execute</span>
+                </div>
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-3 gap-8 overflow-visible">
               {[{
               stage: "Stage 1",
               title: "AI Core Concepts Workshop",
               duration: "3 hours",
-              description: "Foundation workshop covering AI development principles and tool mastery",
-              details: ["AI-first development mindset", "Tool ecosystem mastery", "Prompt engineering for developers", "Code generation strategies"]
+              description: "Build your team's AI foundation with shared understanding",
+              outcome: "Team speaks AI fluently",
+              details: [
+                "**LLM mechanics demystified** - Tokens, embeddings, context windows, hallucinations",
+                "**AI Agents & MCP explained** - The \"USB\" between AI and your tools",
+                "**Trust-but-verify mindset** - When to rely on AI, when to double-check",
+                "**AI-friendly task sizing** - Break work into 30-120 min AI-executable chunks"
+              ]
             }, {
               stage: "Stage 2",
               title: "Codebase AI-Priming",
-              duration: "10-15 hours",
-              description: "Hands-on transformation of your actual codebase with AI integration",
-              details: ["Codebase analysis and documentation", "AI-assisted refactoring", "Test generation automation", "Code review enhancement"]
+              duration: "10-15 hours over 2 weeks",
+              description: "Transform your repo into an AI-ready knowledge base",
+              outcome: "Codebase optimized for AI accuracy",
+              details: [
+                "**Eliminate AI confusion** - Isolate deprecated code so AI learns only from your best",
+                "**Codify tribal knowledge** - Extract unwritten conventions into enforceable AI rules",
+                "**Capture YOUR standards** - From API design to testing strategies to security patterns",
+                "**Make every dev code like your best** - AI enforces your architecture and quality bar"
+              ]
             }, {
               stage: "Stage 3",
               title: "Hands-On AI Workflow",
               duration: "4 hours",
-              description: "Implementation of complete AI-powered development workflows",
-              details: ["End-to-end AI workflows", "Team collaboration patterns", "Quality assurance integration", "Deployment automation"]
+              description: "Practice the complete AI development loop on real features",
+              outcome: "50-70% faster delivery with confidence",
+              details: [
+                "**Requirements → specs with AI** - Transform business needs into technical plans",
+                "**Decompose into AI tasks** - Create perfectly-sized work chunks for AI execution",
+                "**Code with Cursor + your rules** - AI follows YOUR codebase standards automatically",
+                "**AI-driven review** - Catch issues before they hit PR, ship with confidence"
+              ]
             }].map((stage, index) => <motion.div key={index} initial={{
               opacity: 0,
               y: 30
@@ -343,18 +381,54 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     <CardContent className="p-0">
                       <Badge className="mb-4 bg-slate-700/70 text-white border-slate-600">{stage.stage}</Badge>
                       <h3 className="text-xl font-bold mb-2 text-white break-words">{stage.title}</h3>
-                      <p className="text-sm text-slate-400 mb-4">{stage.duration}</p>
-                      <p className="text-slate-300 mb-6 break-words">{stage.description}</p>
-                      <ul className="space-y-3">
-                        {stage.details.map((detail, i) => <li key={i} className="flex items-start text-sm text-slate-300">
-                            <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                            <span className="break-words">{detail}</span>
-                          </li>)}
+                      <p className="text-sm text-slate-400 mb-4 font-medium">{stage.duration}</p>
+                      <p className="text-slate-300 mb-4 break-words leading-relaxed">{stage.description}</p>
+                      
+                      {/* Outcome Badge */}
+                      <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-lg p-3 mb-6">
+                        <p className="text-sm font-semibold text-blue-300">
+                          <span className="text-slate-300">Outcome:</span> {stage.outcome}
+                        </p>
+                      </div>
+
+                      <ul className="space-y-4">
+                        {stage.details.map((detail, i) => {
+                          // Parse detail to separate bold part from description
+                          const parts = detail.split(' - ');
+                          const boldPart = parts[0].replace(/\*\*/g, '');
+                          const description = parts[1] || '';
+                          
+                          return (
+                            <li key={i} className="flex items-start text-sm text-slate-300">
+                              <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="break-words leading-relaxed">
+                                <span className="font-semibold text-white">{boldPart}</span>
+                                {description && <span className="text-slate-300"> - {description}</span>}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </CardContent>
                   </Card>
                 </motion.div>)}
             </div>
+
+            {/* Success Quote */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="mt-16 text-center"
+            >
+              <div className="bg-slate-800/50 backdrop-blur-md border border-slate-700/50 rounded-lg p-8 max-w-4xl mx-auto">
+                <p className="text-lg italic text-slate-300 mb-4">
+                  "After Stage 2, our AI started suggesting code that actually followed our patterns. It was like having a senior dev who had read our entire codebase."
+                </p>
+                <p className="text-sm text-slate-400">— Team Lead, 15-developer team</p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
