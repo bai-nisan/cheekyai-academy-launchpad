@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
@@ -213,12 +214,12 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
           </div>
         </div>
 
-        {/* Bottom Panel - Prerequisites & Works Best With */}
+        {/* Bottom Panel - What You Need & Works Best With */}
         <div className="bg-slate-700/30 backdrop-blur-md py-12">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
-                {/* Prerequisites Card */}
+                {/* What You Need Card */}
                 <motion.div initial={{
                 opacity: 0,
                 y: 20
@@ -232,28 +233,31 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               }}>
                   <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-lg shadow-xl p-6">
                     <h3 className="text-xl font-semibold text-white mb-4">
-                      Prerequisites
+                      What You Need
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 mb-4">
                       <li className="flex items-start">
                         <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-slate-300">
-                          Team with existing codebase (6+ months old)
+                          <span className="font-semibold">Curiosity about AI development</span> - <span className="text-blue-300 font-medium">No prior AI experience needed</span>
                         </span>
                       </li>
                       <li className="flex items-start">
                         <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-slate-300">
-                          Active development (commits within last 30 days)
+                          <span className="font-semibold">Open mind</span> - Ready to rethink how development works
                         </span>
                       </li>
                       <li className="flex items-start">
                         <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-slate-300">
-                          At least 2–3 developers willing to participate
+                          <span className="font-semibold">Any tech stack</span> - We adapt to YOUR codebase and tools
                         </span>
                       </li>
                     </ul>
+                    <p className="text-sm text-slate-400 italic text-center">
+                      That's it. We handle the rest.
+                    </p>
                   </div>
                 </motion.div>
 
@@ -297,6 +301,21 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                   </div>
                 </motion.div>
               </div>
+
+              {/* Ideal Cohort Size */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="mt-8 text-center"
+              >
+                <div className="bg-slate-800/50 backdrop-blur-md border border-slate-600/30 rounded-lg p-4 max-w-md mx-auto">
+                  <p className="text-slate-300">
+                    <span className="font-semibold text-blue-300">Ideal cohort size:</span> 2-10 developers per team
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
