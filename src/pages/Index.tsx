@@ -44,9 +44,9 @@ const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number
 // Floating Orbs Component
 const FloatingOrbs = () => (
   <>
-    <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-    <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-    <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-2000" />
+    <div className="absolute top-20 left-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
+    <div className="absolute top-40 right-20 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
+    <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-2000" />
   </>
 );
 
@@ -54,12 +54,12 @@ const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden scroll-smooth">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden scroll-smooth">
       {/* Grid Pattern Overlay */}
-      <div className="fixed inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] pointer-events-none" />
+      <div className="fixed inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] pointer-events-none" />
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-black/50 border-b border-white/10">
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -91,7 +91,7 @@ const Index = () => {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="md:hidden bg-black/90 backdrop-blur-lg border border-white/10 rounded-lg mt-2 p-4"
+              className="md:hidden bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg mt-2 p-4"
             >
               <div className="flex flex-col space-y-4">
                 <a href="#program" className="hover:text-blue-400 transition-colors">Program</a>
@@ -108,7 +108,8 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5" />
         <FloatingOrbs />
         
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -146,7 +147,7 @@ const Index = () => {
       </section>
 
       {/* Why This Matters Section */}
-      <section id="program" className="py-32">
+      <section id="program" className="py-32 bg-black">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -177,7 +178,7 @@ const Index = () => {
             </Card>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-white/10 p-6">
+              <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 transition-all duration-300">
                 <CardContent className="p-0">
                   <h3 className="text-xl font-semibold mb-4 text-blue-400">Prerequisites</h3>
                   <ul className="space-y-2 text-gray-300">
@@ -197,7 +198,7 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-md border border-white/10 p-6">
+              <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 transition-all duration-300">
                 <CardContent className="p-0">
                   <h3 className="text-xl font-semibold mb-4 text-purple-400">Works Best With</h3>
                   <ul className="space-y-2 text-gray-300">
@@ -222,7 +223,7 @@ const Index = () => {
       </section>
 
       {/* Three Stages Section */}
-      <section id="stages" className="py-32">
+      <section id="stages" className="py-32 bg-black">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -247,9 +248,7 @@ const Index = () => {
                     "Tool ecosystem mastery",
                     "Prompt engineering for developers",
                     "Code generation strategies"
-                  ],
-                  color: "from-blue-500/20 to-cyan-500/20",
-                  borderColor: "border-blue-500/30"
+                  ]
                 },
                 {
                   stage: "Stage 2", 
@@ -261,9 +260,7 @@ const Index = () => {
                     "AI-assisted refactoring",
                     "Test generation automation",
                     "Code review enhancement"
-                  ],
-                  color: "from-purple-500/20 to-pink-500/20",
-                  borderColor: "border-purple-500/30"
+                  ]
                 },
                 {
                   stage: "Stage 3",
@@ -275,9 +272,7 @@ const Index = () => {
                     "Team collaboration patterns",
                     "Quality assurance integration",
                     "Deployment automation"
-                  ],
-                  color: "from-green-500/20 to-emerald-500/20", 
-                  borderColor: "border-green-500/30"
+                  ]
                 }
               ].map((stage, index) => (
                 <motion.div
@@ -289,9 +284,9 @@ const Index = () => {
                   whileHover={{ scale: 1.05 }}
                   className="group"
                 >
-                  <Card className={`bg-gradient-to-br ${stage.color} backdrop-blur-md border ${stage.borderColor} p-6 h-full hover:shadow-2xl transition-all duration-300`}>
+                  <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 h-full hover:bg-white/10 transition-all duration-300">
                     <CardContent className="p-0">
-                      <Badge className="mb-4 bg-white/10 text-white">{stage.stage}</Badge>
+                      <Badge className="mb-4 bg-white/10 text-white border-white/20">{stage.stage}</Badge>
                       <h3 className="text-xl font-bold mb-2 text-white">{stage.title}</h3>
                       <p className="text-sm text-gray-300 mb-4">{stage.duration}</p>
                       <p className="text-gray-300 mb-6">{stage.description}</p>
@@ -313,7 +308,7 @@ const Index = () => {
       </section>
 
       {/* Success Metrics */}
-      <section className="py-32">
+      <section className="py-32 bg-black">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -342,7 +337,7 @@ const Index = () => {
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:scale-105 transition-transform duration-200">
+                  <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300">
                     <CardContent className="p-0">
                       <metric.icon className="w-12 h-12 mx-auto mb-4 text-blue-400" />
                       <div className="text-4xl font-bold text-white mb-2">
@@ -360,7 +355,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-32">
+      <section id="pricing" className="py-32 bg-black">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -428,11 +423,11 @@ const Index = () => {
                   className="relative"
                 >
                   {plan.popular && (
-                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-1">
+                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-1 border-0">
                       Most Popular
                     </Badge>
                   )}
-                  <Card className={`h-full p-8 ${plan.popular ? 'bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-blue-500/30' : 'bg-white/5 border-white/10'} backdrop-blur-md border hover:shadow-2xl transition-all duration-300`}>
+                  <Card className={`h-full p-8 ${plan.popular ? 'bg-white/10 border-blue-600/30' : 'bg-white/5 border-white/10'} backdrop-blur-md border hover:bg-white/10 transition-all duration-300`}>
                     <CardContent className="p-0">
                       <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                       <div className="text-4xl font-bold text-white mb-4">{plan.price}</div>
@@ -461,12 +456,12 @@ const Index = () => {
                   <div>
                     <h4 className="text-lg font-semibold text-blue-400 mb-4">2-3 Teams</h4>
                     <p className="text-gray-300 mb-4">15% discount on total package price</p>
-                    <p className="text-sm text-gray-400">Includes cross-team coordination and shared best practices</p>
+                    <p className="text-sm text-gray-500">Includes cross-team coordination and shared best practices</p>
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-purple-400 mb-4">4+ Teams</h4>
                     <p className="text-gray-300 mb-4">25% discount + custom enterprise support</p>
-                    <p className="text-sm text-gray-400">Full organizational transformation with executive reporting</p>
+                    <p className="text-sm text-gray-500">Full organizational transformation with executive reporting</p>
                   </div>
                 </div>
               </CardContent>
@@ -476,7 +471,7 @@ const Index = () => {
       </section>
 
       {/* Your Journey Timeline */}
-      <section className="py-32">
+      <section className="py-32 bg-black">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -520,8 +515,8 @@ const Index = () => {
       </section>
 
       {/* Final CTA */}
-      <section id="contact" className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20" />
+      <section id="contact" className="py-32 relative bg-black">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -557,14 +552,14 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 border-t border-white/10">
+      <footer className="py-16 border-t border-white/10 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
               CheakyAI Academy
             </div>
-            <p className="text-gray-400 mb-6">Transforming development teams with AI-first methodologies</p>
-            <div className="flex justify-center space-x-8 text-gray-400">
+            <p className="text-gray-500 mb-6">Transforming development teams with AI-first methodologies</p>
+            <div className="flex justify-center space-x-8 text-gray-500">
               <a href="mailto:contact@cheakyai.academy" className="hover:text-blue-400 transition-colors">
                 contact@cheakyai.academy
               </a>
