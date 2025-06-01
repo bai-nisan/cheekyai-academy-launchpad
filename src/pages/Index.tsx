@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
@@ -215,10 +214,10 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
         </div>
 
         {/* Bottom Panel - What You Need & Works Best With */}
-        <div className="bg-slate-700/30 backdrop-blur-md py-12">
+        <div className="bg-slate-700/30 backdrop-blur-md py-16">
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12">
                 {/* What You Need Card */}
                 <motion.div initial={{
                 opacity: 0,
@@ -231,33 +230,41 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               }} transition={{
                 duration: 0.6
               }}>
-                  <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-lg shadow-xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-4">
+                  <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-xl shadow-xl p-8 h-full">
+                    <h3 className="text-2xl font-semibold text-white mb-6 text-center">
                       What You Need
                     </h3>
-                    <ul className="space-y-3 mb-4">
+                    <ul className="space-y-4 mb-6">
                       <li className="flex items-start">
-                        <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">
-                          <span className="font-semibold">Curiosity about AI development</span> - <span className="text-blue-300 font-medium">No prior AI experience needed</span>
+                        <Check className="w-5 h-5 text-blue-400 mr-4 mt-1 flex-shrink-0" />
+                        <span className="text-slate-300 leading-relaxed">
+                          <span className="font-semibold text-white">Curiosity about AI development</span>
+                          <br />
+                          <span className="text-blue-300 font-medium text-sm">No prior AI experience needed</span>
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">
-                          <span className="font-semibold">Open mind</span> - Ready to rethink how development works
+                        <Check className="w-5 h-5 text-blue-400 mr-4 mt-1 flex-shrink-0" />
+                        <span className="text-slate-300 leading-relaxed">
+                          <span className="font-semibold text-white">Open mind</span>
+                          <br />
+                          <span className="text-sm">Ready to rethink how development works</span>
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">
-                          <span className="font-semibold">Any tech stack</span> - We adapt to YOUR codebase and tools
+                        <Check className="w-5 h-5 text-blue-400 mr-4 mt-1 flex-shrink-0" />
+                        <span className="text-slate-300 leading-relaxed">
+                          <span className="font-semibold text-white">Any tech stack</span>
+                          <br />
+                          <span className="text-sm">We adapt to YOUR codebase and tools</span>
                         </span>
                       </li>
                     </ul>
-                    <p className="text-sm text-slate-400 italic text-center">
-                      That's it. We handle the rest.
-                    </p>
+                    <div className="bg-slate-700/30 backdrop-blur-md border border-slate-600/30 rounded-lg p-4 text-center">
+                      <p className="text-slate-300 italic">
+                        That's it. <span className="text-blue-300 font-medium">We handle the rest.</span>
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
 
@@ -274,27 +281,29 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 duration: 0.6,
                 delay: 0.2
               }}>
-                  <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-lg shadow-xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-4">
+                  <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-xl shadow-xl p-8 h-full">
+                    <h3 className="text-2xl font-semibold text-white mb-6 text-center">
                       Works Best With
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-4">
                       <li className="flex items-start">
-                        <Star className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">
-                          Teams feeling behind on AI adoption
+                        <Star className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
+                        <span className="text-slate-300 leading-relaxed">
+                          <span className="font-semibold text-white">Teams feeling behind on AI adoption</span>
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Star className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">
-                          Pressure to deliver faster without sacrificing quality
+                        <Star className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
+                        <span className="text-slate-300 leading-relaxed">
+                          <span className="font-semibold text-white">Pressure to deliver faster</span>
+                          <br />
+                          <span className="text-sm">without sacrificing quality</span>
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Star className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">
-                          Leadership committed to transformation
+                        <Star className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
+                        <span className="text-slate-300 leading-relaxed">
+                          <span className="font-semibold text-white">Leadership committed to transformation</span>
                         </span>
                       </li>
                     </ul>
@@ -308,10 +317,10 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="mt-8 text-center"
+                className="mt-12 text-center"
               >
-                <div className="bg-slate-800/50 backdrop-blur-md border border-slate-600/30 rounded-lg p-4 max-w-md mx-auto">
-                  <p className="text-slate-300">
+                <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-md border border-blue-500/30 rounded-xl p-6 max-w-lg mx-auto">
+                  <p className="text-lg text-slate-200">
                     <span className="font-semibold text-blue-300">Ideal cohort size:</span> 2-10 developers per team
                   </p>
                 </div>
