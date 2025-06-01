@@ -311,24 +311,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               </div>
 
               {/* Ideal Cohort Size */}
-              <motion.div initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.6,
-              delay: 0.4
-            }} className="mt-12 text-center">
-                <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-md border border-blue-500/30 rounded-xl p-6 max-w-lg mx-auto">
-                  <p className="text-lg text-slate-200">
-                    <span className="font-semibold text-blue-300">Ideal size:</span> 2-10 developers per team
-                  </p>
-                </div>
-              </motion.div>
+              
             </div>
           </div>
         </div>
@@ -358,13 +341,17 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               <div className="absolute left-[28px] top-8 bottom-8 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500 opacity-80 rounded-full"></div>
 
               {/* Stage 1 - Learn */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative mb-24 pl-20"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8
+            }} className="relative mb-24 pl-20">
                 {/* Timeline Circle with Icon */}
                 <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-blue-500 text-white shadow-lg z-10 ring-4 ring-blue-500/20">
                   <GraduationCap className="w-6 h-6" />
@@ -440,13 +427,18 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               </motion.div>
 
               {/* Stage 2 - Prepare */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative mb-24 pl-20"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8,
+              delay: 0.2
+            }} className="relative mb-24 pl-20">
                 {/* Timeline Circle with Icon */}
                 <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-purple-500 text-white shadow-lg z-10 ring-4 ring-purple-500/20">
                   <Wrench className="w-6 h-6" />
@@ -522,13 +514,18 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               </motion.div>
 
               {/* Stage 3 - Execute */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative pl-20"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8,
+              delay: 0.4
+            }} className="relative pl-20">
                 {/* Timeline Circle with Icon */}
                 <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg z-10 ring-4 ring-green-500/20">
                   <Rocket className="w-6 h-6" />
@@ -620,9 +617,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 max-w-4xl mx-auto shadow-lg">
                 <div className="flex justify-center mb-4">
                   <div className="flex text-yellow-400">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-5 h-5 fill-current" />
-                    ))}
+                    {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-current" />)}
                   </div>
                 </div>
                 <p className="text-lg italic text-slate-300 mb-4 leading-relaxed">
