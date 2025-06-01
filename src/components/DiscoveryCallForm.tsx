@@ -73,9 +73,9 @@ export const DiscoveryCallForm: React.FC<DiscoveryCallFormProps> = ({ isOpen, on
     onClose();
   };
 
-  const openCalendly = () => {
-    // Open Calendly in a new tab
-    window.open('https://calendly.com/your-company/discovery-call', '_blank');
+  const openCalendar = () => {
+    // Open Google Calendar in a new tab
+    window.open('https://calendar.app.google/E9SKp9BEXq6owExG6', '_blank');
   };
 
   return (
@@ -264,11 +264,11 @@ export const DiscoveryCallForm: React.FC<DiscoveryCallFormProps> = ({ isOpen, on
               
               <Button 
                 type="button"
-                onClick={openCalendly}
+                onClick={openCalendar}
                 className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white"
               >
                 <Calendar className="mr-2 h-4 w-4" />
-                Schedule on Calendly
+                Schedule with us
               </Button>
             </div>
 
