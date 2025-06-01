@@ -146,8 +146,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why This Matters Section - Redesigned */}
-      <section id="program" className="bg-white text-gray-900">
+      {/* Why This Matters Section - Dark Theme */}
+      <section id="program" className="bg-slate-800/50">
         {/* Top Panel - Why This Matters */}
         <div className="py-16">
           <div className="container mx-auto px-6">
@@ -161,25 +161,25 @@ const Index = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                   >
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                       Why This Matters
                     </h2>
 
                     {/* Pull Quote */}
-                    <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
-                      <p className="text-xl md:text-2xl italic text-gray-800 leading-relaxed">
+                    <div className="bg-slate-700/30 backdrop-blur-md border-l-4 border-blue-500 p-6 rounded-r-lg mb-6 shadow-lg">
+                      <p className="text-xl md:text-2xl italic text-slate-200 leading-relaxed">
                         "Most dev teams think AI tools are 'nice to have'—a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's like having a Ferrari in your garage and only using it to check your mail."
                       </p>
                     </div>
 
                     {/* Body Paragraph */}
-                    <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                    <p className="text-lg text-slate-300 leading-relaxed mb-6">
                       Real AI-first development means your entire workflow—planning, coding, testing, and deployment—is designed around AI capabilities. It means your team thinks in terms of AI-assisted architecture, AI-generated tests, AI-powered code reviews, and AI-enhanced debugging.
                     </p>
 
                     {/* CTA Button */}
                     <Button 
-                      className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg font-semibold rounded-md inline-flex items-center transition-colors duration-200"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold rounded-md inline-flex items-center hover:scale-105 transition-all duration-200 shadow-lg"
                       onClick={() => document.getElementById('stages')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       See the 3 Stages
@@ -198,8 +198,8 @@ const Index = () => {
                     className="flex justify-center"
                   >
                     <div className="relative">
-                      <Car className="w-48 h-48 md:w-64 md:h-64 text-red-500 stroke-1" />
-                      <div className="absolute inset-0 bg-red-500/10 rounded-full blur-3xl scale-150"></div>
+                      <Car className="w-48 h-48 md:w-64 md:h-64 text-blue-400 stroke-1" />
+                      <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl scale-150"></div>
                     </div>
                   </motion.div>
                 </div>
@@ -209,7 +209,7 @@ const Index = () => {
         </div>
 
         {/* Bottom Panel - Prerequisites & Works Best With */}
-        <div className="bg-gray-100 py-12">
+        <div className="bg-slate-700/30 backdrop-blur-md py-12">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
@@ -220,26 +220,26 @@ const Index = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-lg shadow-xl p-6">
+                    <h3 className="text-xl font-semibold text-white mb-4">
                       Prerequisites
                     </h3>
                     <ul className="space-y-3">
                       <li className="flex items-start">
-                        <Check className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">
+                        <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">
                           Team with existing codebase (6+ months old)
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Check className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">
+                        <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">
                           Active development (commits within last 30 days)
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Check className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">
+                        <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">
                           At least 2–3 developers willing to participate
                         </span>
                       </li>
@@ -254,26 +254,26 @@ const Index = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-lg shadow-xl p-6">
+                    <h3 className="text-xl font-semibold text-white mb-4">
                       Works Best With
                     </h3>
                     <ul className="space-y-3">
                       <li className="flex items-start">
-                        <Star className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">
+                        <Star className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">
                           Teams feeling behind on AI adoption
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Star className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">
+                        <Star className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">
                           Pressure to deliver faster without sacrificing quality
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Star className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">
+                        <Star className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">
                           Leadership committed to transformation
                         </span>
                       </li>
