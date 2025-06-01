@@ -135,6 +135,23 @@ const Index = () => {
         <div className="py-16">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
+              {/* Centered Header */}
+              <motion.div initial={{
+                opacity: 0,
+                y: 30
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.8
+              }} className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+                  Why This Matters
+                </h2>
+              </motion.div>
+
               <div className="grid lg:grid-cols-12 gap-12 items-center">
                 {/* Left Column - Text Content */}
                 <div className="lg:col-span-7">
@@ -147,12 +164,9 @@ const Index = () => {
                 }} viewport={{
                   once: true
                 }} transition={{
-                  duration: 0.8
+                  duration: 0.8,
+                  delay: 0.2
                 }}>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2 text-center">
-                      Why This Matters
-                    </h2>
-
                     {/* Pull Quote */}
                     <div className="bg-slate-700/30 backdrop-blur-md border-l-4 border-blue-500 p-6 rounded-r-lg mb-6 shadow-lg">
                       <p className="text-xl md:text-2xl italic text-slate-200 leading-relaxed">"Most dev teams think AI tools are 'nice to have'
@@ -186,7 +200,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                   once: true
                 }} transition={{
                   duration: 0.8,
-                  delay: 0.2
+                  delay: 0.4
                 }} className="flex justify-center">
                     <div className="relative">
                       <Car className="w-48 h-48 md:w-64 md:h-64 text-blue-400 stroke-1" />
