@@ -833,78 +833,249 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
           once: true
         }} transition={{
           duration: 0.8
-        }} className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+        }} className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               Your Journey
             </h2>
 
-            <div className="space-y-8">
-              {[{
-              step: "1",
-              icon: Target,
-              title: "Discovery Call",
-              duration: "30 minutes",
-              description: "30 minutes to identify your AI transformation opportunity",
-              outcome: "Pinpoint your team's bottlenecks and select the ideal pilot team for maximum impact"
-            }, {
-              step: "2",
-              icon: GraduationCap,
-              title: "AI Foundations Workshop",
-              duration: "3 hours",
-              description: "Stage 1: Get your team speaking AI (3 hours)",
-              outcome: "Align your entire team with shared AI mental models, tools, and development practices"
-            }, {
-              step: "3",
-              icon: Wrench,
-              title: "Repository Optimization",
-              duration: "10-15 hours",
-              description: "Stage 2: Make your codebase AI-ready (10-15 hours)",
-              outcome: "Transform your repo into an AI knowledge base that enforces YOUR standards automatically"
-            }, {
-              step: "4",
-              icon: Rocket,
-              title: "Hands-On Implementation",
-              duration: "4 hours",
-              description: "Stage 3: Build real features with AI (4 hours)",
-              outcome: "Practice the complete AI workflow—from requirements to deployment—on your actual codebase"
-            }, {
-              step: "5",
-              icon: CheckCircle,
-              title: "Success Review",
-              duration: "30 minutes",
-              description: "30-day check-in to measure your 10× transformation",
-              outcome: "Review metrics, refine workflows, and plan your continued AI-first evolution"
-            }].map((item, index) => <motion.div key={index} initial={{
+            {/* Timeline Container */}
+            <div className="relative">
+              {/* Enhanced Vertical Timeline Line with Gradient */}
+              <div className="absolute left-[28px] top-8 bottom-8 w-1 bg-gradient-to-b from-teal-500 via-cyan-500 to-blue-500 opacity-80 rounded-full"></div>
+
+              {/* Step 1 - Discovery Call */}
+              <motion.div initial={{
               opacity: 0,
-              x: -30
+              y: 20
             }} whileInView={{
               opacity: 1,
-              x: 0
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8
+            }} className="relative mb-24 pl-20">
+                {/* Timeline Circle with Icon */}
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-teal-500 text-white shadow-lg z-10 ring-4 ring-teal-500/20">
+                  <Target className="w-6 h-6" />
+                </div>
+                
+                {/* Connecting Line */}
+                <div className="absolute left-14 top-7 w-6 h-0.5 bg-teal-500/60"></div>
+                
+                {/* Content */}
+                <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 shadow-xl hover:border-teal-500/30 hover:shadow-2xl hover:shadow-teal-500/10 transition-all duration-300">
+                  {/* Step Label */}
+                  <div className="mb-3">
+                    <Badge className="bg-slate-600/70 text-slate-300 border-slate-500 text-xs font-medium">
+                      Step 1
+                    </Badge>
+                  </div>
+                  
+                  <div className="flex items-center gap-4 mb-6">
+                    <h3 className="text-2xl font-bold text-white">Discovery Call</h3>
+                    <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/30 px-3 py-1 text-sm font-semibold">
+                      30 minutes
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-slate-300 mb-6 text-lg leading-relaxed">30 minutes to identify your AI transformation opportunity</p>
+                  
+                  {/* Outcome Badge */}
+                  <div className="inline-flex items-center bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+                    <span className="text-green-400 mr-2">💚</span>
+                    <span className="text-sm font-semibold text-green-300">Pinpoint your team's bottlenecks and select the ideal pilot team for maximum impact</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Step 2 - AI Foundations Workshop */}
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
             }} viewport={{
               once: true
             }} transition={{
               duration: 0.8,
-              delay: index * 0.1
-            }} className="flex items-start space-x-6">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center font-bold text-white shadow-lg">
-                    <item.icon className="w-6 h-6" />
+              delay: 0.1
+            }} className="relative mb-24 pl-20">
+                {/* Timeline Circle with Icon */}
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-cyan-500 text-white shadow-lg z-10 ring-4 ring-cyan-500/20">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                
+                {/* Connecting Line */}
+                <div className="absolute left-14 top-7 w-6 h-0.5 bg-cyan-500/60"></div>
+                
+                {/* Content */}
+                <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 shadow-xl hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300">
+                  {/* Step Label */}
+                  <div className="mb-3">
+                    <Badge className="bg-slate-600/70 text-slate-300 border-slate-500 text-xs font-medium">
+                      Step 2
+                    </Badge>
                   </div>
-                  <div className="flex-grow">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                      <Badge className="bg-slate-700/70 text-blue-300 border-slate-600 text-xs">
-                        {item.duration}
-                      </Badge>
-                    </div>
-                    <p className="text-lg font-medium text-blue-300 mb-3">{item.description}</p>
-                    <p className="text-slate-300 leading-relaxed">{item.outcome}</p>
-                    
-                    {/* Progress Arrow */}
-                    {index < 4 && <div className="flex justify-center mt-6 mb-4">
-                        <ArrowDown className="w-10 h-10 text-slate-500" />
-                      </div>}
+                  
+                  <div className="flex items-center gap-4 mb-6">
+                    <h3 className="text-2xl font-bold text-white">AI Foundations Workshop</h3>
+                    <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30 px-3 py-1 text-sm font-semibold">
+                      3 hours
+                    </Badge>
                   </div>
-                </motion.div>)}
+                  
+                  <p className="text-slate-300 mb-6 text-lg leading-relaxed">Stage 1: Get your team speaking AI (3 hours)</p>
+                  
+                  {/* Outcome Badge */}
+                  <div className="inline-flex items-center bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+                    <span className="text-green-400 mr-2">💚</span>
+                    <span className="text-sm font-semibold text-green-300">Align your entire team with shared AI mental models, tools, and development practices</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Step 3 - Repository Optimization */}
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8,
+              delay: 0.2
+            }} className="relative mb-24 pl-20">
+                {/* Timeline Circle with Icon */}
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-blue-500 text-white shadow-lg z-10 ring-4 ring-blue-500/20">
+                  <Wrench className="w-6 h-6" />
+                </div>
+                
+                {/* Connecting Line */}
+                <div className="absolute left-14 top-7 w-6 h-0.5 bg-blue-500/60"></div>
+                
+                {/* Content */}
+                <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 shadow-xl hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
+                  {/* Step Label */}
+                  <div className="mb-3">
+                    <Badge className="bg-slate-600/70 text-slate-300 border-slate-500 text-xs font-medium">
+                      Step 3
+                    </Badge>
+                  </div>
+                  
+                  <div className="flex items-center gap-4 mb-6">
+                    <h3 className="text-2xl font-bold text-white">Repository Optimization</h3>
+                    <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30 px-3 py-1 text-sm font-semibold">
+                      10-15 hours
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-slate-300 mb-6 text-lg leading-relaxed">Stage 2: Make your codebase AI-ready (10-15 hours)</p>
+                  
+                  {/* Outcome Badge */}
+                  <div className="inline-flex items-center bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+                    <span className="text-green-400 mr-2">💚</span>
+                    <span className="text-sm font-semibold text-green-300">Transform your repo into an AI knowledge base that enforces YOUR standards automatically</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Step 4 - Hands-On Implementation */}
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8,
+              delay: 0.3
+            }} className="relative mb-24 pl-20">
+                {/* Timeline Circle with Icon */}
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-purple-500 text-white shadow-lg z-10 ring-4 ring-purple-500/20">
+                  <Rocket className="w-6 h-6" />
+                </div>
+                
+                {/* Connecting Line */}
+                <div className="absolute left-14 top-7 w-6 h-0.5 bg-purple-500/60"></div>
+                
+                {/* Content */}
+                <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 shadow-xl hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
+                  {/* Step Label */}
+                  <div className="mb-3">
+                    <Badge className="bg-slate-600/70 text-slate-300 border-slate-500 text-xs font-medium">
+                      Step 4
+                    </Badge>
+                  </div>
+                  
+                  <div className="flex items-center gap-4 mb-6">
+                    <h3 className="text-2xl font-bold text-white">Hands-On Implementation</h3>
+                    <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30 px-3 py-1 text-sm font-semibold">
+                      4 hours
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-slate-300 mb-6 text-lg leading-relaxed">Stage 3: Build real features with AI (4 hours)</p>
+                  
+                  {/* Outcome Badge */}
+                  <div className="inline-flex items-center bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+                    <span className="text-green-400 mr-2">💚</span>
+                    <span className="text-sm font-semibold text-green-300">Practice the complete AI workflow—from requirements to deployment—on your actual codebase</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Step 5 - Success Review */}
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8,
+              delay: 0.4
+            }} className="relative pl-20">
+                {/* Timeline Circle with Icon */}
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg z-10 ring-4 ring-green-500/20">
+                  <CheckCircle className="w-6 h-6" />
+                </div>
+                
+                {/* Connecting Line */}
+                <div className="absolute left-14 top-7 w-6 h-0.5 bg-green-500/60"></div>
+                
+                {/* Content */}
+                <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 shadow-xl hover:border-green-500/30 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
+                  {/* Step Label */}
+                  <div className="mb-3">
+                    <Badge className="bg-slate-600/70 text-slate-300 border-slate-500 text-xs font-medium">
+                      Step 5
+                    </Badge>
+                  </div>
+                  
+                  <div className="flex items-center gap-4 mb-6">
+                    <h3 className="text-2xl font-bold text-white">Success Review</h3>
+                    <Badge className="bg-green-500/20 text-green-300 border-green-500/30 px-3 py-1 text-sm font-semibold">
+                      30 minutes
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-slate-300 mb-6 text-lg leading-relaxed">30-day check-in to measure your 10× transformation</p>
+                  
+                  {/* Outcome Badge */}
+                  <div className="inline-flex items-center bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+                    <span className="text-green-400 mr-2">💚</span>
+                    <span className="text-sm font-semibold text-green-300">Review metrics, refine workflows, and plan your continued AI-first evolution</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
             {/* Total Time Investment */}
@@ -919,8 +1090,8 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
           }} transition={{
             duration: 0.8,
             delay: 0.6
-          }} className="mt-16 text-center">
-              <div className="bg-slate-700/30 backdrop-blur-md border border-slate-600/50 rounded-lg p-6 max-w-2xl mx-auto">
+          }} className="mt-20 text-center">
+              <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 max-w-4xl mx-auto shadow-lg">
                 <h4 className="text-lg font-semibold text-white mb-2">Total Investment</h4>
                 <p className="text-slate-300">
                   <span className="text-blue-400 font-semibold">17-22 hours</span> spread over 4-6 weeks for complete transformation
