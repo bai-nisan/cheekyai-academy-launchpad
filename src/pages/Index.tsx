@@ -635,25 +635,12 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             </div>
 
             <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-8 shadow-xl">
-              <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-white mb-6 text-center">Multiple Teams?</h3>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-lg font-semibold text-blue-400 mb-4">2-3 Teams</h4>
-                    <p className="text-slate-300 mb-4">15% discount on total package price</p>
-                    <p className="text-sm text-slate-400">Includes cross-team coordination and shared best practices</p>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-purple-400 mb-4">4+ Teams</h4>
-                    <p className="text-slate-300 mb-4">25% discount + custom enterprise support</p>
-                    <p className="text-sm text-slate-400">Full organizational transformation with executive reporting</p>
-                  </div>
-                </div>
-                <div className="text-center mt-6">
-                  <Button variant="outline" className="bg-slate-700/50 border-slate-600 text-white hover:bg-slate-600/50">
-                    Contact us for team pricing
-                  </Button>
-                </div>
+              <CardContent className="p-0 text-center">
+                <h3 className="text-2xl font-bold text-white mb-6">Multiple Teams?</h3>
+                <p className="text-slate-300 mb-6">Contact us for custom pricing and enterprise support</p>
+                <Button variant="outline" className="bg-slate-700/50 border-slate-600 text-white hover:bg-slate-600/50">
+                  Contact us for custom pricing
+                </Button>
               </CardContent>
             </Card>
           </motion.div>
