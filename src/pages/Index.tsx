@@ -12,7 +12,8 @@ import {
   Star,
   ArrowRight,
   Menu,
-  X
+  X,
+  Car
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -145,79 +146,143 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why This Matters Section */}
-      <section id="program" className="py-32 bg-slate-800/50">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-6xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
-              Why This Matters
-            </h2>
-            
-            <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-8 mb-8 shadow-xl">
-              <CardContent className="p-0">
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  Most dev teams think AI tools are "nice to have" - a few ChatGPT prompts here, maybe some Copilot autocomplete there. 
-                  But that's like having a Ferrari and only using it to check your mail.
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  <strong className="text-white">Real AI-first development</strong> means your entire workflow, from planning to deployment, 
-                  is designed around AI capabilities. It means your team thinks in terms of AI-assisted architecture, 
-                  AI-generated tests, AI-powered code reviews, and AI-enhanced debugging.
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed">
-                  The teams that master this approach aren't just 10-20% faster. They're operating at a completely different level.
-                </p>
-              </CardContent>
-            </Card>
+      {/* Why This Matters Section - Redesigned */}
+      <section id="program" className="bg-white text-gray-900">
+        {/* Top Panel - Why This Matters */}
+        <div className="py-16">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-12 gap-12 items-center">
+                {/* Left Column - Text Content */}
+                <div className="lg:col-span-7">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                      Why This Matters
+                    </h2>
 
-            <div className="grid md:grid-cols-2 gap-8 overflow-visible">
-              <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-6 hover:bg-slate-700/50 transition-all duration-300 overflow-visible shadow-xl">
-                <CardContent className="p-0">
-                  <h3 className="text-xl font-semibold mb-4 text-blue-400 break-words">Prerequisites</h3>
-                  <ul className="space-y-3 text-slate-300">
-                    <li className="flex items-center">
-                      <Check className="w-5 h-5 text-green-400 mr-3" />
-                      Team with existing codebase (6+ months old)
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-5 h-5 text-green-400 mr-3" />
-                      Active development (commits within last month)
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-5 h-5 text-green-400 mr-3" />
-                      At least 2-3 developers willing to participate
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+                    {/* Pull Quote */}
+                    <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
+                      <p className="text-xl md:text-2xl italic text-gray-800 leading-relaxed">
+                        "Most dev teams think AI tools are 'nice to have'—a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's like having a Ferrari in your garage and only using it to check your mail."
+                      </p>
+                    </div>
 
-              <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-6 hover:bg-slate-700/50 transition-all duration-300 overflow-visible shadow-xl">
-                <CardContent className="p-0">
-                  <h3 className="text-xl font-semibold mb-4 text-purple-400 break-words">Works Best With</h3>
-                  <ul className="space-y-3 text-slate-300">
-                    <li className="flex items-center">
-                      <Star className="w-5 h-5 text-yellow-400 mr-3" />
-                      Teams feeling behind on AI adoption
-                    </li>
-                    <li className="flex items-center">
-                      <Star className="w-5 h-5 text-yellow-400 mr-3" />
-                      Pressure to deliver faster without sacrificing quality
-                    </li>
-                    <li className="flex items-center">
-                      <Star className="w-5 h-5 text-yellow-400 mr-3" />
-                      Leadership committed to transformation
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+                    {/* Body Paragraph */}
+                    <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                      Real AI-first development means your entire workflow—planning, coding, testing, and deployment—is designed around AI capabilities. It means your team thinks in terms of AI-assisted architecture, AI-generated tests, AI-powered code reviews, and AI-enhanced debugging.
+                    </p>
+
+                    {/* CTA Button */}
+                    <Button 
+                      className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg font-semibold rounded-md inline-flex items-center transition-colors duration-200"
+                      onClick={() => document.getElementById('stages')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      See the 3 Stages
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </motion.div>
+                </div>
+
+                {/* Right Column - Ferrari Illustration */}
+                <div className="lg:col-span-5 text-center">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="flex justify-center"
+                  >
+                    <div className="relative">
+                      <Car className="w-48 h-48 md:w-64 md:h-64 text-red-500 stroke-1" />
+                      <div className="absolute inset-0 bg-red-500/10 rounded-full blur-3xl scale-150"></div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             </div>
-          </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom Panel - Prerequisites & Works Best With */}
+        <div className="bg-gray-100 py-12">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Prerequisites Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      Prerequisites
+                    </h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <Check className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">
+                          Team with existing codebase (6+ months old)
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">
+                          Active development (commits within last 30 days)
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">
+                          At least 2–3 developers willing to participate
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </motion.div>
+
+                {/* Works Best With Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      Works Best With
+                    </h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <Star className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">
+                          Teams feeling behind on AI adoption
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <Star className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">
+                          Pressure to deliver faster without sacrificing quality
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <Star className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">
+                          Leadership committed to transformation
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
