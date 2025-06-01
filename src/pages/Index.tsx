@@ -352,97 +352,211 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               The Three-Stage Journey
             </h2>
 
-            {/* Progress Indicator */}
-            <div className="flex justify-center items-center mb-16">
-              <div className="flex items-center space-x-4 text-slate-400">
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
-                  <span className="ml-2 text-blue-400 font-medium">Learn</span>
+            {/* Timeline Container */}
+            <div className="relative">
+              {/* Vertical Timeline Line */}
+              <div className="absolute left-[28px] top-8 bottom-0 w-0.5 bg-slate-700 opacity-70"></div>
+
+              {/* Stage 1 - Learn */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative mb-16 pl-16"
+              >
+                {/* Timeline Circle with Number */}
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-blue-500 text-white font-bold text-lg z-10">
+                  1
                 </div>
-                <ArrowRight className="w-4 h-4" />
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
-                  <span className="ml-2 text-purple-400 font-medium">Prepare</span>
+                
+                {/* Stage Badge */}
+                <div className="flex items-center mb-4">
+                  <span className="text-blue-400 font-medium mr-2">Learn</span>
+                  <ArrowRight className="w-4 h-4 text-slate-400" />
                 </div>
-                <ArrowRight className="w-4 h-4" />
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
-                  <span className="ml-2 text-green-400 font-medium">Execute</span>
+                
+                {/* Content */}
+                <div className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 rounded-xl p-8 shadow-xl">
+                  <Badge className="mb-4 bg-slate-700/70 text-white border-slate-600">Stage 1</Badge>
+                  <h3 className="text-xl font-bold mb-2 text-white break-words">AI Core Concepts Workshop</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed mb-4">3 hours</p>
+                  <p className="text-slate-300 mb-4 break-words leading-relaxed">Build your team's AI foundation with shared understanding</p>
+                  
+                  {/* Outcome Badge - Inline Style */}
+                  <div className="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-lg px-4 py-2 mb-6">
+                    <p className="text-sm font-semibold text-blue-300">
+                      <span className="text-slate-300">Outcome:</span> Team speaks AI fluently
+                    </p>
+                  </div>
+
+                  <ul className="space-y-4">
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">LLM mechanics demystified</span>
+                        <span className="text-slate-300"> - Tokens, embeddings, context windows, hallucinations</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">AI Agents & MCP explained</span>
+                        <span className="text-slate-300"> - The "USB" between AI and your tools</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">Trust-but-verify mindset</span>
+                        <span className="text-slate-300"> - When to rely on AI, when to double-check</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">AI-friendly task sizing</span>
+                        <span className="text-slate-300"> - Break work into 30-120 min AI-executable chunks</span>
+                      </span>
+                    </li>
+                  </ul>
                 </div>
-              </div>
+              </motion.div>
+
+              {/* Stage 2 - Prepare */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative mb-16 pl-16"
+              >
+                {/* Timeline Circle with Number */}
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-purple-500 text-white font-bold text-lg z-10">
+                  2
+                </div>
+                
+                {/* Stage Badge */}
+                <div className="flex items-center mb-4">
+                  <span className="text-purple-400 font-medium mr-2">Prepare</span>
+                  <ArrowRight className="w-4 h-4 text-slate-400" />
+                </div>
+                
+                {/* Content */}
+                <div className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 rounded-xl p-8 shadow-xl">
+                  <Badge className="mb-4 bg-slate-700/70 text-white border-slate-600">Stage 2</Badge>
+                  <h3 className="text-xl font-bold mb-2 text-white break-words">Codebase AI-Priming</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed mb-4">10-15 hours over 2 weeks</p>
+                  <p className="text-slate-300 mb-4 break-words leading-relaxed">Transform your repo into an AI-ready knowledge base</p>
+                  
+                  {/* Outcome Badge - Inline Style */}
+                  <div className="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-lg px-4 py-2 mb-6">
+                    <p className="text-sm font-semibold text-blue-300">
+                      <span className="text-slate-300">Outcome:</span> Codebase optimized for AI accuracy
+                    </p>
+                  </div>
+
+                  <ul className="space-y-4">
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">Eliminate AI confusion</span>
+                        <span className="text-slate-300"> - Isolate deprecated code so AI learns only from your best</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">Codify tribal knowledge</span>
+                        <span className="text-slate-300"> - Extract unwritten conventions into enforceable AI rules</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">Capture YOUR standards</span>
+                        <span className="text-slate-300"> - From API design to testing strategies to security patterns</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">Make every dev code like your best</span>
+                        <span className="text-slate-300"> - AI enforces your architecture and quality bar</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+
+              {/* Stage 3 - Execute */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="relative pl-16"
+              >
+                {/* Timeline Circle with Number */}
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white font-bold text-lg z-10">
+                  3
+                </div>
+                
+                {/* Stage Badge */}
+                <div className="flex items-center mb-4">
+                  <span className="text-green-400 font-medium mr-2">Execute</span>
+                  <ArrowRight className="w-4 h-4 text-slate-400" />
+                </div>
+                
+                {/* Content */}
+                <div className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 rounded-xl p-8 shadow-xl">
+                  <Badge className="mb-4 bg-slate-700/70 text-white border-slate-600">Stage 3</Badge>
+                  <h3 className="text-xl font-bold mb-2 text-white break-words">Hands-On AI Workflow</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed mb-4">4 hours</p>
+                  <p className="text-slate-300 mb-4 break-words leading-relaxed">Practice the complete AI development loop on real features</p>
+                  
+                  {/* Outcome Badge - Inline Style */}
+                  <div className="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-lg px-4 py-2 mb-6">
+                    <p className="text-sm font-semibold text-blue-300">
+                      <span className="text-slate-300">Outcome:</span> 50-70% faster delivery with confidence
+                    </p>
+                  </div>
+
+                  <ul className="space-y-4">
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">Requirements → specs with AI</span>
+                        <span className="text-slate-300"> - Transform business needs into technical plans</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">Decompose into AI tasks</span>
+                        <span className="text-slate-300"> - Create perfectly-sized work chunks for AI execution</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">Code with Cursor + your rules</span>
+                        <span className="text-slate-300"> - AI follows YOUR codebase standards automatically</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="break-words leading-relaxed">
+                        <span className="font-semibold text-white">AI-driven review</span>
+                        <span className="text-slate-300"> - Catch issues before they hit PR, ship with confidence</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 overflow-visible">
-              {[{
-              stage: "Stage 1",
-              title: "AI Core Concepts Workshop",
-              duration: "3 hours",
-              description: "Build your team's AI foundation with shared understanding",
-              outcome: "Team speaks AI fluently",
-              details: ["**LLM mechanics demystified** - Tokens, embeddings, context windows, hallucinations", "**AI Agents & MCP explained** - The \"USB\" between AI and your tools", "**Trust-but-verify mindset** - When to rely on AI, when to double-check", "**AI-friendly task sizing** - Break work into 30-120 min AI-executable chunks"]
-            }, {
-              stage: "Stage 2",
-              title: "Codebase AI-Priming",
-              duration: "10-15 hours over 2 weeks",
-              description: "Transform your repo into an AI-ready knowledge base",
-              outcome: "Codebase optimized for AI accuracy",
-              details: ["**Eliminate AI confusion** - Isolate deprecated code so AI learns only from your best", "**Codify tribal knowledge** - Extract unwritten conventions into enforceable AI rules", "**Capture YOUR standards** - From API design to testing strategies to security patterns", "**Make every dev code like your best** - AI enforces your architecture and quality bar"]
-            }, {
-              stage: "Stage 3",
-              title: "Hands-On AI Workflow",
-              duration: "4 hours",
-              description: "Practice the complete AI development loop on real features",
-              outcome: "50-70% faster delivery with confidence",
-              details: ["**Requirements → specs with AI** - Transform business needs into technical plans", "**Decompose into AI tasks** - Create perfectly-sized work chunks for AI execution", "**Code with Cursor + your rules** - AI follows YOUR codebase standards automatically", "**AI-driven review** - Catch issues before they hit PR, ship with confidence"]
-            }].map((stage, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              y: 30
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.8,
-              delay: index * 0.2
-            }} whileHover={{
-              scale: 1.02
-            }} className="group overflow-visible">
-                  <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-6 h-full hover:bg-slate-700/50 transition-all duration-300 overflow-visible shadow-xl hover:shadow-2xl">
-                    <CardContent className="p-0">
-                      <Badge className="mb-4 bg-slate-700/70 text-white border-slate-600">{stage.stage}</Badge>
-                      <h3 className="text-xl font-bold mb-2 text-white break-words">{stage.title}</h3>
-                      <p className="text-sm text-slate-300 leading-relaxed mb-4">{stage.duration}</p>
-                      <p className="text-slate-300 mb-4 break-words leading-relaxed">{stage.description}</p>
-                      
-                      {/* Outcome Badge */}
-                      <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-lg p-3 mb-6">
-                        <p className="text-sm font-semibold text-blue-300">
-                          <span className="text-slate-300">Outcome:</span> {stage.outcome}
-                        </p>
-                      </div>
-
-                      <ul className="space-y-4">
-                        {stage.details.map((detail, i) => {
-                      // Parse detail to separate bold part from description
-                      const parts = detail.split(' - ');
-                      const boldPart = parts[0].replace(/\*\*/g, '');
-                      const description = parts[1] || '';
-                      return <li key={i} className="flex items-start text-sm text-slate-300">
-                              <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                              <span className="break-words leading-relaxed">
-                                <span className="font-semibold text-white">{boldPart}</span>
-                                {description && <span className="text-slate-300"> - {description}</span>}
-                              </span>
-                            </li>;
-                    })}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>)}
-            </div>
-
-            {/* Success Quote */}
+            {/* Success Quote - Keep the existing success quote */}
             <motion.div initial={{
             opacity: 0,
             y: 20
