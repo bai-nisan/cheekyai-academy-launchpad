@@ -136,7 +136,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white/20 hover:bg-white/10 hover:scale-105 transition-all duration-200 text-lg px-8 py-4"
+                className="bg-transparent border-white/20 text-white hover:bg-white/10 hover:scale-105 transition-all duration-200 text-lg px-8 py-4"
               >
                 Book Discovery Call
                 <Calendar className="ml-2" />
@@ -177,10 +177,10 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 transition-all duration-300">
+            <div className="grid md:grid-cols-2 gap-8 overflow-visible">
+              <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 transition-all duration-300 overflow-visible">
                 <CardContent className="p-0">
-                  <h3 className="text-xl font-semibold mb-4 text-blue-400">Prerequisites</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-blue-400 break-words">Prerequisites</h3>
                   <ul className="space-y-2 text-gray-300">
                     <li className="flex items-center">
                       <Check className="w-5 h-5 text-green-400 mr-3" />
@@ -198,9 +198,9 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 transition-all duration-300">
+              <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 transition-all duration-300 overflow-visible">
                 <CardContent className="p-0">
-                  <h3 className="text-xl font-semibold mb-4 text-purple-400">Works Best With</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-purple-400 break-words">Works Best With</h3>
                   <ul className="space-y-2 text-gray-300">
                     <li className="flex items-center">
                       <Star className="w-5 h-5 text-yellow-400 mr-3" />
@@ -236,7 +236,7 @@ const Index = () => {
               The Three-Stage Journey
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 overflow-visible">
               {[
                 {
                   stage: "Stage 1",
@@ -282,19 +282,19 @@ const Index = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   whileHover={{ scale: 1.05 }}
-                  className="group"
+                  className="group overflow-visible"
                 >
-                  <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 h-full hover:bg-white/10 transition-all duration-300">
+                  <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 h-full hover:bg-white/10 transition-all duration-300 overflow-visible">
                     <CardContent className="p-0">
                       <Badge className="mb-4 bg-white/10 text-white border-white/20">{stage.stage}</Badge>
-                      <h3 className="text-xl font-bold mb-2 text-white">{stage.title}</h3>
+                      <h3 className="text-xl font-bold mb-2 text-white break-words">{stage.title}</h3>
                       <p className="text-sm text-gray-300 mb-4">{stage.duration}</p>
-                      <p className="text-gray-300 mb-6">{stage.description}</p>
+                      <p className="text-gray-300 mb-6 break-words">{stage.description}</p>
                       <ul className="space-y-2">
                         {stage.details.map((detail, i) => (
-                          <li key={i} className="flex items-center text-sm text-gray-300">
-                            <Check className="w-4 h-4 text-green-400 mr-2" />
-                            {detail}
+                          <li key={i} className="flex items-start text-sm text-gray-300">
+                            <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="break-words">{detail}</span>
                           </li>
                         ))}
                       </ul>
@@ -321,7 +321,7 @@ const Index = () => {
               Proven Results
             </h2>
 
-            <div className="grid md:grid-cols-5 gap-8">
+            <div className="grid md:grid-cols-5 gap-8 overflow-visible">
               {[
                 { icon: Zap, value: 60, suffix: "%", label: "Faster Development" },
                 { icon: Shield, value: 90, suffix: "%", label: "Code Standards" },
@@ -337,14 +337,14 @@ const Index = () => {
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300">
+                  <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300 overflow-visible">
                     <CardContent className="p-0">
                       <metric.icon className="w-12 h-12 mx-auto mb-4 text-blue-400" />
                       <div className="text-4xl font-bold text-white mb-2">
                         <AnimatedCounter end={metric.value} />
                         {metric.suffix}
                       </div>
-                      <p className="text-gray-300 text-sm">{metric.label}</p>
+                      <p className="text-gray-300 text-sm whitespace-nowrap">{metric.label}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -368,7 +368,7 @@ const Index = () => {
               Choose Your Transformation
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-3 gap-8 mb-12 overflow-visible">
               {[
                 {
                   name: "Foundation",
@@ -420,18 +420,18 @@ const Index = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   whileHover={{ scale: 1.05 }}
-                  className="relative"
+                  className="relative overflow-visible"
                 >
                   {plan.popular && (
                     <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-1 border-0">
                       Most Popular
                     </Badge>
                   )}
-                  <Card className={`h-full p-8 ${plan.popular ? 'bg-white/10 border-blue-600/30' : 'bg-white/5 border-white/10'} backdrop-blur-md border hover:bg-white/10 transition-all duration-300`}>
+                  <Card className={`h-full p-8 ${plan.popular ? 'bg-white/10 border-blue-600/30' : 'bg-white/5 border-white/10'} backdrop-blur-md border hover:bg-white/10 transition-all duration-300 overflow-visible`}>
                     <CardContent className="p-0">
-                      <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                      <h3 className="text-2xl font-bold text-white mb-2 break-words">{plan.name}</h3>
                       <div className="text-4xl font-bold text-white mb-4">{plan.price}</div>
-                      <p className="text-gray-300 mb-6">{plan.description}</p>
+                      <p className="text-gray-300 mb-6 break-words">{plan.description}</p>
                       <ul className="space-y-3 mb-8">
                         {plan.features.map((feature, i) => (
                           <li key={i} className="flex items-start text-gray-300">
@@ -542,7 +542,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white/20 hover:bg-white/10 hover:scale-105 transition-all duration-200 text-lg px-8 py-4"
+                className="bg-transparent border-white/20 text-white hover:bg-white/10 hover:scale-105 transition-all duration-200 text-lg px-8 py-4"
               >
                 Download Program Guide
               </Button>
