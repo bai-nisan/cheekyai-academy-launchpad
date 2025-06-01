@@ -451,9 +451,10 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {[{
-              name: "Foundation",
+              name: "Explorer",
               icon: Target,
               price: "₪7,990",
+              showPrice: true,
               subtitle: "AI Fundamentals Workshop",
               timeInvestment: "3 hours",
               description: "Get your team speaking AI fluently in just 3 hours. Learn LLM mechanics, AI agents, and development best practices.",
@@ -461,24 +462,26 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               features: ["**Stage 1: AI Core Concepts Workshop** (3 hours)", "Shared mental model for entire team", "Understand AI power & limitations", "Practical prompt engineering basics", "30-day email support"],
               popular: false
             }, {
-              name: "Practitioner",
+              name: "Pioneer",
               icon: Rocket,
               price: "₪14,990",
+              showPrice: true,
               subtitle: "Rapid AI Skills Development",
               timeInvestment: "7 hours",
               description: "Transform your team into AI practitioners with hands-on training on your actual tech stack.",
               bestFor: "Teams ready to implement AI workflows",
-              features: ["Everything in Foundation", "**Stage 3: Hands-On AI Workflow** (4 hours)", "Live feature implementation practice", "AI-driven code review techniques", "Custom exercises for your tech stack", "60-day priority support"],
+              features: ["Everything in Explorer", "**Stage 3: Hands-On AI Workflow** (4 hours)", "Live feature implementation practice", "AI-driven code review techniques", "Custom exercises for your tech stack", "60-day priority support"],
               popular: true
             }, {
-              name: "Transformation",
+              name: "Leader",
               icon: Trophy,
               price: "₪29,990",
+              showPrice: false,
               subtitle: "Complete AI-First Evolution",
               timeInvestment: "25+ hours",
               description: "Full transformation from traditional to AI-augmented development with custom repository optimization.",
               bestFor: "Teams committed to 50-70% faster delivery",
-              features: ["Everything in Practitioner", "**Stage 2: Codebase AI-Priming** (10-15 hours)", "Repository optimization for AI accuracy", "Codified team standards & patterns", "Custom AI rules for your architecture", "90-day dedicated support", "Monthly progress check-ins"],
+              features: ["Everything in Pioneer", "**Stage 2: Codebase AI-Priming** (10-15 hours)", "Repository optimization for AI accuracy", "Codified team standards & patterns", "Custom AI rules for your architecture", "90-day dedicated support", "Monthly progress check-ins"],
               popular: false
             }].map((plan, index) => <motion.div key={index} initial={{
               opacity: 0,
@@ -493,12 +496,12 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               delay: index * 0.2
             }} whileHover={{
               scale: 1.02
-            }} className="relative">
+            }} className="relative h-full">
                   {plan.popular && <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-1 border-0 shadow-lg z-10">
                       Most Popular
                     </Badge>}
-                  <Card className={`h-full p-8 relative ${plan.popular ? 'bg-slate-700/70 border-blue-500/30 shadow-2xl shadow-blue-500/10' : 'bg-slate-800/70 border-slate-700/50'} backdrop-blur-md border hover:bg-slate-700/50 transition-all duration-300 shadow-xl`}>
-                    <CardContent className="p-0">
+                  <Card className={`h-full p-8 relative flex flex-col ${plan.popular ? 'bg-slate-700/70 border-blue-500/30 shadow-2xl shadow-blue-500/10' : 'bg-slate-800/70 border-slate-700/50'} backdrop-blur-md border hover:bg-slate-700/50 transition-all duration-300 shadow-xl`}>
+                    <CardContent className="p-0 flex flex-col h-full">
                       <div className="flex items-center gap-3 mb-4">
                         <plan.icon className="w-8 h-8 text-blue-400" />
                         <div>
@@ -507,8 +510,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                         </div>
                       </div>
                       
-                      <h4 className="text-lg font-semibold text-blue-300 mb-2">{plan.subtitle}</h4>
-                      <div className="text-4xl font-bold text-white mb-4">{plan.price}</div>
+                      <h4 className="text-lg font-semibold text-blue-300 mb-4">{plan.subtitle}</h4>
                       
                       <p className="text-slate-300 mb-4 break-words leading-relaxed">{plan.description}</p>
                       
@@ -516,7 +518,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                         <p className="text-sm font-medium text-blue-300">Best for: {plan.bestFor}</p>
                       </div>
 
-                      <ul className="space-y-3 mb-8">
+                      <ul className="space-y-3 mb-6 flex-grow">
                         {plan.features.map((feature, i) => {
                           const isStage = feature.includes('**Stage');
                           const cleanFeature = feature.replace(/\*\*/g, '');
@@ -530,9 +532,16 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                           );
                         })}
                       </ul>
-                      <Button className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg' : 'bg-slate-700/70 hover:bg-slate-600/70'} hover:scale-105 transition-all duration-200`}>
-                        Get Started
-                      </Button>
+
+                      {/* Price and Button at bottom */}
+                      <div className="mt-auto">
+                        {plan.showPrice && (
+                          <div className="text-4xl font-bold text-white mb-4 text-center">{plan.price}</div>
+                        )}
+                        <Button className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg' : 'bg-slate-700/70 hover:bg-slate-600/70'} hover:scale-105 transition-all duration-200`}>
+                          Get Started
+                        </Button>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>)}
