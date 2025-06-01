@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
-import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowRight, Menu, X, Car } from 'lucide-react';
+import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowRight, Menu, X, Car, Target, Rocket, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -452,21 +452,33 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {[{
               name: "Foundation",
+              icon: Target,
               price: "₪7,990",
-              description: "Perfect for getting started with AI-first development",
-              features: ["Stage 1: AI Core Concepts Workshop (3 hours)", "Foundational AI development training", "Tool setup and configuration", "Basic prompt engineering", "30 days email support"],
+              subtitle: "AI Fundamentals Workshop",
+              timeInvestment: "3 hours",
+              description: "Get your team speaking AI fluently in just 3 hours. Learn LLM mechanics, AI agents, and development best practices.",
+              bestFor: "Teams exploring AI development",
+              features: ["**Stage 1: AI Core Concepts Workshop** (3 hours)", "Shared mental model for entire team", "Understand AI power & limitations", "Practical prompt engineering basics", "30-day email support"],
               popular: false
             }, {
               name: "Practitioner",
+              icon: Rocket,
               price: "₪14,990",
-              description: "Most comprehensive package for complete transformation",
-              features: ["All Foundation features", "Stage 2: Codebase AI-Priming (10-15 hours)", "Hands-on codebase transformation", "AI workflow implementation", "Team collaboration training", "60 days priority support"],
+              subtitle: "Rapid AI Skills Development",
+              timeInvestment: "7 hours",
+              description: "Transform your team into AI practitioners with hands-on training on your actual tech stack.",
+              bestFor: "Teams ready to implement AI workflows",
+              features: ["Everything in Foundation", "**Stage 3: Hands-On AI Workflow** (4 hours)", "Live feature implementation practice", "AI-driven code review techniques", "Custom exercises for your tech stack", "60-day priority support"],
               popular: true
             }, {
               name: "Transformation",
+              icon: Trophy,
               price: "₪29,990",
-              description: "Complete end-to-end AI transformation with ongoing support",
-              features: ["All Practitioner features", "Stage 3: Hands-On AI Workflow (4 hours)", "Complete workflow automation", "Advanced AI integration", "Custom tool development", "90 days dedicated support", "Monthly check-ins"],
+              subtitle: "Complete AI-First Evolution",
+              timeInvestment: "25+ hours",
+              description: "Full transformation from traditional to AI-augmented development with custom repository optimization.",
+              bestFor: "Teams committed to 50-70% faster delivery",
+              features: ["Everything in Practitioner", "**Stage 2: Codebase AI-Priming** (10-15 hours)", "Repository optimization for AI accuracy", "Codified team standards & patterns", "Custom AI rules for your architecture", "90-day dedicated support", "Monthly progress check-ins"],
               popular: false
             }].map((plan, index) => <motion.div key={index} initial={{
               opacity: 0,
@@ -487,14 +499,36 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     </Badge>}
                   <Card className={`h-full p-8 relative ${plan.popular ? 'bg-slate-700/70 border-blue-500/30 shadow-2xl shadow-blue-500/10' : 'bg-slate-800/70 border-slate-700/50'} backdrop-blur-md border hover:bg-slate-700/50 transition-all duration-300 shadow-xl`}>
                     <CardContent className="p-0">
-                      <h3 className="text-2xl font-bold text-white mb-2 break-words">{plan.name}</h3>
+                      <div className="flex items-center gap-3 mb-4">
+                        <plan.icon className="w-8 h-8 text-blue-400" />
+                        <div>
+                          <h3 className="text-2xl font-bold text-white break-words">{plan.name}</h3>
+                          <p className="text-sm text-slate-400">{plan.timeInvestment} total</p>
+                        </div>
+                      </div>
+                      
+                      <h4 className="text-lg font-semibold text-blue-300 mb-2">{plan.subtitle}</h4>
                       <div className="text-4xl font-bold text-white mb-4">{plan.price}</div>
-                      <p className="text-slate-300 mb-6 break-words">{plan.description}</p>
+                      
+                      <p className="text-slate-300 mb-4 break-words leading-relaxed">{plan.description}</p>
+                      
+                      <div className="bg-slate-700/30 rounded-lg p-3 mb-6">
+                        <p className="text-sm font-medium text-blue-300">Best for: {plan.bestFor}</p>
+                      </div>
+
                       <ul className="space-y-3 mb-8">
-                        {plan.features.map((feature, i) => <li key={i} className="flex items-start text-slate-300">
-                            <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                            {feature}
-                          </li>)}
+                        {plan.features.map((feature, i) => {
+                          const isStage = feature.includes('**Stage');
+                          const cleanFeature = feature.replace(/\*\*/g, '');
+                          return (
+                            <li key={i} className="flex items-start text-slate-300">
+                              <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className={`break-words ${isStage ? 'font-semibold text-white' : ''}`}>
+                                {cleanFeature}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                       <Button className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg' : 'bg-slate-700/70 hover:bg-slate-600/70'} hover:scale-105 transition-all duration-200`}>
                         Get Started
@@ -502,6 +536,14 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     </CardContent>
                   </Card>
                 </motion.div>)}
+            </div>
+
+            {/* Success Metric Highlight */}
+            <div className="text-center mb-8">
+              <p className="text-lg text-slate-300">
+                <span className="text-blue-400 font-semibold">Up to 10 developers</span> per team • 
+                <span className="text-purple-400 font-semibold ml-2">50-70% faster delivery</span> with Transformation tier
+              </p>
             </div>
 
             <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-8 shadow-xl">
@@ -518,6 +560,11 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     <p className="text-slate-300 mb-4">25% discount + custom enterprise support</p>
                     <p className="text-sm text-slate-400">Full organizational transformation with executive reporting</p>
                   </div>
+                </div>
+                <div className="text-center mt-6">
+                  <Button variant="outline" className="bg-slate-700/50 border-slate-600 text-white hover:bg-slate-600/50">
+                    Contact us for team pricing
+                  </Button>
                 </div>
               </CardContent>
             </Card>
