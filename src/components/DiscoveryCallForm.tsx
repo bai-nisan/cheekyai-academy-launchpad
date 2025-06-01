@@ -47,7 +47,7 @@ const formSchema = z.object({
     .max(17, 'Phone number must not exceed 17 characters'),
   company: z.string().min(2, 'Company name must be at least 2 characters'),
   teamSize: z.string().min(1, 'Please select team size'),
-  challenges: z.string().min(10, 'Please describe your current challenges'),
+  challenges: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -252,7 +252,7 @@ export const DiscoveryCallForm: React.FC<DiscoveryCallFormProps> = ({ isOpen, on
               name="challenges"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-slate-200">Current Development Challenges</FormLabel>
+                  <FormLabel className="text-slate-200">Current Development Challenges (Optional)</FormLabel>
                   <FormControl>
                     <Textarea 
                       placeholder="Tell us about your biggest development bottlenecks, delivery pressure, or AI adoption challenges..."
