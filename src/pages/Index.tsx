@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
-import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowRight, Menu, X, Car, Target, Rocket, Trophy } from 'lucide-react';
+import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowRight, Menu, X, Car, Target, Rocket, Trophy, ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -728,7 +728,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     {/* Progress Arrow */}
                     {index < 4 && (
                       <div className="flex justify-center mt-6 mb-4">
-                        <ArrowRight className="w-5 h-5 text-slate-500" />
+                        <ArrowDown className="w-5 h-5 text-slate-500" />
                       </div>
                     )}
                   </div>
