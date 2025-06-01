@@ -137,16 +137,16 @@ const Index = () => {
             <div className="max-w-6xl mx-auto">
               {/* Centered Header */}
               <motion.div initial={{
-                opacity: 0,
-                y: 30
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.8
-              }} className="text-center mb-12">
+              opacity: 0,
+              y: 30
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8
+            }} className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
                   Why This Matters
                 </h2>
@@ -312,16 +312,21 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               </div>
 
               {/* Ideal Cohort Size */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="mt-12 text-center"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.6,
+              delay: 0.4
+            }} className="mt-12 text-center">
                 <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-md border border-blue-500/30 rounded-xl p-6 max-w-lg mx-auto">
                   <p className="text-lg text-slate-200">
-                    <span className="font-semibold text-blue-300">Ideal cohort size:</span> 2-10 developers per team
+                    <span className="font-semibold text-blue-300">Ideal size:</span> 2-10 developers per team
                   </p>
                 </div>
               </motion.div>
@@ -375,36 +380,21 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               duration: "3 hours",
               description: "Build your team's AI foundation with shared understanding",
               outcome: "Team speaks AI fluently",
-              details: [
-                "**LLM mechanics demystified** - Tokens, embeddings, context windows, hallucinations",
-                "**AI Agents & MCP explained** - The \"USB\" between AI and your tools",
-                "**Trust-but-verify mindset** - When to rely on AI, when to double-check",
-                "**AI-friendly task sizing** - Break work into 30-120 min AI-executable chunks"
-              ]
+              details: ["**LLM mechanics demystified** - Tokens, embeddings, context windows, hallucinations", "**AI Agents & MCP explained** - The \"USB\" between AI and your tools", "**Trust-but-verify mindset** - When to rely on AI, when to double-check", "**AI-friendly task sizing** - Break work into 30-120 min AI-executable chunks"]
             }, {
               stage: "Stage 2",
               title: "Codebase AI-Priming",
               duration: "10-15 hours over 2 weeks",
               description: "Transform your repo into an AI-ready knowledge base",
               outcome: "Codebase optimized for AI accuracy",
-              details: [
-                "**Eliminate AI confusion** - Isolate deprecated code so AI learns only from your best",
-                "**Codify tribal knowledge** - Extract unwritten conventions into enforceable AI rules",
-                "**Capture YOUR standards** - From API design to testing strategies to security patterns",
-                "**Make every dev code like your best** - AI enforces your architecture and quality bar"
-              ]
+              details: ["**Eliminate AI confusion** - Isolate deprecated code so AI learns only from your best", "**Codify tribal knowledge** - Extract unwritten conventions into enforceable AI rules", "**Capture YOUR standards** - From API design to testing strategies to security patterns", "**Make every dev code like your best** - AI enforces your architecture and quality bar"]
             }, {
               stage: "Stage 3",
               title: "Hands-On AI Workflow",
               duration: "4 hours",
               description: "Practice the complete AI development loop on real features",
               outcome: "50-70% faster delivery with confidence",
-              details: [
-                "**Requirements → specs with AI** - Transform business needs into technical plans",
-                "**Decompose into AI tasks** - Create perfectly-sized work chunks for AI execution",
-                "**Code with Cursor + your rules** - AI follows YOUR codebase standards automatically",
-                "**AI-driven review** - Catch issues before they hit PR, ship with confidence"
-              ]
+              details: ["**Requirements → specs with AI** - Transform business needs into technical plans", "**Decompose into AI tasks** - Create perfectly-sized work chunks for AI execution", "**Code with Cursor + your rules** - AI follows YOUR codebase standards automatically", "**AI-driven review** - Catch issues before they hit PR, ship with confidence"]
             }].map((stage, index) => <motion.div key={index} initial={{
               opacity: 0,
               y: 30
@@ -435,21 +425,18 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
 
                       <ul className="space-y-4">
                         {stage.details.map((detail, i) => {
-                          // Parse detail to separate bold part from description
-                          const parts = detail.split(' - ');
-                          const boldPart = parts[0].replace(/\*\*/g, '');
-                          const description = parts[1] || '';
-                          
-                          return (
-                            <li key={i} className="flex items-start text-sm text-slate-300">
+                      // Parse detail to separate bold part from description
+                      const parts = detail.split(' - ');
+                      const boldPart = parts[0].replace(/\*\*/g, '');
+                      const description = parts[1] || '';
+                      return <li key={i} className="flex items-start text-sm text-slate-300">
                               <Check className="w-4 h-4 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
                               <span className="break-words leading-relaxed">
                                 <span className="font-semibold text-white">{boldPart}</span>
                                 {description && <span className="text-slate-300"> - {description}</span>}
                               </span>
-                            </li>
-                          );
-                        })}
+                            </li>;
+                    })}
                       </ul>
                     </CardContent>
                   </Card>
@@ -457,13 +444,18 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             </div>
 
             {/* Success Quote */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }} 
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-16 text-center"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.8,
+            delay: 0.6
+          }} className="mt-16 text-center">
               <div className="bg-slate-800/50 backdrop-blur-md border border-slate-700/50 rounded-lg p-8 max-w-4xl mx-auto">
                 <p className="text-lg italic text-slate-300 mb-4">
                   "After Stage 2, our AI started suggesting code that actually followed our patterns. It was like having a senior dev who had read our entire codebase."
@@ -630,17 +622,15 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
 
                       <ul className="space-y-3 mb-6 flex-grow">
                         {plan.features.map((feature, i) => {
-                          const isStage = feature.includes('**Stage');
-                          const cleanFeature = feature.replace(/\*\*/g, '');
-                          return (
-                            <li key={i} className="flex items-start text-slate-300">
+                      const isStage = feature.includes('**Stage');
+                      const cleanFeature = feature.replace(/\*\*/g, '');
+                      return <li key={i} className="flex items-start text-slate-300">
                               <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
                               <span className={`break-words ${isStage ? 'font-semibold text-white' : ''}`}>
                                 {cleanFeature}
                               </span>
-                            </li>
-                          );
-                        })}
+                            </li>;
+                    })}
                       </ul>
 
                       {/* Button at bottom */}
@@ -702,7 +692,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               description: "30 minutes to identify your AI transformation opportunity",
               outcome: "Pinpoint your team's bottlenecks and select the ideal pilot team for maximum impact"
             }, {
-              step: "2", 
+              step: "2",
               icon: "🔧",
               title: "AI Foundations Workshop",
               duration: "3 hours",
@@ -710,7 +700,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               outcome: "Align your entire team with shared AI mental models, tools, and development practices"
             }, {
               step: "3",
-              icon: "🚀", 
+              icon: "🚀",
               title: "Repository Optimization",
               duration: "10-15 hours",
               description: "Stage 2: Make your codebase AI-ready (10-15 hours)",
@@ -718,7 +708,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             }, {
               step: "4",
               icon: "📊",
-              title: "Hands-On Implementation", 
+              title: "Hands-On Implementation",
               duration: "4 hours",
               description: "Stage 3: Build real features with AI (4 hours)",
               outcome: "Practice the complete AI workflow—from requirements to deployment—on your actual codebase"
@@ -726,7 +716,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               step: "5",
               icon: "✅",
               title: "Success Review",
-              duration: "30 minutes", 
+              duration: "30 minutes",
               description: "30-day check-in to measure your 10× transformation",
               outcome: "Review metrics, refine workflows, and plan your continued AI-first evolution"
             }].map((item, index) => <motion.div key={index} initial={{
@@ -755,23 +745,26 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     <p className="text-slate-300 leading-relaxed">{item.outcome}</p>
                     
                     {/* Progress Arrow */}
-                    {index < 4 && (
-                      <div className="flex justify-center mt-6 mb-4">
+                    {index < 4 && <div className="flex justify-center mt-6 mb-4">
                         <ArrowDown className="w-5 h-5 text-slate-500" />
-                      </div>
-                    )}
+                      </div>}
                   </div>
                 </motion.div>)}
             </div>
 
             {/* Total Time Investment */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }} 
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-16 text-center"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.8,
+            delay: 0.6
+          }} className="mt-16 text-center">
               <div className="bg-slate-700/30 backdrop-blur-md border border-slate-600/50 rounded-lg p-6 max-w-2xl mx-auto">
                 <h4 className="text-lg font-semibold text-white mb-2">Total Investment</h4>
                 <p className="text-slate-300">
