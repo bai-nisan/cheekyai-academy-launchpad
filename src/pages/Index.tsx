@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
@@ -51,7 +50,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full z-50 bg-slate-900/90 backdrop-blur-xl border-b border-slate-700/50">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
               CheakyAI Academy
             </div>
             
@@ -108,7 +107,7 @@ const Index = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-emerald-300 via-blue-300 to-purple-300 bg-clip-text text-transparent leading-tight">
               Turn One Dev Team Into an AI-Powered 10× Squad
             </h1>
             <p className="text-xl md:text-2xl mb-12 text-slate-300 max-w-3xl mx-auto leading-relaxed">
@@ -148,7 +147,7 @@ const Index = () => {
             }} transition={{
               duration: 0.8
             }} className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent leading-[1.2] pb-2">
                   Why This Matters
                 </h2>
               </motion.div>
@@ -232,7 +231,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 duration: 0.6
               }}>
                   <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-xl shadow-xl p-8 h-full">
-                    <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+                    <h3 className="text-2xl font-semibold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-6 text-center">
                       What You Need
                     </h3>
                     <ul className="space-y-4 mb-6">
@@ -278,7 +277,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 delay: 0.2
               }}>
                   <div className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 rounded-xl shadow-xl p-8 h-full">
-                    <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+                    <h3 className="text-2xl font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent mb-6 text-center">
                       Works Best With
                     </h3>
                     <ul className="space-y-4">
@@ -349,7 +348,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
         }} transition={{
           duration: 0.8
         }} className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               The Three-Stage Journey
             </h2>
 
@@ -650,7 +649,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
         }} transition={{
           duration: 0.8
         }} className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+            <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               Proven Results
             </h2>
 
@@ -722,7 +721,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
         }} transition={{
           duration: 0.8
         }} className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               Choose Your Transformation
             </h2>
 
@@ -823,7 +822,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
 
             <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-8 shadow-xl">
               <CardContent className="p-0 text-center">
-                <h3 className="text-2xl font-bold text-white mb-6">Multiple Teams?</h3>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-6">Multiple Teams?</h3>
                 <p className="text-slate-300 mb-6">Contact us for custom pricing and enterprise support</p>
                 <Button variant="outline" className="bg-slate-700/50 border-slate-600 text-white hover:bg-slate-600/50">
                   Contact us for custom pricing
@@ -848,7 +847,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
         }} transition={{
           duration: 0.8
         }} className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               Your Journey
             </h2>
 
@@ -963,7 +962,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
         }} transition={{
           duration: 0.8
         }} className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
               Ready to Transform Your Development Team?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
@@ -986,7 +985,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
       <footer className="py-16 border-t border-slate-700/50 bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-4">
               CheakyAI Academy
             </div>
             <p className="text-slate-400 mb-6">Transforming development teams with AI-first methodologies</p>
