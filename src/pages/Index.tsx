@@ -260,11 +260,6 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                         </span>
                       </li>
                     </ul>
-                    <div className="bg-slate-700/30 backdrop-blur-md border border-slate-600/30 rounded-lg p-4 text-center">
-                      <p className="text-slate-300 italic">
-                        That's it. <span className="text-blue-300 font-medium">We handle the rest.</span>
-                      </p>
-                    </div>
                   </div>
                 </motion.div>
 
@@ -287,23 +282,27 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     </h3>
                     <ul className="space-y-4">
                       <li className="flex items-start">
-                        <Star className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
+                        <Check className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
                         <span className="text-slate-300 leading-relaxed">
-                          <span className="font-semibold text-white">Teams feeling behind on AI adoption</span>
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <Star className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
-                        <span className="text-slate-300 leading-relaxed">
-                          <span className="font-semibold text-white">Pressure to deliver faster</span>
+                          <span className="font-semibold text-white">Teams feeling behind on AI</span>
                           <br />
-                          <span className="text-sm">without sacrificing quality</span>
+                          <span className="text-sm">Watching competitors ship faster with AI tools</span>
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <Star className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
+                        <Check className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
                         <span className="text-slate-300 leading-relaxed">
-                          <span className="font-semibold text-white">Leadership committed to transformation</span>
+                          <span className="font-semibold text-white">Delivery pressure mounting</span>
+                          <br />
+                          <span className="text-sm">Need speed without sacrificing code quality</span>
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="w-5 h-5 text-purple-400 mr-4 mt-1 flex-shrink-0" />
+                        <span className="text-slate-300 leading-relaxed">
+                          <span className="font-semibold text-white">Leadership ready to invest</span>
+                          <br />
+                          <span className="text-sm">Committed to real transformation, not just experiments</span>
                         </span>
                       </li>
                     </ul>
