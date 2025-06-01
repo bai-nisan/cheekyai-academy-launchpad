@@ -374,58 +374,65 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 <div className="absolute left-14 top-7 w-6 h-0.5 bg-blue-500/60"></div>
                 
                 {/* Content */}
-                <div className="bg-white/95 backdrop-blur-md border border-blue-200 rounded-xl p-8 shadow-xl">
+                <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 shadow-xl hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
+                  {/* Stage Label */}
+                  <div className="mb-3">
+                    <Badge className="bg-slate-600/70 text-slate-300 border-slate-500 text-xs font-medium">
+                      Stage 1
+                    </Badge>
+                  </div>
+                  
                   <div className="flex items-center gap-4 mb-6">
-                    <h3 className="text-2xl font-bold text-slate-800">AI Core Concepts Workshop</h3>
-                    <Badge className="bg-blue-100 text-blue-700 border-blue-200 px-3 py-1 text-sm font-semibold">
+                    <h3 className="text-2xl font-bold text-white">AI Core Concepts Workshop</h3>
+                    <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30 px-3 py-1 text-sm font-semibold">
                       3 hours
                     </Badge>
                   </div>
                   
-                  <p className="text-slate-600 mb-6 text-lg leading-relaxed">Build your team's AI foundation with shared understanding</p>
+                  <p className="text-slate-300 mb-6 text-lg leading-relaxed">Build your team's AI foundation with shared understanding</p>
                   
                   {/* Outcome Badge */}
-                  <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-full px-4 py-2 mb-6">
-                    <span className="text-green-600 mr-2">💚</span>
-                    <span className="text-sm font-semibold text-green-700">Team speaks AI fluently</span>
+                  <div className="inline-flex items-center bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+                    <span className="text-green-400 mr-2">💚</span>
+                    <span className="text-sm font-semibold text-green-300">Team speaks AI fluently</span>
                   </div>
 
                   <div className="grid gap-4">
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-blue-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-blue-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">LLM mechanics demystified</span>
-                        <div className="text-sm text-slate-600 mt-1">Tokens, embeddings, context windows, hallucinations</div>
+                        <span className="font-semibold text-white">LLM mechanics demystified</span>
+                        <div className="text-sm text-slate-400 mt-1">Tokens, embeddings, context windows, hallucinations</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-blue-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-blue-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">AI Agents & MCP explained</span>
-                        <div className="text-sm text-slate-600 mt-1">The "USB" between AI and your tools</div>
+                        <span className="font-semibold text-white">AI Agents & MCP explained</span>
+                        <div className="text-sm text-slate-400 mt-1">The "USB" between AI and your tools</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-blue-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-blue-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">Trust-but-verify mindset</span>
-                        <div className="text-sm text-slate-600 mt-1">When to rely on AI, when to double-check</div>
+                        <span className="font-semibold text-white">Trust-but-verify mindset</span>
+                        <div className="text-sm text-slate-400 mt-1">When to rely on AI, when to double-check</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-blue-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-blue-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">AI-friendly task sizing</span>
-                        <div className="text-sm text-slate-600 mt-1">Break work into 30-120 min AI-executable chunks</div>
+                        <span className="font-semibold text-white">AI-friendly task sizing</span>
+                        <div className="text-sm text-slate-400 mt-1">Break work into 30-120 min AI-executable chunks</div>
                       </div>
                     </div>
                   </div>
@@ -449,58 +456,65 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 <div className="absolute left-14 top-7 w-6 h-0.5 bg-purple-500/60"></div>
                 
                 {/* Content */}
-                <div className="bg-white/95 backdrop-blur-md border border-purple-200 rounded-xl p-8 shadow-xl">
+                <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 shadow-xl hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
+                  {/* Stage Label */}
+                  <div className="mb-3">
+                    <Badge className="bg-slate-600/70 text-slate-300 border-slate-500 text-xs font-medium">
+                      Stage 2
+                    </Badge>
+                  </div>
+                  
                   <div className="flex items-center gap-4 mb-6">
-                    <h3 className="text-2xl font-bold text-slate-800">Codebase AI-Priming</h3>
-                    <Badge className="bg-purple-100 text-purple-700 border-purple-200 px-3 py-1 text-sm font-semibold">
+                    <h3 className="text-2xl font-bold text-white">Codebase AI-Priming</h3>
+                    <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30 px-3 py-1 text-sm font-semibold">
                       10-15 hours
                     </Badge>
                   </div>
                   
-                  <p className="text-slate-600 mb-6 text-lg leading-relaxed">Transform your repo into an AI-ready knowledge base</p>
+                  <p className="text-slate-300 mb-6 text-lg leading-relaxed">Transform your repo into an AI-ready knowledge base</p>
                   
                   {/* Outcome Badge */}
-                  <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-full px-4 py-2 mb-6">
-                    <span className="text-green-600 mr-2">💚</span>
-                    <span className="text-sm font-semibold text-green-700">Codebase optimized for AI accuracy</span>
+                  <div className="inline-flex items-center bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+                    <span className="text-green-400 mr-2">💚</span>
+                    <span className="text-sm font-semibold text-green-300">Codebase optimized for AI accuracy</span>
                   </div>
 
                   <div className="grid gap-4">
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-purple-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-purple-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">Eliminate AI confusion</span>
-                        <div className="text-sm text-slate-600 mt-1">Isolate deprecated code so AI learns only from your best</div>
+                        <span className="font-semibold text-white">Eliminate AI confusion</span>
+                        <div className="text-sm text-slate-400 mt-1">Isolate deprecated code so AI learns only from your best</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-purple-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-purple-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">Codify tribal knowledge</span>
-                        <div className="text-sm text-slate-600 mt-1">Extract unwritten conventions into enforceable AI rules</div>
+                        <span className="font-semibold text-white">Codify tribal knowledge</span>
+                        <div className="text-sm text-slate-400 mt-1">Extract unwritten conventions into enforceable AI rules</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-purple-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-purple-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">Capture YOUR standards</span>
-                        <div className="text-sm text-slate-600 mt-1">From API design to testing strategies to security patterns</div>
+                        <span className="font-semibold text-white">Capture YOUR standards</span>
+                        <div className="text-sm text-slate-400 mt-1">From API design to testing strategies to security patterns</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-purple-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-purple-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">Make every dev code like your best</span>
-                        <div className="text-sm text-slate-600 mt-1">AI enforces your architecture and quality bar</div>
+                        <span className="font-semibold text-white">Make every dev code like your best</span>
+                        <div className="text-sm text-slate-400 mt-1">AI enforces your architecture and quality bar</div>
                       </div>
                     </div>
                   </div>
@@ -515,7 +529,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="relative pl-20"
               >
-                {/* Timeline Circle with Icon - Outlined for "upcoming" feel */}
+                {/* Timeline Circle with Icon */}
                 <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg z-10 ring-4 ring-green-500/20">
                   <Rocket className="w-6 h-6" />
                 </div>
@@ -524,58 +538,65 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 <div className="absolute left-14 top-7 w-6 h-0.5 bg-green-500/60"></div>
                 
                 {/* Content */}
-                <div className="bg-white/95 backdrop-blur-md border border-green-200 rounded-xl p-8 shadow-xl">
+                <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 shadow-xl hover:border-green-500/30 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
+                  {/* Stage Label */}
+                  <div className="mb-3">
+                    <Badge className="bg-slate-600/70 text-slate-300 border-slate-500 text-xs font-medium">
+                      Stage 3
+                    </Badge>
+                  </div>
+                  
                   <div className="flex items-center gap-4 mb-6">
-                    <h3 className="text-2xl font-bold text-slate-800">Hands-On AI Workflow</h3>
-                    <Badge className="bg-green-100 text-green-700 border-green-200 px-3 py-1 text-sm font-semibold">
+                    <h3 className="text-2xl font-bold text-white">Hands-On AI Workflow</h3>
+                    <Badge className="bg-green-500/20 text-green-300 border-green-500/30 px-3 py-1 text-sm font-semibold">
                       4 hours
                     </Badge>
                   </div>
                   
-                  <p className="text-slate-600 mb-6 text-lg leading-relaxed">Practice the complete AI development loop on real features</p>
+                  <p className="text-slate-300 mb-6 text-lg leading-relaxed">Practice the complete AI development loop on real features</p>
                   
                   {/* Outcome Badge */}
-                  <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-full px-4 py-2 mb-6">
-                    <span className="text-green-600 mr-2">💚</span>
-                    <span className="text-sm font-semibold text-green-700">50-70% faster delivery with confidence</span>
+                  <div className="inline-flex items-center bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+                    <span className="text-green-400 mr-2">💚</span>
+                    <span className="text-sm font-semibold text-green-300">50-70% faster delivery with confidence</span>
                   </div>
 
                   <div className="grid gap-4">
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-green-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-green-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">Requirements → specs with AI</span>
-                        <div className="text-sm text-slate-600 mt-1">Transform business needs into technical plans</div>
+                        <span className="font-semibold text-white">Requirements → specs with AI</span>
+                        <div className="text-sm text-slate-400 mt-1">Transform business needs into technical plans</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-green-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-green-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">Decompose into AI tasks</span>
-                        <div className="text-sm text-slate-600 mt-1">Create perfectly-sized work chunks for AI execution</div>
+                        <span className="font-semibold text-white">Decompose into AI tasks</span>
+                        <div className="text-sm text-slate-400 mt-1">Create perfectly-sized work chunks for AI execution</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-green-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-green-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">Code with Cursor + your rules</span>
-                        <div className="text-sm text-slate-600 mt-1">AI follows YOUR codebase standards automatically</div>
+                        <span className="font-semibold text-white">Code with Cursor + your rules</span>
+                        <div className="text-sm text-slate-400 mt-1">AI follows YOUR codebase standards automatically</div>
                       </div>
                     </div>
                     
-                    <hr className="border-slate-200" />
+                    <hr className="border-slate-600/50" />
                     
-                    <div className="flex items-start text-slate-700">
-                      <Check className="w-5 h-5 text-green-500 mr-4 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start text-slate-300">
+                      <Check className="w-5 h-5 text-green-400 mr-4 mt-0.5 flex-shrink-0" />
                       <div>
-                        <span className="font-semibold text-slate-800">AI-driven review</span>
-                        <div className="text-sm text-slate-600 mt-1">Catch issues before they hit PR, ship with confidence</div>
+                        <span className="font-semibold text-white">AI-driven review</span>
+                        <div className="text-sm text-slate-400 mt-1">Catch issues before they hit PR, ship with confidence</div>
                       </div>
                     </div>
                   </div>
@@ -596,7 +617,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             duration: 0.8,
             delay: 0.6
           }} className="mt-20 text-center">
-              <div className="bg-white/95 backdrop-blur-md border border-slate-200 rounded-xl p-8 max-w-4xl mx-auto shadow-lg">
+              <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 max-w-4xl mx-auto shadow-lg">
                 <div className="flex justify-center mb-4">
                   <div className="flex text-yellow-400">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -604,10 +625,10 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     ))}
                   </div>
                 </div>
-                <p className="text-lg italic text-slate-700 mb-4 leading-relaxed">
+                <p className="text-lg italic text-slate-300 mb-4 leading-relaxed">
                   "After Stage 2, our AI started suggesting code that actually followed our patterns. It was like having a senior dev who had read our entire codebase."
                 </p>
-                <p className="text-sm text-slate-500 font-medium">— Team Lead, 15-developer team</p>
+                <p className="text-sm text-slate-400 font-medium">— Team Lead, 15-developer team</p>
               </div>
             </motion.div>
           </motion.div>
