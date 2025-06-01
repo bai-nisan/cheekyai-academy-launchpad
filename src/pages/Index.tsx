@@ -1,7 +1,8 @@
+
 import React, { useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
-import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowRight, Menu, X, Car, Target, Rocket, Trophy, ArrowDown, GraduationCap, Wrench } from 'lucide-react';
+import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowRight, Menu, X, Car, Target, Rocket, Trophy, ArrowDown, GraduationCap, Wrench, Phone, Settings, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -854,35 +855,35 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             <div className="space-y-8">
               {[{
               step: "1",
-              icon: "🎯",
+              icon: Target,
               title: "Discovery Call",
               duration: "30 minutes",
               description: "30 minutes to identify your AI transformation opportunity",
               outcome: "Pinpoint your team's bottlenecks and select the ideal pilot team for maximum impact"
             }, {
               step: "2",
-              icon: "🔧",
+              icon: GraduationCap,
               title: "AI Foundations Workshop",
               duration: "3 hours",
               description: "Stage 1: Get your team speaking AI (3 hours)",
               outcome: "Align your entire team with shared AI mental models, tools, and development practices"
             }, {
               step: "3",
-              icon: "🚀",
+              icon: Wrench,
               title: "Repository Optimization",
               duration: "10-15 hours",
               description: "Stage 2: Make your codebase AI-ready (10-15 hours)",
               outcome: "Transform your repo into an AI knowledge base that enforces YOUR standards automatically"
             }, {
               step: "4",
-              icon: "📊",
+              icon: Rocket,
               title: "Hands-On Implementation",
               duration: "4 hours",
               description: "Stage 3: Build real features with AI (4 hours)",
               outcome: "Practice the complete AI workflow—from requirements to deployment—on your actual codebase"
             }, {
               step: "5",
-              icon: "✅",
+              icon: CheckCircle,
               title: "Success Review",
               duration: "30 minutes",
               description: "30-day check-in to measure your 10× transformation",
@@ -900,7 +901,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               delay: index * 0.1
             }} className="flex items-start space-x-6">
                   <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center font-bold text-white shadow-lg">
-                    <span className="text-2xl">{item.icon}</span>
+                    <item.icon className="w-6 h-6" />
                   </div>
                   <div className="flex-grow">
                     <div className="flex items-center gap-3 mb-2">
