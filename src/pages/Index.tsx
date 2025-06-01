@@ -155,7 +155,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="max-w-6xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               Why This Matters
             </h2>
             
@@ -231,7 +231,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="max-w-6xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               The Three-Stage Journey
             </h2>
 
@@ -316,7 +316,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="max-w-6xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               Proven Results
             </h2>
 
@@ -363,7 +363,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="max-w-6xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               Choose Your Transformation
             </h2>
 
@@ -383,7 +383,7 @@ const Index = () => {
                   popular: false
                 },
                 {
-                  name: "Practitioner",
+                  name: "Practitioner", 
                   price: "₪14,990", 
                   description: "Most comprehensive package for complete transformation",
                   features: [
@@ -479,7 +479,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
               Your Journey
             </h2>
 
