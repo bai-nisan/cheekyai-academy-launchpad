@@ -815,15 +815,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               </p>
             </div>
 
-            <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-8 shadow-xl">
-              <CardContent className="p-0 text-center">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-6">Multiple Teams?</h3>
-                <p className="text-slate-300 mb-6">Contact us for custom pricing and enterprise support</p>
-                <Button variant="outline" className="bg-slate-700/50 border-slate-600 text-white hover:bg-slate-600/50">
-                  Contact us for custom pricing
-                </Button>
-              </CardContent>
-            </Card>
+            
           </motion.div>
         </div>
       </section>
@@ -909,7 +901,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     
                     {/* Progress Arrow */}
                     {index < 4 && <div className="flex justify-center mt-6 mb-4">
-                        <ArrowDown className="w-5 h-5 text-slate-500" />
+                        <ArrowDown className="w-10 h-10 text-slate-500" />
                       </div>}
                   </div>
                 </motion.div>)}
