@@ -4,6 +4,7 @@ import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowR
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { DiscoveryCallForm } from '@/components/DiscoveryCallForm';
 
 // Animated Counter Component
 const AnimatedCounter = ({
@@ -41,7 +42,7 @@ const FloatingOrbs = () => <>
   </>;
 
 // Hero Section Component
-const HeroSection = () => (
+const HeroSection = ({ onOpenForm }: { onOpenForm: () => void }) => (
   <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10" />
     <FloatingOrbs />
@@ -58,7 +59,7 @@ const HeroSection = () => (
             See the Program
             <ArrowRight className="ml-2" />
           </Button>
-          <Button size="lg" variant="outline" className="bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/50 hover:scale-105 transition-all duration-200 text-lg px-10 py-4 backdrop-blur-sm">
+          <Button size="lg" variant="outline" className="bg-slate-800/50 border-slate-600 text-white hover:bg-slate-700/50 hover:scale-105 transition-all duration-200 text-lg px-10 py-4 backdrop-blur-sm" onClick={onOpenForm}>
             Book Discovery Call
             <Calendar className="ml-2" />
           </Button>
@@ -486,7 +487,7 @@ const SuccessMetricsSection = () => (
             label: "KPI Improvement"
           }].map((metric, index) => (
             <motion.div key={index} initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.1 }} className="text-center">
-              <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-700/50 p-6 hover:bg-slate-700/50 hover:scale-105 transition-all duration-300 overflow-visible shadow-xl">
+              <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 p-6 hover:bg-slate-700/50 hover:scale-105 transition-all duration-300 overflow-visible shadow-xl">
                 <CardContent className="p-0">
                   <metric.icon className="w-12 h-12 mx-auto mb-4 text-blue-400" />
                   <div className="text-4xl font-bold text-white mb-2">
@@ -505,7 +506,7 @@ const SuccessMetricsSection = () => (
 );
 
 // Pricing Section Component
-const PricingSection = () => (
+const PricingSection = ({ onOpenForm }: { onOpenForm: () => void }) => (
   <section id="pricing" className="py-32 bg-gradient-to-br from-slate-900 to-gray-900">
     <div className="container mx-auto px-6">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="max-w-6xl mx-auto">
@@ -579,7 +580,7 @@ const PricingSection = () => (
 
                   {/* Button at bottom */}
                   <div className="mt-auto">
-                    <Button className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg' : 'bg-slate-700/70 hover:bg-slate-600/70'} hover:scale-105 transition-all duration-200`}>
+                    <Button className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg' : 'bg-slate-700/70 hover:bg-slate-600/70'} hover:scale-105 transition-all duration-200`} onClick={onOpenForm}>
                       Get Started
                     </Button>
                   </div>
@@ -775,7 +776,7 @@ const YourJourneyTimelineSection = () => (
 );
 
 // Final CTA Section Component
-const FinalCTASection = () => (
+const FinalCTASection = ({ onOpenForm }: { onOpenForm: () => void }) => (
   <section id="contact" className="py-32 relative bg-gradient-to-br from-slate-900 to-gray-900">
     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10" />
     <div className="container mx-auto px-6 relative z-10">
@@ -787,7 +788,7 @@ const FinalCTASection = () => (
           Join the growing number of development teams who have already made the leap to AI-first development.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all duration-200 text-lg px-10 py-4 shadow-2xl shadow-blue-500/25">
+          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all duration-200 text-lg px-10 py-4 shadow-2xl shadow-blue-500/25" onClick={onOpenForm}>
             Book Your Discovery Call
             <Calendar className="ml-2" />
           </Button>
@@ -825,6 +826,11 @@ const Footer = () => (
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const handleOpenForm = () => setIsFormOpen(true);
+  const handleCloseForm = () => setIsFormOpen(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white overflow-x-hidden scroll-smooth">
       {/* Subtle Grid Pattern Overlay */}
@@ -844,7 +850,7 @@ const Index = () => {
               <a href="#stages" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Stages</a>
               <a href="#pricing" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Pricing</a>
               <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Contact</a>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all duration-200 shadow-lg">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all duration-200 shadow-lg" onClick={handleOpenForm}>
                 Book Discovery Call
               </Button>
             </div>
@@ -863,7 +869,7 @@ const Index = () => {
                 <a href="#stages" className="text-slate-300 hover:text-blue-400 transition-colors">Stages</a>
                 <a href="#pricing" className="text-slate-300 hover:text-blue-400 transition-colors">Pricing</a>
                 <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a>
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg">
+                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg" onClick={handleOpenForm}>
                   Book Discovery Call
                 </Button>
               </div>
@@ -872,14 +878,16 @@ const Index = () => {
         </div>
       </nav>
 
-      <HeroSection />
+      <HeroSection onOpenForm={handleOpenForm} />
       <WhyThisMattersSection />
       <ThreeStagesSection />
       <SuccessMetricsSection />
-      <PricingSection />
+      <PricingSection onOpenForm={handleOpenForm} />
       <YourJourneyTimelineSection />
-      <FinalCTASection />
+      <FinalCTASection onOpenForm={handleOpenForm} />
       <Footer />
+
+      <DiscoveryCallForm isOpen={isFormOpen} onClose={handleCloseForm} />
     </div>
   );
 };
