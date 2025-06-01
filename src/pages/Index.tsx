@@ -201,7 +201,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                 }} transition={{
                   duration: 0.8,
                   delay: 0.4
-                }} className="flex justify-center">
+                }}>
                     <div className="relative">
                       <Car className="w-48 h-48 md:w-64 md:h-64 text-blue-400 stroke-1" />
                       <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl scale-150"></div>
