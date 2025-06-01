@@ -381,7 +381,7 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                     <CardContent className="p-0">
                       <Badge className="mb-4 bg-slate-700/70 text-white border-slate-600">{stage.stage}</Badge>
                       <h3 className="text-xl font-bold mb-2 text-white break-words">{stage.title}</h3>
-                      <p className="text-sm text-slate-400 mb-4 font-medium">{stage.duration}</p>
+                      <p className="text-sm text-slate-300 leading-relaxed mb-4">{stage.duration}</p>
                       <p className="text-slate-300 mb-4 break-words leading-relaxed">{stage.description}</p>
                       
                       {/* Outcome Badge */}
@@ -527,8 +527,6 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               {[{
               name: "Explorer",
               icon: Target,
-              price: "₪7,990",
-              showPrice: true,
               subtitle: "AI Fundamentals Workshop",
               timeInvestment: "3 hours",
               description: "Get your team speaking AI fluently in just 3 hours. Learn LLM mechanics, AI agents, and development best practices.",
@@ -538,8 +536,6 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             }, {
               name: "Pioneer",
               icon: Rocket,
-              price: "₪14,990",
-              showPrice: true,
               subtitle: "Rapid AI Skills Development",
               timeInvestment: "7 hours",
               description: "Transform your team into AI practitioners with hands-on training on your actual tech stack.",
@@ -549,8 +545,6 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             }, {
               name: "Leader",
               icon: Trophy,
-              price: "₪29,990",
-              showPrice: false,
               subtitle: "Complete AI-First Evolution",
               timeInvestment: "25+ hours",
               description: "Full transformation from traditional to AI-augmented development with custom repository optimization.",
@@ -607,11 +601,8 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
                         })}
                       </ul>
 
-                      {/* Price and Button at bottom */}
+                      {/* Button at bottom */}
                       <div className="mt-auto">
-                        {plan.showPrice && (
-                          <div className="text-4xl font-bold text-white mb-4 text-center">{plan.price}</div>
-                        )}
                         <Button className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg' : 'bg-slate-700/70 hover:bg-slate-600/70'} hover:scale-105 transition-all duration-200`}>
                           Get Started
                         </Button>
