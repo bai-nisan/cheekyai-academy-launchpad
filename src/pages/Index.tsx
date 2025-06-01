@@ -667,24 +667,39 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
             <div className="space-y-8">
               {[{
               step: "1",
+              icon: "🎯",
               title: "Discovery Call",
-              description: "We analyze your team's current state and development challenges"
+              duration: "30 minutes",
+              description: "30 minutes to identify your AI transformation opportunity",
+              outcome: "Pinpoint your team's bottlenecks and select the ideal pilot team for maximum impact"
             }, {
-              step: "2",
-              title: "Program Design",
-              description: "Custom program design based on your tech stack and goals"
+              step: "2", 
+              icon: "🔧",
+              title: "AI Foundations Workshop",
+              duration: "3 hours",
+              description: "Stage 1: Get your team speaking AI (3 hours)",
+              outcome: "Align your entire team with shared AI mental models, tools, and development practices"
             }, {
               step: "3",
-              title: "Kickoff Workshop",
-              description: "Stage 1 implementation with your entire development team"
+              icon: "🚀", 
+              title: "Repository Optimization",
+              duration: "10-15 hours",
+              description: "Stage 2: Make your codebase AI-ready (10-15 hours)",
+              outcome: "Transform your repo into an AI knowledge base that enforces YOUR standards automatically"
             }, {
               step: "4",
-              title: "Hands-On Transformation",
-              description: "Stages 2-3 with real codebase integration and workflow setup"
+              icon: "📊",
+              title: "Hands-On Implementation", 
+              duration: "4 hours",
+              description: "Stage 3: Build real features with AI (4 hours)",
+              outcome: "Practice the complete AI workflow—from requirements to deployment—on your actual codebase"
             }, {
               step: "5",
-              title: "Ongoing Support",
-              description: "Continued guidance as your team masters AI-first development"
+              icon: "✅",
+              title: "Success Review",
+              duration: "30 minutes", 
+              description: "30-day check-in to measure your 10× transformation",
+              outcome: "Review metrics, refine workflows, and plan your continued AI-first evolution"
             }].map((item, index) => <motion.div key={index} initial={{
               opacity: 0,
               x: -30
@@ -697,15 +712,47 @@ a few ChatGPT prompts here, maybe some Copilot autocomplete there. But that's li
               duration: 0.8,
               delay: index * 0.1
             }} className="flex items-start space-x-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center font-bold text-white shadow-lg">
-                    {item.step}
+                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center font-bold text-white shadow-lg">
+                    <span className="text-2xl">{item.icon}</span>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                    <p className="text-slate-300">{item.description}</p>
+                  <div className="flex-grow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                      <Badge className="bg-slate-700/70 text-blue-300 border-slate-600 text-xs">
+                        {item.duration}
+                      </Badge>
+                    </div>
+                    <p className="text-lg font-medium text-blue-300 mb-3">{item.description}</p>
+                    <p className="text-slate-300 leading-relaxed">{item.outcome}</p>
+                    
+                    {/* Progress Arrow */}
+                    {index < 4 && (
+                      <div className="flex justify-center mt-6 mb-4">
+                        <ArrowRight className="w-5 h-5 text-slate-500" />
+                      </div>
+                    )}
                   </div>
                 </motion.div>)}
             </div>
+
+            {/* Total Time Investment */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="mt-16 text-center"
+            >
+              <div className="bg-slate-700/30 backdrop-blur-md border border-slate-600/50 rounded-lg p-6 max-w-2xl mx-auto">
+                <h4 className="text-lg font-semibold text-white mb-2">Total Investment</h4>
+                <p className="text-slate-300">
+                  <span className="text-blue-400 font-semibold">17-22 hours</span> spread over 4-6 weeks for complete transformation
+                </p>
+                <p className="text-sm text-slate-400 mt-2">
+                  From traditional development to 50-70% faster AI-first delivery
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
