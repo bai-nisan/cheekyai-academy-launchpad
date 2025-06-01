@@ -28,8 +28,23 @@ import { useToast } from '@/hooks/use-toast';
 const formSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
+  email: z
+    .string()
+    .min(1, 'Email is required')
+    .email('Please enter a valid email address')
+    .regex(
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      'Please enter a valid email format'
+    ),
+  phone: z
+    .string()
+    .min(1, 'Phone number is required')
+    .regex(
+      /^[\+]?[1-9][\d]{0,15}$/,
+      'Please enter a valid phone number (10-16 digits, optionally starting with +)'
+    )
+    .min(10, 'Phone number must be at least 10 digits')
+    .max(17, 'Phone number must not exceed 17 characters'),
   company: z.string().min(2, 'Company name must be at least 2 characters'),
   teamSize: z.string().min(1, 'Please select team size'),
   challenges: z.string().min(10, 'Please describe your current challenges'),
