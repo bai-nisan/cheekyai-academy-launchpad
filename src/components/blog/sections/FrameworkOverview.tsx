@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Rocket, Wrench, BookOpen, Code2, CheckCircle2 } from "lucide-react";
 
@@ -7,33 +8,45 @@ export const FrameworkOverview = () => {
       title: "Environment Preparation", 
       desc: "Standardizing your codebase for AI assistance", 
       icon: <Wrench className="h-5 w-5" />, 
-      color: "from-blue-600/30 to-blue-700/30 border-blue-500/50 hover:from-blue-600/40 hover:to-blue-700/40" 
+      color: "from-blue-600/30 to-blue-700/30 border-blue-500/50 hover:from-blue-600/40 hover:to-blue-700/40",
+      sectionId: "environment-preparation"
     },
     { 
       title: "AI-Assisted Planning", 
       desc: "Creating technical specifications with AI", 
       icon: <BookOpen className="h-5 w-5" />, 
-      color: "from-purple-600/30 to-purple-700/30 border-purple-500/50 hover:from-purple-600/40 hover:to-purple-700/40" 
+      color: "from-purple-600/30 to-purple-700/30 border-purple-500/50 hover:from-purple-600/40 hover:to-purple-700/40",
+      sectionId: "ai-assisted-planning"
     },
     { 
       title: "Task Decomposition", 
       desc: "Breaking down work into AI-executable chunks", 
       icon: <Code2 className="h-5 w-5" />, 
-      color: "from-green-600/30 to-green-700/30 border-green-500/50 hover:from-green-600/40 hover:to-green-700/40" 
+      color: "from-green-600/30 to-green-700/30 border-green-500/50 hover:from-green-600/40 hover:to-green-700/40",
+      sectionId: "task-decomposition"
     },
     { 
       title: "Execution Workflow", 
       desc: "Implementing tasks with AI assistance", 
       icon: <Rocket className="h-5 w-5" />, 
-      color: "from-orange-600/30 to-orange-700/30 border-orange-500/50 hover:from-orange-600/40 hover:to-orange-700/40" 
+      color: "from-orange-600/30 to-orange-700/30 border-orange-500/50 hover:from-orange-600/40 hover:to-orange-700/40",
+      sectionId: "execution-workflow"
     },
     { 
       title: "Best Practices", 
       desc: "Ensuring quality and consistency", 
       icon: <CheckCircle2 className="h-5 w-5" />, 
-      color: "from-cyan-600/30 to-cyan-700/30 border-cyan-500/50 hover:from-cyan-600/40 hover:to-cyan-700/40" 
+      color: "from-cyan-600/30 to-cyan-700/30 border-cyan-500/50 hover:from-cyan-600/40 hover:to-cyan-700/40",
+      sectionId: "best-practices"
     }
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <section id="framework-overview" className="mb-12">
@@ -57,6 +70,16 @@ export const FrameworkOverview = () => {
               <div 
                 key={idx} 
                 className={`flex items-start gap-4 p-5 rounded-xl bg-gradient-to-br ${item.color} border backdrop-blur-sm hover:scale-[1.02] transition-all duration-200 cursor-pointer group`}
+                onClick={() => scrollToSection(item.sectionId)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    scrollToSection(item.sectionId);
+                  }
+                }}
+                aria-label={`Navigate to ${item.title} section`}
               >
                 <div className="text-white bg-white/20 p-2.5 rounded-lg backdrop-blur-sm group-hover:bg-white/25 transition-colors">
                   {item.icon}
