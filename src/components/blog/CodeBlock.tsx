@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ChevronDown, ChevronRight } from "lucide-react";
 
 interface CodeBlockProps {
   code: string;
@@ -21,11 +21,11 @@ export const CodeBlock = ({ code, language = "bash", collapsible = false, title 
   };
 
   return (
-    <div className="relative codeblock-wrapper my-6">
+    <div className="relative my-6">
       {title && (
-        <div className="flex items-center justify-between bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-sm px-4 py-3 rounded-t-lg border border-slate-600/50 border-b-0">
+        <div className="flex items-center justify-between bg-slate-800/60 px-4 py-3 rounded-t-lg border-b border-slate-600/30">
           <span className="text-sm font-medium text-slate-200 flex items-center gap-2">
-            <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
             {title}
           </span>
           {collapsible && (
@@ -35,7 +35,11 @@ export const CodeBlock = ({ code, language = "bash", collapsible = false, title 
               className="text-slate-300 hover:text-slate-100 hover:bg-slate-700/60 transition-all duration-200"
               onClick={() => setIsExpanded(!isExpanded)}
             >
-              {isExpanded ? "Collapse" : "Expand"}
+              {isExpanded ? (
+                <ChevronDown className="h-4 w-4" />
+              ) : (
+                <ChevronRight className="h-4 w-4" />
+              )}
             </Button>
           )}
         </div>
@@ -43,14 +47,11 @@ export const CodeBlock = ({ code, language = "bash", collapsible = false, title 
       
       {isExpanded && (
         <div className="relative group">
-          {/* Gradient Border Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
-          <div className="relative code-block-container [&_pre]:!text-slate-200 [&_code]:!text-slate-200 [&_span]:!text-slate-200 [&_*]:!text-slate-200">
+          <div className="relative">
             <Button
               variant="ghost"
               size="sm"
-              className="absolute top-3 right-3 z-10 text-slate-400 hover:text-slate-100 hover:bg-slate-700/80 backdrop-blur-sm transition-all duration-200 border border-slate-600/30 hover:border-slate-500/50"
+              className="absolute top-3 right-3 z-10 text-slate-400 hover:text-slate-100 hover:bg-slate-700/80 backdrop-blur-sm transition-all duration-200"
               onClick={copyToClipboard}
             >
               {copied ? (
@@ -61,13 +62,10 @@ export const CodeBlock = ({ code, language = "bash", collapsible = false, title 
             </Button>
             
             <pre 
-              className={`overflow-x-auto p-4 bg-slate-900/90 backdrop-blur-sm border border-slate-600/50 ${title ? "rounded-t-none rounded-b-lg" : "rounded-lg"} !text-slate-200 relative`}
+              className={`overflow-x-auto p-4 bg-slate-900/80 backdrop-blur-sm border border-slate-600/30 ${title ? "rounded-t-none rounded-b-lg" : "rounded-lg"} text-slate-200 relative`}
             >
-              {/* Subtle Inner Glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-800/10 via-transparent to-slate-900/10 rounded-lg pointer-events-none"></div>
-              
               <code 
-                className="text-sm block !text-inherit relative z-10" 
+                className="text-sm block text-inherit" 
               >
                 {code}
               </code>

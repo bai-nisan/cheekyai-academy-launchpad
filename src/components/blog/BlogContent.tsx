@@ -1,5 +1,4 @@
 
-import { Separator } from "@/components/ui/separator";
 import {
   FrameworkOverview,
   EnvironmentPreparation,
@@ -13,7 +12,7 @@ import {
 export const BlogContent = () => {
   return (
     <article className="prose prose-lg max-w-none prose-slate prose-invert">
-      {/* Custom prose styles for gradient headings */}
+      {/* Custom prose styles for professional typography */}
       <style>{`
         article h2 {
           background: linear-gradient(135deg, #3B82F6, #8B5CF6);
@@ -21,18 +20,25 @@ export const BlogContent = () => {
           -webkit-text-fill-color: transparent;
           background-clip: text;
           font-weight: 700;
-          margin-top: 2.5rem;
+          margin-top: 3rem;
           margin-bottom: 1.5rem;
+          font-size: 1.875rem;
         }
         
         article h3 {
-          background: linear-gradient(135deg, #06B6D4, #3B82F6);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #3B82F6;
           font-weight: 600;
           margin-top: 2rem;
           margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+        
+        article h4 {
+          color: #F1F5F9;
+          font-weight: 600;
+          margin-top: 1.5rem;
+          margin-bottom: 0.75rem;
+          font-size: 1.25rem;
         }
         
         article p {
@@ -57,10 +63,10 @@ export const BlogContent = () => {
         
         article blockquote {
           border-left: 4px solid #3B82F6;
-          background: #1E293B/50;
+          background: #1E293B/30;
           padding: 1rem 1.5rem;
           margin: 1.5rem 0;
-          border-radius: 0.5rem;
+          border-radius: 0.375rem;
           backdrop-filter: blur(10px);
         }
         
@@ -75,80 +81,43 @@ export const BlogContent = () => {
         article li::marker {
           color: #3B82F6;
         }
+
+        .section-spacing {
+          margin-bottom: 4rem;
+        }
+
+        .section-spacing:last-child {
+          margin-bottom: 0;
+        }
       `}</style>
       
-      <div className="space-y-12">
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg blur-sm"></div>
-          <div className="relative bg-slate-800/20 backdrop-blur-sm rounded-lg p-6 border border-slate-700/30">
-            <FrameworkOverview />
-          </div>
+      <div className="space-y-16">
+        <section className="section-spacing">
+          <FrameworkOverview />
         </section>
         
-        <div className="relative">
-          <Separator className="bg-gradient-to-r from-transparent via-slate-600 to-transparent h-px" />
-        </div>
-        
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-lg blur-sm"></div>
-          <div className="relative bg-slate-800/20 backdrop-blur-sm rounded-lg p-6 border border-slate-700/30">
-            <EnvironmentPreparation />
-          </div>
+        <section className="section-spacing">
+          <EnvironmentPreparation />
         </section>
         
-        <div className="relative">
-          <Separator className="bg-gradient-to-r from-transparent via-slate-600 to-transparent h-px" />
-        </div>
-        
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-lg blur-sm"></div>
-          <div className="relative bg-slate-800/20 backdrop-blur-sm rounded-lg p-6 border border-slate-700/30">
-            <AIAssistedPlanning />
-          </div>
+        <section className="section-spacing">
+          <AIAssistedPlanning />
         </section>
         
-        <div className="relative">
-          <Separator className="bg-gradient-to-r from-transparent via-slate-600 to-transparent h-px" />
-        </div>
-        
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg blur-sm"></div>
-          <div className="relative bg-slate-800/20 backdrop-blur-sm rounded-lg p-6 border border-slate-700/30">
-            <TaskDecomposition />
-          </div>
+        <section className="section-spacing">
+          <TaskDecomposition />
         </section>
         
-        <div className="relative">
-          <Separator className="bg-gradient-to-r from-transparent via-slate-600 to-transparent h-px" />
-        </div>
-        
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-lg blur-sm"></div>
-          <div className="relative bg-slate-800/20 backdrop-blur-sm rounded-lg p-6 border border-slate-700/30">
-            <ExecutionWorkflow />
-          </div>
+        <section className="section-spacing">
+          <ExecutionWorkflow />
         </section>
         
-        <div className="relative">
-          <Separator className="bg-gradient-to-r from-transparent via-slate-600 to-transparent h-px" />
-        </div>
-        
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-lg blur-sm"></div>
-          <div className="relative bg-slate-800/20 backdrop-blur-sm rounded-lg p-6 border border-slate-700/30">
-            <BestPractices />
-          </div>
+        <section className="section-spacing">
+          <BestPractices />
         </section>
         
-        <div className="relative">
-          <Separator className="bg-gradient-to-r from-transparent via-slate-600 to-transparent h-px" />
-        </div>
-        
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg blur-sm"></div>
-          <div className="relative bg-slate-800/20 backdrop-blur-sm rounded-lg p-6 border border-slate-700/30">
-            <ResourcesCommunity />
-          </div>
+        <section className="section-spacing">
+          <ResourcesCommunity />
         </section>
       </div>
     </article>
