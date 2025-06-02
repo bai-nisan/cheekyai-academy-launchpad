@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,15 @@
             box-sizing: border-box;
         }
 
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         .thumbnail {
-            width: 800px;
-            height: 450px;
+            width: 100%;
+            height: 100vh;
             background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
             position: relative;
             overflow: hidden;
@@ -46,7 +53,7 @@
             background-image: 
                 linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-size: 2.5vw 2.5vh;
             opacity: 0.3;
         }
 
@@ -58,15 +65,15 @@
         }
 
         .ai-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
+            width: clamp(60px, 8vw, 80px);
+            height: clamp(60px, 8vw, 80px);
+            margin: 0 auto clamp(15px, 2vh, 20px);
             background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-            border-radius: 20px;
+            border-radius: clamp(15px, 2vw, 20px);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
+            font-size: clamp(30px, 4vw, 40px);
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
             animation: pulse 2s infinite;
         }
@@ -77,40 +84,40 @@
         }
 
         .title {
-            font-size: 48px;
+            font-size: clamp(24px, 5vw, 48px);
             font-weight: bold;
             background: linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            margin-bottom: clamp(8px, 1vh, 10px);
             line-height: 1.2;
         }
 
         .subtitle {
-            font-size: 20px;
+            font-size: clamp(14px, 2.5vw, 20px);
             color: #94A3B8;
-            margin-bottom: 30px;
+            margin-bottom: clamp(20px, 3vh, 30px);
             font-weight: 300;
         }
 
         .workflow-steps {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            gap: clamp(10px, 1.5vw, 15px);
+            margin-top: clamp(15px, 2vh, 20px);
         }
 
         .step {
-            width: 50px;
-            height: 50px;
+            width: clamp(35px, 5vw, 50px);
+            height: clamp(35px, 5vw, 50px);
             border-radius: 50%;
             background: linear-gradient(135deg, #3B82F6, #8B5CF6);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 14px;
+            font-size: clamp(10px, 1.5vw, 14px);
             position: relative;
             animation: float 3s ease-in-out infinite;
         }
@@ -129,14 +136,14 @@
         .step::after {
             content: '';
             position: absolute;
-            right: -12px;
+            right: calc(-0.75vw - 6px);
             top: 50%;
             transform: translateY(-50%);
             width: 0;
             height: 0;
-            border-left: 8px solid #3B82F6;
-            border-top: 5px solid transparent;
-            border-bottom: 5px solid transparent;
+            border-left: clamp(6px, 1vw, 8px) solid #3B82F6;
+            border-top: clamp(4px, 0.6vw, 5px) solid transparent;
+            border-bottom: clamp(4px, 0.6vw, 5px) solid transparent;
         }
 
         .step:last-child::after {
@@ -145,34 +152,34 @@
 
         .tech-elements {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: clamp(15px, 2vh, 20px);
+            right: clamp(15px, 2vw, 20px);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: clamp(8px, 1vh, 10px);
             opacity: 0.6;
         }
 
         .tech-tag {
             background: rgba(59, 130, 246, 0.2);
             border: 1px solid rgba(59, 130, 246, 0.3);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+            padding: clamp(4px, 0.5vh, 5px) clamp(8px, 1.5vw, 12px);
+            border-radius: clamp(15px, 2vw, 20px);
+            font-size: clamp(10px, 1.2vw, 12px);
             color: #3B82F6;
             backdrop-filter: blur(10px);
         }
 
         .code-snippet {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
+            bottom: clamp(15px, 2vh, 20px);
+            left: clamp(15px, 2vw, 20px);
             background: rgba(15, 23, 42, 0.8);
             border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 8px;
-            padding: 10px;
+            border-radius: clamp(6px, 1vw, 8px);
+            padding: clamp(8px, 1vh, 10px);
             font-family: 'Courier New', monospace;
-            font-size: 12px;
+            font-size: clamp(9px, 1.2vw, 12px);
             color: #06B6D4;
             backdrop-filter: blur(10px);
             opacity: 0.7;
@@ -187,24 +194,24 @@
         }
 
         .orb-1 {
-            width: 100px;
-            height: 100px;
+            width: clamp(80px, 10vw, 100px);
+            height: clamp(80px, 10vw, 100px);
             top: 10%;
             left: 10%;
             animation-delay: 0s;
         }
 
         .orb-2 {
-            width: 150px;
-            height: 150px;
+            width: clamp(120px, 15vw, 150px);
+            height: clamp(120px, 15vw, 150px);
             top: 60%;
             right: 10%;
             animation-delay: 2s;
         }
 
         .orb-3 {
-            width: 80px;
-            height: 80px;
+            width: clamp(60px, 8vw, 80px);
+            height: clamp(60px, 8vw, 80px);
             bottom: 20%;
             left: 70%;
             animation-delay: 4s;
@@ -214,6 +221,25 @@
             0%, 100% { transform: translate(0, 0) scale(1); }
             33% { transform: translate(20px, -20px) scale(1.1); }
             66% { transform: translate(-15px, 10px) scale(0.9); }
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .tech-elements {
+                top: 10px;
+                right: 10px;
+                gap: 6px;
+            }
+            
+            .code-snippet {
+                bottom: 10px;
+                left: 10px;
+                padding: 6px;
+            }
+            
+            .workflow-steps {
+                gap: 8px;
+            }
         }
     </style>
 </head>
