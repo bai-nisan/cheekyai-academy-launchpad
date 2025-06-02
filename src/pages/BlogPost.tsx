@@ -28,12 +28,12 @@ const BlogPost = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <div className="min-h-screen bg-slate-900">
       <ReadingProgress />
       
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white">
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative">
           <BlogHeader />
         </div>
@@ -51,7 +51,7 @@ const BlogPost = () => {
             </aside>
             
             <main className="lg:col-span-3">
-              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 lg:p-12">
+              <div className="bg-slate-800 rounded-2xl shadow-xl p-8 lg:p-12 border border-slate-700">
                 <BlogContent />
               </div>
             </main>
