@@ -833,63 +833,75 @@ const Index = () => {
   const handleCloseForm = () => setIsFormOpen(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white overflow-x-hidden scroll-smooth">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
       {/* Subtle Grid Pattern Overlay */}
       <div className="fixed inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.02%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] pointer-events-none" />
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-900/90 backdrop-blur-xl border-b border-slate-700/50">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
-            <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-              CheakyAI Academy
+      {/* Header */}
+      <header className="relative z-50 bg-slate-900/50 backdrop-blur-sm border-b border-slate-700/50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Lovable
             </div>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            
+            <nav className="hidden md:flex items-center space-x-8">
+              <a href="#hero" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Home</a>
               <a href="#program" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Program</a>
               <a href="#stages" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Stages</a>
               <a href="#pricing" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Pricing</a>
-              <Link to="/blog/ai-powered-development-workflow" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Blog</Link>
+              <Link to="/blog" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Blog</Link>
               <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Contact</a>
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all duration-200 shadow-lg" onClick={handleOpenForm}>
                 Book Discovery Call
               </Button>
-            </div>
+            </nav>
 
-            {/* Mobile Menu Button */}
-            <button className="md:hidden p-2 text-slate-300" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X /> : <Menu />}
+            {/* Mobile menu button */}
+            <button className="md:hidden text-white">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             </button>
           </div>
 
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="md:hidden bg-slate-800/95 backdrop-blur-xl border border-slate-700/50 rounded-xl mt-2 p-6">
-              <div className="flex flex-col space-y-4">
+          {/* Mobile Navigation */}
+          <div className="md:hidden mt-4 border-t border-slate-700 pt-4">
+            <nav className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-2">
+                <a href="#hero" className="text-slate-300 hover:text-blue-400 transition-colors">Home</a>
                 <a href="#program" className="text-slate-300 hover:text-blue-400 transition-colors">Program</a>
                 <a href="#stages" className="text-slate-300 hover:text-blue-400 transition-colors">Stages</a>
                 <a href="#pricing" className="text-slate-300 hover:text-blue-400 transition-colors">Pricing</a>
-                <Link to="/blog/ai-powered-development-workflow" className="text-slate-300 hover:text-blue-400 transition-colors">Blog</Link>
+                <Link to="/blog" className="text-slate-300 hover:text-blue-400 transition-colors">Blog</Link>
                 <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a>
                 <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg" onClick={handleOpenForm}>
                   Book Discovery Call
                 </Button>
               </div>
-            </motion.div>
-          )}
+            </nav>
+          </div>
         </div>
-      </nav>
+      </header>
 
+      {/* Hero Section Component */}
       <HeroSection onOpenForm={handleOpenForm} />
+      {/* Why This Matters Section Component */}
       <WhyThisMattersSection />
+      {/* Three Stages Section Component */}
       <ThreeStagesSection />
+      {/* Success Metrics Section Component */}
       <SuccessMetricsSection />
+      {/* Pricing Section Component */}
       <PricingSection onOpenForm={handleOpenForm} />
+      {/* Your Journey Timeline Section Component */}
       <YourJourneyTimelineSection />
+      {/* Final CTA Section Component */}
       <FinalCTASection onOpenForm={handleOpenForm} />
+      {/* Footer Component */}
       <Footer />
 
+      {/* Discovery Call Form Component */}
       <DiscoveryCallForm isOpen={isFormOpen} onClose={handleCloseForm} />
     </div>
   );
