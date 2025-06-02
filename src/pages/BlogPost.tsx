@@ -1,29 +1,7 @@
 
-import { useState, useEffect } from "react";
-import { BlogHeader, BlogContent, ReadingProgress, HorizontalTableOfContents, TopNavigation } from "@/components/blog";
-import { motion } from "framer-motion";
+import { BlogHeader, BlogContent, ReadingProgress, TopNavigation } from "@/components/blog";
 
 const BlogPost = () => {
-  const [activeSection, setActiveSection] = useState("");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("h2[id], h3[id]");
-      const scrollPosition = window.scrollY + 200;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i] as HTMLElement;
-        if (section.offsetTop <= scrollPosition) {
-          setActiveSection(section.id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
       <ReadingProgress />
@@ -33,9 +11,6 @@ const BlogPost = () => {
 
       {/* Top Navigation with Share */}
       <TopNavigation />
-      
-      {/* Horizontal Table of Contents */}
-      <HorizontalTableOfContents activeSection={activeSection} />
 
       {/* Main Content - Full Width with Optimal Reading Constraints */}
       <main className="relative">
