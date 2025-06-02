@@ -6,8 +6,7 @@ import {
   EnvironmentPreparation,
   AIAssistedPlanning,
   TaskDecomposition,
-  ExecutionWorkflow,
-  BestPractices
+  ExecutionWorkflow
 } from "./";
 
 export const FrameworkOverview = () => {
@@ -33,11 +32,6 @@ export const FrameworkOverview = () => {
       title: "Execution Workflow", 
       desc: "Implementing tasks with AI assistance", 
       value: "execution-workflow"
-    },
-    { 
-      title: "Best Practices", 
-      desc: "Ensuring quality and consistency", 
-      value: "best-practices"
     }
   ];
 
@@ -51,8 +45,6 @@ export const FrameworkOverview = () => {
         return <TaskDecomposition />;
       case "execution-workflow":
         return <ExecutionWorkflow />;
-      case "best-practices":
-        return <BestPractices />;
       default:
         return null;
     }
@@ -81,7 +73,7 @@ export const FrameworkOverview = () => {
               {/* Gradient background container */}
               <div className="absolute inset-0 bg-gradient-to-r from-slate-800/60 via-slate-800/40 to-slate-800/60 rounded-xl blur-sm"></div>
               
-              <TabsList className="relative w-full h-auto p-2 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-lg grid grid-cols-5 gap-1">
+              <TabsList className="relative w-full h-auto p-2 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-lg grid grid-cols-4 gap-1">
                 {coreComponents.map((item) => (
                   <TabsTrigger 
                     key={item.value} 
