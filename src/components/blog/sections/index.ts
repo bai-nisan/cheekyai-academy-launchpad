@@ -8,4 +8,3 @@ export { AIAssistedPlanning } from './AIAssistedPlanning';
 export { TaskDecomposition } from './TaskDecomposition';
 export { ExecutionWorkflow } from './ExecutionWorkflow';
 export { ResourcesCommunity } from './ResourcesCommunity';
-export { BestPractices } from './BestPractices';
