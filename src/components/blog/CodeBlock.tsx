@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Copy, Check } from "lucide-react";
@@ -21,7 +20,7 @@ export const CodeBlock = ({ code, language = "bash", collapsible = false, title 
   };
 
   return (
-    <div className="relative">
+    <div className="relative codeblock-wrapper">
       {title && (
         <div className="flex items-center justify-between bg-slate-800/60 backdrop-blur-sm px-4 py-2 rounded-t-lg border border-slate-700/50 border-b-0">
           <span className="text-sm font-medium text-slate-200">{title}</span>
@@ -39,7 +38,7 @@ export const CodeBlock = ({ code, language = "bash", collapsible = false, title 
       )}
       
       {isExpanded && (
-        <div className="relative">
+        <div className="relative code-block-container [&_pre]:!text-slate-200 [&_code]:!text-slate-200 [&_span]:!text-slate-200 [&_*]:!text-slate-200">
           <Button
             variant="ghost"
             size="sm"
@@ -49,8 +48,12 @@ export const CodeBlock = ({ code, language = "bash", collapsible = false, title 
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
           </Button>
           
-          <pre className={`overflow-x-auto p-4 bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 text-slate-200 ${title ? "rounded-t-none rounded-b-lg" : "rounded-lg"}`}>
-            <code className={`language-${language} text-sm`}>
+          <pre 
+            className={`overflow-x-auto p-4 bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 ${title ? "rounded-t-none rounded-b-lg" : "rounded-lg"} !text-slate-200`}
+          >
+            <code 
+              className="text-sm block !text-inherit" 
+            >
               {code}
             </code>
           </pre>

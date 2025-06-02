@@ -1,22 +1,9 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BLOG_SECTIONS } from "./constants";
 
 interface TableOfContentsProps {
   activeSection: string;
 }
-
-const sections = [
-  { id: "framework-overview", title: "Framework Overview", level: 2 },
-  { id: "environment-preparation", title: "Environment Preparation", level: 2 },
-  { id: "tool-setup", title: "Tool Setup", level: 3 },
-  { id: "standards-requirements", title: "Standards & Requirements", level: 3 },
-  { id: "implementation", title: "Implementation", level: 3 },
-  { id: "ai-assisted-planning", title: "AI-Assisted Planning", level: 2 },
-  { id: "task-decomposition", title: "Task Decomposition", level: 2 },
-  { id: "execution-workflow", title: "Execution Workflow", level: 2 },
-  { id: "best-practices", title: "Best Practices", level: 2 },
-  { id: "resources-community", title: "Resources & Community", level: 2 },
-];
 
 export const TableOfContents = ({ activeSection }: TableOfContentsProps) => {
   const scrollToSection = (sectionId: string) => {
@@ -35,7 +22,7 @@ export const TableOfContents = ({ activeSection }: TableOfContentsProps) => {
       </CardHeader>
       <CardContent>
         <nav className="space-y-1">
-          {sections.map((section) => (
+          {BLOG_SECTIONS.map((section) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}

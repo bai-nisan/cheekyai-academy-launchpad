@@ -1,10 +1,6 @@
-
-import { useEffect, useState } from "react";
-import { BlogHeader } from "@/components/blog/BlogHeader";
-import { TableOfContents } from "@/components/blog/TableOfContents";
-import { BlogContent } from "@/components/blog/BlogContent";
-import { SocialShare } from "@/components/blog/SocialShare";
-import { ReadingProgress } from "@/components/blog/ReadingProgress";
+import { useState, useEffect } from "react";
+import { BlogHeader, TableOfContents, BlogContent, SocialShare, ReadingProgress } from "@/components/blog";
+import { motion } from "framer-motion";
 
 const BlogPost = () => {
   const [activeSection, setActiveSection] = useState("");
