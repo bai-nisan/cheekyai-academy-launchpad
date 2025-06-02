@@ -5,108 +5,46 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Calendar, Clock, User } from "lucide-react";
+import { Search, Calendar, Clock, User, ArrowRight } from "lucide-react";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  date: string;
-  readingTime: string;
-  tags: string[];
-  thumbnail: string;
-  slug: string;
-  category: string;
-}
+// Single featured blog post
+const featuredPost = {
+  id: "1",
+  title: "🚀 AI-Powered Development Workflow Framework",
+  excerpt: "A comprehensive guide to integrating AI-first development workflows across any codebase. Master the fundamentals of modern AI-assisted development and transform your productivity.",
+  author: "CheakyAI Academy Team",
+  date: new Date().toLocaleDateString(),
+  readingTime: "25 min",
+  tags: ["AI Development", "Workflow", "Best Practices"],
+  thumbnail: "/placeholder.svg",
+  slug: "ai-powered-development-workflow",
+  category: "AI Development"
+};
 
-const mockPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "🚀 AI-Powered Development Workflow Framework",
-    excerpt: "A comprehensive guide to integrating AI-first development workflows across any codebase",
-    author: "CheakyAI Academy Team",
-    date: new Date().toLocaleDateString(),
-    readingTime: "25 min",
-    tags: ["AI Development", "Workflow", "Best Practices"],
-    thumbnail: "/placeholder.svg",
-    slug: "ai-powered-development-workflow",
-    category: "AI Development"
-  },
-  {
-    id: "2",
-    title: "Building Scalable React Applications with TypeScript",
-    excerpt: "Learn how to structure and build maintainable React applications using TypeScript best practices",
-    author: "Development Team",
-    date: "2024-05-28",
-    readingTime: "15 min",
-    tags: ["Tutorials", "Best Practices"],
-    thumbnail: "/placeholder.svg",
-    slug: "scalable-react-typescript",
-    category: "Tutorials"
-  },
-  {
-    id: "3",
-    title: "Optimizing Development Workflow with AI Tools",
-    excerpt: "Discover how AI tools can streamline your development process and boost productivity",
-    author: "AI Research Team",
-    date: "2024-05-25",
-    readingTime: "12 min",
-    tags: ["Workflow", "AI Development"],
-    thumbnail: "/placeholder.svg",
-    slug: "ai-tools-optimization",
-    category: "Workflow"
-  },
-  {
-    id: "4",
-    title: "Advanced Component Design Patterns",
-    excerpt: "Master advanced React component patterns for building flexible and reusable UI components",
-    author: "UI Team",
-    date: "2024-05-20",
-    readingTime: "18 min",
-    tags: ["Best Practices", "Tutorials"],
-    thumbnail: "/placeholder.svg",
-    slug: "component-design-patterns",
-    category: "Best Practices"
-  }
-];
-
-const categories = ["All", "AI Development", "Workflow", "Best Practices", "Tutorials"];
-const sortOptions = [
-  { value: "newest", label: "Newest First" },
-  { value: "oldest", label: "Oldest First" },
-  { value: "popular", label: "Most Popular" }
-];
+const relevantCategories = ["AI Development", "Workflow", "Best Practices"];
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [sortBy, setSortBy] = useState("newest");
 
-  const filteredAndSortedPosts = useMemo(() => {
-    let filtered = mockPosts.filter(post => {
-      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-
-    return filtered.sort((a, b) => {
-      switch (sortBy) {
-        case "oldest":
-          return new Date(a.date).getTime() - new Date(b.date).getTime();
-        case "popular":
-          return b.readingTime.localeCompare(a.readingTime);
-        default: // newest
-          return new Date(b.date).getTime() - new Date(a.date).getTime();
-      }
-    });
-  }, [searchTerm, selectedCategory, sortBy]);
+  const isPostVisible = useMemo(() => {
+    const matchesSearch = featuredPost.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         featuredPost.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === "All" || featuredPost.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  }, [searchTerm, selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-slate-950 relative overflow-hidden">
+      {/* Floating Background Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
       {/* Header Navigation */}
-      <header className="relative z-50 bg-slate-900/50 backdrop-blur-sm border-b border-slate-700/50">
+      <header className="relative z-50 bg-slate-900/50 backdrop-blur-xl border-b border-slate-800/50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -126,14 +64,16 @@ const Blog = () => {
 
       {/* Hero Section */}
       <section className="relative py-16 lg:py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-3xl"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              CheakyAI Blog
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Featured Article
+              </span>
             </h1>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-              Insights on AI development, best practices, and workflow optimization
+              Master AI-powered development workflows and transform your coding productivity
             </p>
             
             {/* Search Bar */}
@@ -141,10 +81,10 @@ const Blog = () => {
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
               <Input
                 type="text"
-                placeholder="Search articles..."
+                placeholder="Search within this article..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 h-14 text-lg bg-slate-800/50 border-slate-600 text-white placeholder-slate-400 focus:border-blue-500 focus:ring-blue-500 rounded-xl"
+                className="pl-12 h-14 text-lg bg-slate-800/50 border-slate-700 text-white placeholder-slate-400 focus:border-blue-500 focus:ring-blue-500/50 rounded-xl backdrop-blur-sm"
               />
             </div>
           </div>
@@ -152,125 +92,135 @@ const Blog = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 border-b border-slate-700/50">
+      <section className="py-8 border-b border-slate-800/50 relative z-10">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div className="flex justify-center">
             {/* Category Filters */}
-            <div className="flex flex-wrap gap-3">
-              {categories.map((category) => (
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Button
+                variant="default"
+                onClick={() => setSelectedCategory("All")}
+                className={`rounded-full transition-all duration-300 ${
+                  selectedCategory === "All"
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
+                    : "bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20 hover:border-blue-500/50 hover:text-blue-400 backdrop-blur-sm"
+                }`}
+              >
+                All Topics
+              </Button>
+              {relevantCategories.map((category) => (
                 <Button
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
+                  variant="outline"
                   onClick={() => setSelectedCategory(category)}
-                  className={`rounded-full transition-all duration-200 ${
+                  className={`rounded-full transition-all duration-300 ${
                     selectedCategory === category
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                      : "border-slate-600 text-slate-300 hover:border-blue-500 hover:text-blue-400"
+                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25 border-transparent"
+                      : "bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20 hover:border-blue-500/50 hover:text-blue-400 backdrop-blur-sm"
                   }`}
                 >
                   {category}
                 </Button>
               ))}
             </div>
-
-            {/* Sort Dropdown */}
-            <div className="flex items-center gap-3">
-              <span className="text-slate-300 text-sm">Sort by:</span>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="bg-slate-800 border border-slate-600 text-white rounded-lg px-4 py-2 focus:border-blue-500 focus:ring-blue-500"
-              >
-                {sortOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
-      <section className="py-16">
+      {/* Featured Article Section */}
+      <section className="py-16 lg:py-24 relative z-10">
         <div className="container mx-auto px-4">
-          {filteredAndSortedPosts.length === 0 ? (
+          {!isPostVisible ? (
             <div className="text-center py-16">
-              <div className="text-slate-400 text-lg mb-4">No articles found matching your criteria</div>
+              <div className="text-slate-400 text-lg mb-6">No content matches your search criteria</div>
               <Button
                 onClick={() => {
                   setSearchTerm("");
                   setSelectedCategory("All");
                 }}
-                variant="outline"
-                className="border-slate-600 text-slate-300 hover:border-blue-500 hover:text-blue-400"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all duration-200 shadow-lg"
               >
-                Clear Filters
+                Clear Search
               </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredAndSortedPosts.map((post) => (
-                <Link key={post.id} to={`/blog/${post.slug}`}>
-                  <Card className="group h-full bg-slate-800/50 border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10">
-                    <div className="aspect-video relative overflow-hidden rounded-t-lg">
-                      <img
-                        src={post.thumbnail}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+            <div className="max-w-4xl mx-auto">
+              <Link to={`/blog/${featuredPost.slug}`} className="block group">
+                <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-blue-500/50 transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 backdrop-blur-sm relative overflow-hidden">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="aspect-video relative overflow-hidden rounded-t-lg">
+                    <img
+                      src={featuredPost.thumbnail}
+                      alt={featuredPost.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+                    
+                    {/* Featured Badge */}
+                    <div className="absolute top-6 left-6">
+                      <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-none shadow-lg">
+                        Featured Article
+                      </Badge>
+                    </div>
+                  </div>
+                  
+                  <CardContent className="p-8 relative">
+                    <div className="flex flex-wrap gap-3 mb-6">
+                      {featuredPost.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="secondary"
+                          className="bg-slate-800/50 text-slate-300 border-slate-700 backdrop-blur-sm"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
                     
-                    <CardContent className="p-6">
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {post.tags.map((tag) => (
-                          <Badge
-                            key={tag}
-                            variant="secondary"
-                            className="bg-blue-600/20 text-blue-300 border-blue-600/30"
-                          >
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                        {post.title}
-                      </h3>
-                      
-                      <p className="text-slate-300 mb-4 line-clamp-2">
-                        {post.excerpt}
-                      </p>
-                      
-                      <div className="flex items-center justify-between text-sm text-slate-400">
-                        <div className="flex items-center gap-4">
-                          <div className="flex items-center gap-1">
-                            <User className="w-4 h-4" />
-                            <span>{post.author}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            <span>{post.date}</span>
-                          </div>
+                    <h2 className="text-3xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {featuredPost.title}
+                    </h2>
+                    
+                    <p className="text-slate-300 mb-6 text-lg leading-relaxed">
+                      {featuredPost.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center gap-6 text-sm text-slate-400">
+                        <div className="flex items-center gap-2">
+                          <User className="w-4 h-4" />
+                          <span>{featuredPost.author}</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4" />
+                          <span>{featuredPost.date}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
                           <Clock className="w-4 h-4" />
-                          <span>{post.readingTime}</span>
+                          <span>{featuredPost.readingTime}</span>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+                    </div>
+
+                    {/* Read Article CTA */}
+                    <div className="flex items-center justify-between">
+                      <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all duration-200 shadow-lg group">
+                        Read Full Article
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           )}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-700 py-12">
+      <footer className="bg-slate-900/50 border-t border-slate-800 py-12 backdrop-blur-xl relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
