@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Target, FileText, Brain, Settings, Workflow, FolderOpen, Bot, Database, Zap, CheckCircle, Lightbulb, AlertTriangle, Code2 } from "lucide-react";
+import { BookOpen, CheckCircle, AlertTriangle } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CodeBlock } from "../CodeBlock";
@@ -32,8 +32,7 @@ export const AIAssistedPlanning = () => {
 
 const CreatingTechnicalSpecifications = () => (
   <div id="creating-technical-specifications" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
-      <Target className="h-6 w-6 text-blue-400" />
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200">
       Creating Technical Specifications
     </h3>
     
@@ -41,7 +40,7 @@ const CreatingTechnicalSpecifications = () => (
       Effective AI-assisted planning follows a systematic methodology that transforms business requirements into detailed technical specifications. Rather than hoping AI understands your context, we explicitly provide architecture, patterns, and constraints.
     </p>
 
-    <h4 className="text-xl font-medium mb-4 text-slate-200">🎯 Methodology</h4>
+    <h4 className="text-xl font-medium mb-4 text-slate-200">Methodology</h4>
     
     <p className="text-slate-300 mb-4">
       Follow this systematic approach to leverage AI for comprehensive technical planning:
@@ -83,8 +82,7 @@ const CreatingTechnicalSpecifications = () => (
 
 const ImplementationProcess = () => (
   <div id="implementation-process" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
-      <Workflow className="h-6 w-6 text-green-400" />
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200">
       Implementation Process
     </h3>
     
@@ -92,12 +90,11 @@ const ImplementationProcess = () => (
       A structured five-phase approach that transforms business requirements into detailed technical specifications through systematic AI assistance.
     </p>
 
-    <h4 className="text-xl font-medium mb-4 text-slate-200">🔄 Implementation Process</h4>
+    <h4 className="text-xl font-medium mb-4 text-slate-200">Implementation Process</h4>
 
     <div className="space-y-8">
       <div>
-        <h5 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-          <FolderOpen className="h-5 w-5 text-blue-400" />
+        <h5 className="text-lg font-semibold text-slate-200 mb-4">
           Phase 1: Input Collection
         </h5>
         
@@ -120,8 +117,7 @@ const ImplementationProcess = () => (
       </div>
 
       <div>
-        <h5 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-          <Bot className="h-5 w-5 text-purple-400" />
+        <h5 className="text-lg font-semibold text-slate-200 mb-4">
           Phase 2: Model Selection
         </h5>
         
@@ -150,8 +146,7 @@ const ImplementationProcess = () => (
       </div>
 
       <div>
-        <h5 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-          <Database className="h-5 w-5 text-cyan-400" />
+        <h5 className="text-lg font-semibold text-slate-200 mb-4">
           Phase 3: Context Loading
         </h5>
         
@@ -180,8 +175,7 @@ const ImplementationProcess = () => (
       </div>
 
       <div>
-        <h5 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-          <Zap className="h-5 w-5 text-yellow-400" />
+        <h5 className="text-lg font-semibold text-slate-200 mb-4">
           Phase 4: Specification Generation
         </h5>
         
@@ -206,8 +200,7 @@ const ImplementationProcess = () => (
       </div>
 
       <div>
-        <h5 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-          <CheckCircle className="h-5 w-5 text-green-400" />
+        <h5 className="text-lg font-semibold text-slate-200 mb-4">
           Phase 5: Review & Refinement
         </h5>
         
@@ -244,8 +237,7 @@ const ImplementationProcess = () => (
 
 const PlanningBestPractices = () => (
   <div id="planning-best-practices" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
-      <Lightbulb className="h-6 w-6 text-purple-400" />
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200">
       Planning Best Practices
     </h3>
     
@@ -253,12 +245,11 @@ const PlanningBestPractices = () => (
       Professional AI-assisted planning requires understanding model capabilities, context optimization, and common pitfalls. Here's how to maximize effectiveness while maintaining quality.
     </p>
 
-    <h4 className="text-xl font-medium mb-4 text-slate-200">💡 Planning Best Practices</h4>
+    <h4 className="text-xl font-medium mb-4 text-slate-200">Planning Best Practices</h4>
 
     <div className="space-y-8">
       <div>
-        <h5 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-          <Brain className="h-5 w-5 text-blue-400" />
+        <h5 className="text-lg font-semibold text-slate-200 mb-4">
           Model Selection Guidelines
         </h5>
         <div className="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
@@ -280,8 +271,7 @@ const PlanningBestPractices = () => (
       </div>
 
       <div>
-        <h5 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-          <Database className="h-5 w-5 text-green-400" />
+        <h5 className="text-lg font-semibold text-slate-200 mb-4">
           Context Optimization
         </h5>
         <div className="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
@@ -339,8 +329,7 @@ const PlanningBestPractices = () => (
 
 const PracticalExample = () => (
   <div className="mt-12">
-    <h4 className="text-xl font-medium mb-8 text-slate-200 flex items-center gap-3">
-      <Code2 className="h-6 w-6 text-purple-400" />
+    <h4 className="text-xl font-medium mb-8 text-slate-200">
       Planning in Practice
     </h4>
     
@@ -402,8 +391,7 @@ const PracticalExample = () => (
 
 const ResourcesAndTools = () => (
   <div className="mt-12">
-    <h4 className="text-xl font-medium mb-8 text-slate-200 flex items-center gap-3">
-      <Settings className="h-6 w-6 text-cyan-400" />
+    <h4 className="text-xl font-medium mb-8 text-slate-200">
       Resources & Tools
     </h4>
     

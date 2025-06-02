@@ -1,5 +1,6 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code2, CheckCircle2 } from "lucide-react";
+import { GitBranch, CheckCircle2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CodeBlock } from "../CodeBlock";
 
@@ -7,7 +8,7 @@ export const TaskDecomposition = () => {
   return (
     <section id="task-decomposition" className="mb-12">
       <h2 className="text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3">
-        <Code2 className="h-8 w-8 text-blue-400" />
+        <GitBranch className="h-8 w-8 text-blue-400" />
         Task Decomposition
       </h2>
       
@@ -15,7 +16,7 @@ export const TaskDecomposition = () => {
       
       <Card className="mb-6 bg-slate-800/80 backdrop-blur-md border-slate-600/50 shadow-2xl">
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-slate-200">🎯 Methodology</CardTitle>
+          <CardTitle className="text-xl font-semibold text-slate-200">Methodology</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-slate-300">
@@ -32,7 +33,7 @@ export const TaskDecomposition = () => {
 
 const WorkflowProcess = () => (
   <>
-    <h4 className="text-xl font-medium mb-3 text-slate-200">🔄 Workflow Process</h4>
+    <h4 className="text-xl font-medium mb-3 text-slate-200">Workflow Process</h4>
 
     <Tabs defaultValue="parse" className="mb-6">
       <TabsList className="grid grid-cols-5 w-full bg-slate-800/60">
@@ -191,4 +192,4 @@ Update the task file with all relevant context"
       </CardContent>
     </Card>
   </>
-); 
+);

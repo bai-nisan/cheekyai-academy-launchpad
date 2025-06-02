@@ -1,5 +1,6 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wrench, Info, ChevronRight, CheckCircle2, AlertCircle, Lightbulb, FolderOpen, FileText, Settings, Database, Code, GitBranch } from "lucide-react";
+import { Settings, CheckCircle2, AlertCircle } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -10,7 +11,7 @@ export const EnvironmentPreparation = () => {
   return (
     <section id="environment-preparation" className="mb-12">
       <h2 className="text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3">
-        <Wrench className="h-8 w-8 text-blue-400" />
+        <Settings className="h-8 w-8 text-blue-400" />
         Environment Preparation
       </h2>
       
@@ -33,8 +34,7 @@ export const EnvironmentPreparation = () => {
 
 const CodebaseIndexing = () => (
   <div id="codebase-indexing" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
-      <FolderOpen className="h-6 w-6 text-blue-400" />
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200">
       Codebase Indexing
     </h3>
     
@@ -110,8 +110,7 @@ Create a .cursorignore file that will help Cursor's agent focus on active, relev
 
 const RepositoryDocumentation = () => (
   <div id="repository-documentation" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
-      <FileText className="h-6 w-6 text-green-400" />
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200">
       Repository Documentation
     </h3>
     
@@ -177,7 +176,7 @@ repomix --output "codebase-docs.md" \\
     </Tabs>
 
     <Alert className="mb-6 bg-blue-950/30 border-blue-500/30">
-      <Lightbulb className="h-4 w-4 text-blue-400" />
+      <CheckCircle2 className="h-4 w-4 text-blue-400" />
       <AlertTitle className="text-blue-200">Practical Example</AlertTitle>
       <AlertDescription className="text-blue-100/80 mt-3">
         <div className="space-y-3">
@@ -205,8 +204,7 @@ Suggest a migration plan to standardize these patterns"`}
 
 const AIContextRules = () => (
   <div id="ai-context-rules" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
-      <Settings className="h-6 w-6 text-purple-400" />
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200">
       Cursor Rules
     </h3>
     

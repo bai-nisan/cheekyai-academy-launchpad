@@ -1,5 +1,5 @@
 
-import { Rocket, ChevronRight, Code2, CheckCircle2, Target, RotateCcw, AlertTriangle } from "lucide-react";
+import { Play, CheckCircle2, Target, AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { CodeBlock } from "../CodeBlock";
 
@@ -7,7 +7,7 @@ export const ExecutionWorkflow = () => {
   return (
     <section id="execution-workflow">
       <h2 className="text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3">
-        <Rocket className="h-8 w-8 text-blue-400" />
+        <Play className="h-8 w-8 text-blue-400" />
         Execution Workflow
       </h2>
       
@@ -29,7 +29,6 @@ const Process = () => {
     { 
       step: 1, 
       title: "Task Selection",
-      icon: <Target className="h-5 w-5" />,
       content: (
         <CodeBlock
           code={`Please help me implement task 3 from @tasks/task_003.txt
@@ -47,7 +46,6 @@ Then implement the notification service following our patterns`}
     {
       step: 2,
       title: "AI-Assisted Implementation",
-      icon: <Code2 className="h-5 w-5" />,
       content: (
         <div className="space-y-4">
           <p className="text-slate-300 mb-4">The AI will:</p>
@@ -72,7 +70,6 @@ Then implement the notification service following our patterns`}
     {
       step: 3,
       title: "Progress Tracking",
-      icon: <RotateCcw className="h-5 w-5" />,
       content: (
         <div className="space-y-3">
           <div className="flex items-center gap-3">
@@ -93,7 +90,6 @@ Then implement the notification service following our patterns`}
     {
       step: 4,
       title: "Continuous Refinement",
-      icon: <AlertTriangle className="h-5 w-5" />,
       content: (
         <CodeBlock
           code={`I've completed task 4. What's next?
@@ -115,7 +111,7 @@ refresh the S3 integration context for task 8.`}
           <div key={item.step} className="border-l-4 border-blue-500/30 pl-6">
             <div className="flex items-start gap-4 mb-4">
               <div className="w-10 h-10 bg-blue-500/20 text-blue-300 rounded-lg flex items-center justify-center flex-shrink-0 border border-blue-500/30">
-                {item.icon}
+                <Target className="h-5 w-5" />
               </div>
               <div className="flex-1">
                 <h5 className="font-semibold mb-3 text-slate-200 text-lg">
@@ -130,4 +126,4 @@ refresh the S3 integration context for task 8.`}
       </div>
     </>
   );
-}; 
+};

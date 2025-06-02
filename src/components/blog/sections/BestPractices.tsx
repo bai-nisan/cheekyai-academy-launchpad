@@ -1,12 +1,13 @@
+
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const BestPractices = () => {
   return (
     <section id="best-practices" className="mb-12">
       <h2 className="text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3">
-        <CheckCircle2 className="h-8 w-8 text-blue-400" />
+        <CheckCircle className="h-8 w-8 text-blue-400" />
         Best Practices
       </h2>
       
@@ -39,7 +40,7 @@ const PlanningPhase = () => (
             { title: "Model Selection", desc: "Use reasoning models for complex planning" }
           ].map((item, idx) => (
             <div key={idx} className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+              <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
               <div>
                 <span className="font-semibold text-slate-200">{item.title}:</span>
                 <span className="text-slate-300 ml-2">{item.desc}</span>
@@ -65,7 +66,7 @@ const TaskDecompositionPractices = () => (
             { title: "Maintain Flexibility", desc: "Update as requirements change" }
           ].map((item, idx) => (
             <div key={idx} className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+              <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
               <div>
                 <span className="font-semibold text-slate-200">{item.title}:</span>
                 <span className="text-slate-300 ml-2">{item.desc}</span>
@@ -90,7 +91,7 @@ const ExecutionPhase = () => (
             { title: "Document Decisions", desc: "Track why choices were made" }
           ].map((item, idx) => (
             <div key={idx} className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+              <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
               <div>
                 <span className="font-semibold text-slate-200">{item.title}:</span>
                 <span className="text-slate-300 ml-2">{item.desc}</span>
@@ -116,7 +117,7 @@ const GeneralGuidelines = () => (
             { title: "Stay Current", desc: "Use Context7 to keep external API documentation up-to-date" }
           ].map((item, idx) => (
             <div key={idx} className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+              <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
               <div>
                 <span className="font-semibold text-slate-200">{item.title}:</span>
                 <span className="text-slate-300 ml-2">{item.desc}</span>
@@ -127,4 +128,4 @@ const GeneralGuidelines = () => (
       </CardContent>
     </Card>
   </TabsContent>
-); 
+);

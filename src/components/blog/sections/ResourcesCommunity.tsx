@@ -1,12 +1,12 @@
 
-import { BookOpen, ExternalLink, Users, Lightbulb } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { KEY_FIGURES, LEARNING_RESOURCES } from "../constants";
 
 export const ResourcesCommunity = () => {
   return (
     <section id="resources-community">
       <h2 className="text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3">
-        <BookOpen className="h-8 w-8 text-blue-400" />
+        <ExternalLink className="h-8 w-8 text-blue-400" />
         Resources & Community
       </h2>
       
@@ -21,8 +21,7 @@ export const ResourcesCommunity = () => {
 
 const LearningResources = () => (
   <div>
-    <h3 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-      <Lightbulb className="h-5 w-5 text-blue-400" />
+    <h3 className="text-lg font-semibold text-slate-200 mb-4">
       Learning Resources
     </h3>
     <div className="space-y-4">
@@ -44,8 +43,7 @@ const LearningResources = () => (
 
 const KeyFigures = () => (
   <div>
-    <h3 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-      <Users className="h-5 w-5 text-blue-400" />
+    <h3 className="text-lg font-semibold text-slate-200 mb-4">
       Key Figures to Follow
     </h3>
     <div className="space-y-3">
@@ -61,8 +59,7 @@ const KeyFigures = () => (
 
 const Communities = () => (
   <div>
-    <h3 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-      <Users className="h-5 w-5 text-blue-400" />
+    <h3 className="text-lg font-semibold text-slate-200 mb-4">
       Communities
     </h3>
     <div className="space-y-3">
@@ -79,4 +76,4 @@ const Communities = () => (
       ))}
     </div>
   </div>
-); 
+);
