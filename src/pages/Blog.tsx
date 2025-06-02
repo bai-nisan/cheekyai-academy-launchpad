@@ -16,7 +16,7 @@ const featuredPost = {
   date: new Date().toLocaleDateString(),
   readingTime: "25 min",
   tags: ["AI Development", "Workflow", "Best Practices"],
-  thumbnail: "/placeholder.svg",
+  thumbnail: "/src/assets/ai_workflow_thumbnail.html",
   slug: "ai-powered-development-workflow",
   category: "AI Development"
 };
@@ -151,10 +151,11 @@ const Blog = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="aspect-video relative overflow-hidden rounded-t-lg">
-                    <img
+                    <iframe
                       src={featuredPost.thumbnail}
-                      alt={featuredPost.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      title="AI Workflow Thumbnail"
+                      className="w-full h-full border-0 group-hover:scale-110 transition-transform duration-700"
+                      style={{ pointerEvents: 'none' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
                     
