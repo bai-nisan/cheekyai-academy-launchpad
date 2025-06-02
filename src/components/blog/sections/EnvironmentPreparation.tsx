@@ -5,7 +5,29 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { CodeBlock } from "../CodeBlock";
-import { TOOLS_LIST } from "../constants";
+
+const AI_TOOLS_LIST = [
+  {
+    name: "Cursor",
+    desc: "AI-powered code editor with intelligent code completion and generation",
+    link: "https://www.cursor.com/"
+  },
+  {
+    name: "Context7",
+    desc: "Context management tool for AI development workflows",
+    link: "https://context7.com/"
+  },
+  {
+    name: "Task Master",
+    desc: "Claude-based task management and execution framework",
+    link: "https://github.com/eyaltoledano/claude-task-master"
+  },
+  {
+    name: "Repomix",
+    desc: "Repository documentation generator for AI context",
+    link: "https://repomix.com/guide/prompt-examples"
+  }
+];
 
 export const EnvironmentPreparation = () => {
   return (
@@ -14,6 +36,14 @@ export const EnvironmentPreparation = () => {
         <Wrench className="h-8 w-8 text-blue-400" />
         Environment Preparation
       </h2>
+      
+      <div className="mb-8">
+        <p className="text-slate-300 mb-4 leading-relaxed text-lg">
+          Establishing a standardized development environment is crucial for maximizing AI assistance effectiveness across your team. 
+          This preparation phase ensures that AI tools can understand your codebase context, follow your conventions, and generate 
+          consistent, high-quality code that aligns with your project standards.
+        </p>
+      </div>
       
       <ToolSetup />
       <StandardsRequirements />
@@ -26,21 +56,17 @@ const ToolSetup = () => (
   <div id="tool-setup" className="mb-8">
     <h3 className="text-2xl font-semibold mb-4 text-slate-200">Tool Setup</h3>
     <p className="text-slate-300 mb-4">
-      Ensure AI development tools are installed:
+      We are using these essential AI development tools to create an optimal workflow:
     </p>
     
     <div className="grid md:grid-cols-2 gap-4 mb-6">
-      {TOOLS_LIST.map((tool, idx) => (
+      {AI_TOOLS_LIST.map((tool, idx) => (
         <Card key={idx} className="bg-slate-800/40 backdrop-blur-sm border-slate-700/50 hover:border-blue-500/30 transition-all">
           <CardContent className="p-4">
             <h4 className="font-semibold text-slate-200">
-              {tool.link ? (
-                <a href={tool.link} className="text-blue-400 hover:text-blue-300 underline transition-colors">
-                  {tool.name}
-                </a>
-              ) : (
-                tool.name
-              )}
+              <a href={tool.link} className="text-blue-400 hover:text-blue-300 underline transition-colors" target="_blank" rel="noopener noreferrer">
+                {tool.name}
+              </a>
             </h4>
             <p className="text-sm text-slate-400 mt-1">{tool.desc}</p>
           </CardContent>
@@ -603,4 +629,4 @@ const BestPracticesForMDC = () => (
       </div>
     </CardContent>
   </Card>
-); 
+);
