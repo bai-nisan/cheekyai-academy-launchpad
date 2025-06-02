@@ -81,7 +81,7 @@ export const FrameworkOverview = () => {
                     className="relative h-12 text-xs sm:text-sm font-medium transition-all duration-300 ease-out rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-blue-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-blue-500/25 data-[state=active]:border-blue-400/50 text-slate-400 hover:text-slate-200 hover:bg-slate-700/50 hover:shadow-md hover:border-slate-600/30 border border-transparent backdrop-blur-sm"
                   >
                     <span className="relative z-10 font-semibold tracking-wide">
-                      {item.title.split(' ')[0]}
+                      {item.title}
                     </span>
                     {/* Active tab indicator */}
                     <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 data-[state=active]:opacity-100 transition-opacity duration-300"></div>
