@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -15,6 +14,7 @@ import { NewsletterSignup } from '@/components/blog/NewsletterSignup';
 import { ReadingProgress } from '@/components/blog/ReadingProgress';
 import { ThemeToggle } from '@/components/blog/ThemeToggle';
 import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const BlogPost = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -54,9 +54,11 @@ const BlogPost = () => {
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center justify-between">
-          <Button variant="ghost" size="sm" onClick={() => window.history.back()}>
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Blog
+          <Button variant="ghost" size="sm" asChild>
+            <Link to="/">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Blog
+            </Link>
           </Button>
           <ThemeToggle />
         </div>
