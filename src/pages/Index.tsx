@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { DiscoveryCallForm } from '@/components/DiscoveryCallForm';
+import { Link } from 'react-router-dom';
 
 // Animated Counter Component
 const AnimatedCounter = ({
@@ -849,6 +850,7 @@ const Index = () => {
               <a href="#program" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Program</a>
               <a href="#stages" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Stages</a>
               <a href="#pricing" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Pricing</a>
+              <Link to="/blog/ai-powered-development-workflow" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Blog</Link>
               <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors duration-200">Contact</a>
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all duration-200 shadow-lg" onClick={handleOpenForm}>
                 Book Discovery Call
@@ -868,6 +870,7 @@ const Index = () => {
                 <a href="#program" className="text-slate-300 hover:text-blue-400 transition-colors">Program</a>
                 <a href="#stages" className="text-slate-300 hover:text-blue-400 transition-colors">Stages</a>
                 <a href="#pricing" className="text-slate-300 hover:text-blue-400 transition-colors">Pricing</a>
+                <Link to="/blog/ai-powered-development-workflow" className="text-slate-300 hover:text-blue-400 transition-colors">Blog</Link>
                 <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a>
                 <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg" onClick={handleOpenForm}>
                   Book Discovery Call
