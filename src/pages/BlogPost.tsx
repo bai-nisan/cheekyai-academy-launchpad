@@ -28,24 +28,34 @@ const BlogPost = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <ReadingProgress />
-      <div className="container mx-auto px-4 py-8">
-        <BlogHeader />
-        
-        <div className="grid lg:grid-cols-4 gap-8 mt-8">
-          <aside className="lg:col-span-1">
-            <div className="sticky top-8">
-              <TableOfContents activeSection={activeSection} />
-              <div className="mt-8">
+      
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative">
+          <BlogHeader />
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="relative -mt-16 z-10">
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid lg:grid-cols-4 gap-8">
+            <aside className="lg:col-span-1">
+              <div className="sticky top-8 space-y-6">
+                <TableOfContents activeSection={activeSection} />
                 <SocialShare />
               </div>
-            </div>
-          </aside>
-          
-          <main className="lg:col-span-3">
-            <BlogContent />
-          </main>
+            </aside>
+            
+            <main className="lg:col-span-3">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 lg:p-12">
+                <BlogContent />
+              </div>
+            </main>
+          </div>
         </div>
       </div>
     </div>

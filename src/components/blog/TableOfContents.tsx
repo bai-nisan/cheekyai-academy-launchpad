@@ -27,22 +27,24 @@ export const TableOfContents = ({ activeSection }: TableOfContentsProps) => {
   };
 
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle className="text-lg">Table of Contents</CardTitle>
+    <Card className="w-full bg-white/80 backdrop-blur-sm border-white/20 shadow-lg">
+      <CardHeader className="pb-4">
+        <CardTitle className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Table of Contents
+        </CardTitle>
       </CardHeader>
       <CardContent>
-        <nav className="space-y-2">
+        <nav className="space-y-1">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
-              className={`block w-full text-left text-sm py-1 px-2 rounded transition-colors ${
-                section.level === 3 ? "ml-4" : ""
+              className={`block w-full text-left text-sm py-2 px-3 rounded-lg transition-all duration-200 ${
+                section.level === 3 ? "ml-4 text-xs" : ""
               } ${
                 activeSection === section.id
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
+                  ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md"
+                  : "hover:bg-blue-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300"
               }`}
             >
               {section.title}
