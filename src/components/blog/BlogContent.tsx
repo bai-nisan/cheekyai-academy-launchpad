@@ -10,26 +10,21 @@ export const BlogContent = () => {
       <section id="framework-overview" className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Framework Overview</h2>
         <p className="text-muted-foreground mb-4">
-          The AI-Powered Development Workflow Framework represents a paradigm shift in how we approach software development. 
-          By integrating AI assistance at every stage of the development lifecycle, teams can achieve unprecedented levels of 
-          productivity, code quality, and innovation.
-        </p>
-        <p className="text-muted-foreground mb-6">
-          This framework is designed to be technology-agnostic and can be applied across different programming languages, 
-          frameworks, and project types. Whether you're working on a web application, mobile app, or enterprise system, 
-          these principles will help you harness the power of AI to streamline your development process.
+          This framework outlines a comprehensive approach to integrating AI-first development workflows 
+          across any codebase and planning process. It guides technical leads and senior developers in 
+          establishing environment standards, aligning processes, and enabling AI-powered task execution.
         </p>
         
         <Card className="mb-6">
           <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Key Benefits</h3>
-            <ul className="space-y-2">
-              <li>• <strong>Accelerated Development:</strong> Reduce development time by 40-60%</li>
-              <li>• <strong>Enhanced Code Quality:</strong> AI-assisted code review and optimization</li>
-              <li>• <strong>Improved Documentation:</strong> Automated generation of comprehensive docs</li>
-              <li>• <strong>Better Testing Coverage:</strong> AI-generated test cases and scenarios</li>
-              <li>• <strong>Knowledge Transfer:</strong> Democratize expert-level development practices</li>
-            </ul>
+            <h3 className="text-xl font-semibold mb-4">Core Components</h3>
+            <ol className="space-y-2 list-decimal list-inside">
+              <li><strong>Environment Preparation</strong> - Standardizing your codebase for AI assistance</li>
+              <li><strong>AI-Assisted Planning</strong> - Creating technical specifications with AI</li>
+              <li><strong>Task Decomposition</strong> - Breaking down work into AI-executable chunks</li>
+              <li><strong>Execution Workflow</strong> - Implementing tasks with AI assistance</li>
+              <li><strong>Best Practices</strong> - Ensuring quality and consistency</li>
+            </ol>
           </CardContent>
         </Card>
       </section>
@@ -40,361 +35,503 @@ export const BlogContent = () => {
         <div id="tool-setup" className="mb-8">
           <h3 className="text-2xl font-semibold mb-4">Tool Setup</h3>
           <p className="text-muted-foreground mb-4">
-            Begin by setting up your AI-enhanced development environment. The following tools form the foundation of our workflow:
+            Ensure AI development tools are installed:
           </p>
           
-          <CodeBlock
-            title="Essential AI Development Tools"
-            code={`# Install AI-powered development tools
-npm install -g @ai-dev/cli
-pip install ai-code-assistant
-brew install copilot-cli
-
-# Set up your AI development environment
-ai-dev init --framework react
-ai-dev configure --model gpt-4
-ai-dev setup --integrations vscode,github`}
-            language="bash"
-          />
+          <Card className="mb-6">
+            <CardContent className="p-6">
+              <ul className="space-y-2">
+                <li>• <strong>MCP Atlassian</strong> - For project management integration</li>
+                <li>• <strong>Context7</strong> - Knowledge and documentation injection for enhanced task context</li>
+                <li>• <strong>Task Master</strong> - PRD to subtask planning automation</li>
+                <li>• <strong>Cursor</strong> - AI-powered IDE with context awareness</li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
 
         <div id="standards-requirements" className="mb-8">
           <h3 className="text-2xl font-semibold mb-4">Standards & Requirements</h3>
+          
+          <h4 className="text-xl font-medium mb-3">📁 Codebase Indexing</h4>
           <p className="text-muted-foreground mb-4">
-            Establish clear coding standards and requirements that will guide AI assistance throughout your project:
+            Create a `.cursorignore` file to prevent AI confusion in large codebases:
+          </p>
+          
+          <Card className="mb-6">
+            <CardContent className="p-6">
+              <p className="mb-3">Exclude redundant, deprecated, or legacy code that could mislead Cursor's agent:</p>
+              <ul className="space-y-1 text-sm">
+                <li>• Old feature implementations that are no longer used</li>
+                <li>• Deprecated API endpoints or services</li>
+                <li>• Legacy migration files or outdated scripts</li>
+                <li>• Generated files, build artifacts, and temporary code</li>
+                <li>• Test fixtures or mock data that don't represent current patterns</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <h4 className="text-xl font-medium mb-3">📄 Repository Documentation</h4>
+          <ul className="space-y-2 mb-6">
+            <li>• Use <a href="https://repomix.com/guide/prompt-examples" className="text-primary hover:underline">Repomix</a> to generate comprehensive codebase documentation</li>
+            <li>• Create contextual prompts for AI interactions</li>
+            <li>• Maintain up-to-date architectural documentation</li>
+          </ul>
+
+          <h4 className="text-xl font-medium mb-3">🧩 AI Context Rules (MDC Files)</h4>
+          <p className="text-muted-foreground mb-4">
+            Create comprehensive Cursor rules files to standardize your development practices:
           </p>
           
           <Collapsible>
             <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 hover:text-primary">
               <ChevronDown className="h-5 w-5" />
-              Project Configuration Example
+              Rule Categories
             </CollapsibleTrigger>
             <CollapsibleContent>
-              <CodeBlock
-                code={`{
-  "project": {
-    "name": "ai-powered-app",
-    "framework": "react-typescript",
-    "aiAssistance": {
-      "codeGeneration": true,
-      "codeReview": true,
-      "testing": true,
-      "documentation": true
-    }
-  },
-  "standards": {
-    "codeStyle": "prettier",
-    "linting": "eslint",
-    "testing": "jest",
-    "documentation": "jsdoc"
-  },
-  "aiGuidelines": {
-    "prioritizeReadability": true,
-    "enforceTypeScript": true,
-    "generateTests": true,
-    "includeDocumentation": true
-  }
-}`}
-                language="json"
-              />
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <Card>
+                  <CardContent className="p-4">
+                    <ul className="space-y-1 text-sm">
+                      <li>• Code Conventions</li>
+                      <li>• Boilerplate Rules</li>
+                      <li>• Refactoring Guidelines</li>
+                      <li>• Architecture Rules</li>
+                      <li>• Security & Compliance</li>
+                      <li>• Performance Guidelines</li>
+                      <li>• API Design Standards</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-4">
+                    <ul className="space-y-1 text-sm">
+                      <li>• Database Patterns</li>
+                      <li>• Testing Strategies</li>
+                      <li>• DevOps & Deployment</li>
+                      <li>• Frontend Patterns</li>
+                      <li>• Documentation Standards</li>
+                      <li>• Team Collaboration</li>
+                      <li>• Domain-Specific Rules</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
             </CollapsibleContent>
           </Collapsible>
         </div>
 
         <div id="implementation" className="mb-8">
           <h3 className="text-2xl font-semibold mb-4">Implementation</h3>
-          <p className="text-muted-foreground mb-4">
-            With tools and standards in place, implement the core workflow automation:
-          </p>
+          
+          <h4 className="text-xl font-medium mb-3">🚀 Quick Start: Repository Documentation with Repomix</h4>
           
           <CodeBlock
-            title="Workflow Automation Setup"
-            code={`# Initialize AI workflow automation
-ai-workflow init
+            title="Generate Complete Repository Overview"
+            code={`# Install Repomix
+npm install -g repomix
 
-# Configure automated code review
-ai-workflow add-hook pre-commit "ai-review --strict"
-ai-workflow add-hook pre-push "ai-test --coverage 80"
+# Generate comprehensive documentation
+repomix --output "codebase-docs.md" \\
+  --include "src/**/*.ts,src/**/*.tsx" \\
+  --exclude "node_modules,dist,coverage" \\
+  --format markdown
 
-# Set up continuous AI assistance
-ai-workflow enable real-time-suggestions
-ai-workflow enable context-aware-completion`}
+# Use with AI to create README
+"Based on this codebase analysis from @codebase-docs.md, create a comprehensive README.md with:
+- Project overview
+- Architecture diagram (mermaid)
+- Setup instructions
+- Folder structure explanation
+- Key design decisions"`}
             language="bash"
+            collapsible={true}
           />
+
+          <CodeBlock
+            title="Create AI-Optimized Repository Structure"
+            code={`# Use AI to analyze and restructure your codebase
+"Analyze my current project structure and suggest improvements:
+@codebase-docs.md
+
+Create:
+1. Optimal folder structure
+2. .cursorignore file with smart exclusions
+3. Directory-specific README templates
+4. Migration script to reorganize files"
+
+# Example .cursorignore output:
+# legacy/           # Old codebase before migration
+# deprecated/       # Features marked for removal
+# *.old.js         # Backup files
+# experiments/     # Proof of concepts
+# temp/           # Temporary development files
+# migrations/pre-2023/  # Historical migrations`}
+            language="bash"
+            collapsible={true}
+          />
+
+          <Collapsible>
+            <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 hover:text-primary">
+              <ChevronDown className="h-5 w-5" />
+              Example MDC Rule Files
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <div className="space-y-6">
+                <CodeBlock
+                  title="frontend-component-rules.mdc"
+                  code={`# Frontend Component Creation Rules
+
+## Component Structure
+- Use functional components with TypeScript
+- Place in \`components/[ComponentName]/\` folder
+- Include: Component.tsx, Component.test.tsx, Component.stories.tsx, index.ts
+- Use named exports with default re-export in index
+
+## Props Interface
+- Define Props interface above component
+- Use descriptive names, avoid abbreviations
+- Optional props should have defaults
+- Document complex props with JSDoc
+
+## Styling
+- Use CSS Modules or styled-components
+- Follow BEM naming for class names
+- Mobile-first responsive design
+- Support dark/light theme variables`}
+                  language="markdown"
+                />
+
+                <CodeBlock
+                  title="database-patterns.mdc"
+                  code={`# Database Design Patterns
+
+## Table Naming
+- Use plural snake_case (users, user_roles)
+- Junction tables: first_second (user_organizations)
+- Prefix with domain for large systems (billing_invoices)
+
+## Required Columns
+- id: UUID primary key
+- created_at: timestamp with timezone
+- updated_at: timestamp with timezone
+- deleted_at: nullable timestamp (soft deletes)
+
+## Indexing Rules
+- Add indexes for all foreign keys
+- Create composite indexes for common WHERE clauses
+- Include EXPLAIN plan in PR for new queries
+- Monitor slow query log
+
+## Migration Standards
+- Up and down migrations required
+- Test rollback in staging
+- Include data migration for schema changes
+- Version with timestamp prefix`}
+                  language="markdown"
+                />
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
         </div>
       </section>
 
       <section id="ai-assisted-planning" className="mb-12">
         <h2 className="text-3xl font-bold mb-6">AI-Assisted Planning</h2>
-        <p className="text-muted-foreground mb-6">
-          Transform your project planning phase with AI-powered analysis and recommendations. This approach ensures 
-          comprehensive coverage of requirements, potential challenges, and optimal architectural decisions.
-        </p>
-
+        
+        <h3 className="text-2xl font-semibold mb-4">Creating Technical Specifications</h3>
+        
         <Card className="mb-6">
           <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Planning Workflow</h3>
-            <ol className="list-decimal list-inside space-y-3">
-              <li><strong>Requirement Analysis:</strong> Use AI to analyze and expand project requirements</li>
-              <li><strong>Architecture Planning:</strong> Generate architectural recommendations based on requirements</li>
-              <li><strong>Technology Selection:</strong> AI-guided technology stack recommendations</li>
-              <li><strong>Risk Assessment:</strong> Identify potential challenges and mitigation strategies</li>
-              <li><strong>Timeline Estimation:</strong> AI-powered project timeline and milestone planning</li>
+            <h4 className="text-xl font-semibold mb-4">🎯 Methodology</h4>
+            <ol className="list-decimal list-inside space-y-2">
+              <li><strong>Gather Requirements</strong> - Feature tickets, technical constraints, acceptance criteria</li>
+              <li><strong>Leverage AI Context</strong> - Use reasoning models, reference patterns, include documentation</li>
+              <li><strong>Generate Specifications</strong> - Technical approach, API contracts, component architecture, testing strategy</li>
             </ol>
           </CardContent>
         </Card>
 
+        <h4 className="text-xl font-medium mb-3">🔄 Workflow Process</h4>
+        
+        <div className="space-y-4 mb-6">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+            <div>
+              <h5 className="font-semibold">Collect Input Materials</h5>
+              <p className="text-sm text-muted-foreground">Feature requirements, specification templates, technical documentation</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+            <div>
+              <h5 className="font-semibold">Model Selection</h5>
+              <p className="text-sm text-muted-foreground">Use reasoning-optimized models for planning tasks</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+            <div>
+              <h5 className="font-semibold">Context Loading</h5>
+              <p className="text-sm text-muted-foreground">Use @ mentions and Context7 for comprehensive context</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">4</div>
+            <div>
+              <h5 className="font-semibold">Specification Generation</h5>
+              <p className="text-sm text-muted-foreground">Create detailed technical specifications with all requirements</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">5</div>
+            <div>
+              <h5 className="font-semibold">Review and Refinement</h5>
+              <p className="text-sm text-muted-foreground">Verify accuracy, ensure completeness, align with standards</p>
+            </div>
+          </div>
+        </div>
+
         <CodeBlock
-          title="AI Planning Commands"
-          code={`# Analyze project requirements
-ai-plan analyze-requirements --input requirements.md --output analysis.json
-
-# Generate architecture recommendations
-ai-plan architecture --type web-app --scale enterprise --output architecture.md
-
-# Create development timeline
-ai-plan timeline --features features.json --team-size 5 --output timeline.md`}
+          title="Specification Generation Example"
+          code={`"Create a detailed technical specification including:
+- Feature: @requirements/feature.md
+- Template: @templates/specification.md
+- Backend rules: @docs/backend/patterns.md
+- Frontend rules: @docs/frontend/standards.md
+- External APIs: Use Context7 to include Stripe/Auth0/AWS documentation
+- Constraints: Focus on planning, not implementation"`}
           language="bash"
-          collapsible={true}
         />
       </section>
 
       <section id="task-decomposition" className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Task Decomposition</h2>
+        
         <p className="text-muted-foreground mb-6">
-          Break down complex features into manageable, AI-assistable tasks. This approach maximizes the effectiveness 
-          of AI tools while maintaining human oversight and creativity.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3">Traditional Approach</h3>
-              <ul className="space-y-2 text-sm">
-                <li>• Large, monolithic tasks</li>
-                <li>• Unclear dependencies</li>
-                <li>• Difficult to parallelize</li>
-                <li>• Hard to estimate</li>
-              </ul>
-            </CardContent>
-          </Card>
-          
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3">AI-Powered Approach</h3>
-              <ul className="space-y-2 text-sm">
-                <li>• Atomic, well-defined tasks</li>
-                <li>• Clear input/output specifications</li>
-                <li>• AI-assistable granularity</li>
-                <li>• Measurable outcomes</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-
-        <CodeBlock
-          title="Task Decomposition Example"
-          code={`# Decompose a feature into AI-assistable tasks
-ai-decompose feature "User Authentication System" \\
-  --output-format json \\
-  --include-tests \\
-  --include-docs
-
-# Output: Generates atomic tasks like:
-# - Create User model with validation
-# - Implement password hashing utility
-# - Build login API endpoint
-# - Create authentication middleware
-# - Write unit tests for auth functions
-# - Generate API documentation`}
-          language="bash"
-        />
-      </section>
-
-      <section id="execution-workflow" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Execution Workflow</h2>
-        <p className="text-muted-foreground mb-6">
-          The execution phase leverages AI assistance for coding, testing, and documentation while maintaining 
-          human oversight for critical decisions and creative problem-solving.
+          Transform specifications into executable, self-contained tasks that can be completed independently.
         </p>
 
         <Card className="mb-6">
           <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Core Execution Loop</h3>
+            <h3 className="text-xl font-semibold mb-4">🔄 Workflow Process</h3>
             <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">1</div>
-                <div>
-                  <h4 className="font-semibold">AI-Assisted Implementation</h4>
-                  <p className="text-sm text-muted-foreground">Generate initial code implementation with AI assistance</p>
-                </div>
+              <div>
+                <h4 className="font-semibold mb-2">1. Parse Specifications</h4>
+                <p className="text-sm text-muted-foreground">Save specification and use Task Master to parse</p>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">2</div>
-                <div>
-                  <h4 className="font-semibold">Human Review & Refinement</h4>
-                  <p className="text-sm text-muted-foreground">Review, modify, and optimize AI-generated code</p>
-                </div>
+              <div>
+                <h4 className="font-semibold mb-2">2. Generate Task Structure</h4>
+                <p className="text-sm text-muted-foreground">Creates tasks.json with 30-120 minute scoped tasks</p>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">3</div>
-                <div>
-                  <h4 className="font-semibold">Automated Testing</h4>
-                  <p className="text-sm text-muted-foreground">Run AI-generated tests and validate functionality</p>
-                </div>
+              <div>
+                <h4 className="font-semibold mb-2">3. Create Individual Task Files</h4>
+                <p className="text-sm text-muted-foreground">Generate separate files for each task with full context</p>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">4</div>
-                <div>
-                  <h4 className="font-semibold">Documentation Generation</h4>
-                  <p className="text-sm text-muted-foreground">Auto-generate comprehensive documentation</p>
-                </div>
+              <div>
+                <h4 className="font-semibold mb-2">4. Ensure Task Completeness</h4>
+                <p className="text-sm text-muted-foreground">Each task includes objective, references, dependencies, success criteria</p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">5. Refine Tasks</h4>
+                <p className="text-sm text-muted-foreground">Break down complex tasks, add specificity, update for changes</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
+        <CodeBlock
+          title="Task Decomposition Commands"
+          code={`# Save specification to designated folder
+scripts/specifications/feature_spec.md
+
+# Use Task Master to parse
+"Can you parse my specification at scripts/specifications/feature_spec.md?"
+
+# Generate individual task files
+"Please generate individual task files from tasks.json"
+
+# Output structure:
+# - tasks/task_001.txt
+# - tasks/task_002.txt
+# - etc.`}
+          language="bash"
+        />
+
         <Collapsible>
           <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 hover:text-primary">
             <ChevronDown className="h-5 w-5" />
-            Complete Execution Example
+            Using Context7 for Task Enhancement
           </CollapsibleTrigger>
           <CollapsibleContent>
             <CodeBlock
-              code={`# Start AI-assisted development session
-ai-dev start-session --task "implement-user-auth"
+              code={`# Example: Enriching a payment integration task
+"For task 12 (payment processing):
+1. Use Context7 to fetch Stripe API documentation
+2. Filter for 'payment intents' and 'webhooks'
+3. Include our payment service patterns from @services/payment/*
+4. Add PCI compliance requirements from @docs/security/pci.md
 
-# Generate initial implementation
-ai-code generate --prompt "Create a secure user authentication system" \\
-  --language typescript \\
-  --framework express \\
-  --include-tests
+Update the task file with all relevant context"
 
-# Review and refine with AI assistance
-ai-code review --file auth.ts --suggestions --security-check
-
-# Generate comprehensive tests
-ai-test generate --file auth.ts --coverage full --edge-cases
-
-# Auto-generate documentation
-ai-docs generate --file auth.ts --format markdown --include-examples
-
-# Validate complete implementation
-ai-validate --task "implement-user-auth" --requirements requirements.md`}
+# Context7 helps ensure each task has:
+# - Latest third-party API documentation
+# - Internal implementation patterns
+# - Security/compliance requirements
+# - Related code examples`}
               language="bash"
             />
           </CollapsibleContent>
         </Collapsible>
       </section>
 
-      <section id="best-practices" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Best Practices</h2>
+      <section id="execution-workflow" className="mb-12">
+        <h2 className="text-3xl font-bold mb-6">Execution Workflow</h2>
+        
         <p className="text-muted-foreground mb-6">
-          These proven practices will help you maximize the benefits of AI-powered development while avoiding common pitfalls.
+          Developers use AI assistance to complete each self-contained task efficiently.
         </p>
 
+        <Card className="mb-6">
+          <CardContent className="p-6">
+            <h3 className="text-xl font-semibold mb-4">⚡ Process</h3>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-semibold mb-2">1. Task Selection</h4>
+                <p className="text-sm text-muted-foreground">Choose and load task context, including external APIs via Context7</p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">2. AI-Assisted Implementation</h4>
+                <p className="text-sm text-muted-foreground">AI reads context, suggests approach, generates code following standards</p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">3. Progress Tracking</h4>
+                <p className="text-sm text-muted-foreground">Mark tasks complete, update dependencies, track blockers</p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">4. Continuous Refinement</h4>
+                <p className="text-sm text-muted-foreground">Update tasks as requirements change, refresh external documentation</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <CodeBlock
+          title="Execution Examples"
+          code={`# Basic task implementation
+"Please help me implement task 3 from tasks/task_003.txt"
+
+# Task with external API integration
+"This task requires Twilio integration. Use Context7 to load:
+- Twilio SMS API documentation
+- Webhook security requirements
+- Rate limiting guidelines
+Then implement the notification service following our patterns"
+
+# Progress updates
+"I've completed task 4. What's next?"
+"Task 5 is blocked by API changes. Please update it."
+"The AWS SDK documentation has been updated. Use Context7 to refresh the S3 integration context for task 8."`}
+          language="bash"
+        />
+      </section>
+
+      <section id="best-practices" className="mb-12">
+        <h2 className="text-3xl font-bold mb-6">Best Practices</h2>
+        
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4 text-green-600">✅ Do's</h3>
+              <h3 className="text-lg font-semibold mb-4">Planning Phase</h3>
               <ul className="space-y-2 text-sm">
-                <li>• Always review AI-generated code thoroughly</li>
-                <li>• Use AI for repetitive and boilerplate tasks</li>
-                <li>• Maintain clear context in AI prompts</li>
-                <li>• Combine AI suggestions with human creativity</li>
-                <li>• Keep AI tools updated and well-configured</li>
-                <li>• Document AI-assisted development decisions</li>
+                <li>• <strong>Rich Context = Better Results:</strong> Include all relevant documentation</li>
+                <li>• <strong>Use Strong Examples:</strong> Good templates guide AI output</li>
+                <li>• <strong>Set Clear Boundaries:</strong> Be explicit about planning vs. coding</li>
+                <li>• <strong>Model Selection:</strong> Use reasoning models for complex planning</li>
               </ul>
             </CardContent>
           </Card>
           
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4 text-red-600">❌ Don'ts</h3>
+              <h3 className="text-lg font-semibold mb-4">Task Decomposition</h3>
               <ul className="space-y-2 text-sm">
-                <li>• Never deploy AI code without review</li>
-                <li>• Don't rely solely on AI for critical decisions</li>
-                <li>• Avoid sharing sensitive data with AI tools</li>
-                <li>• Don't skip testing AI-generated code</li>
-                <li>• Never ignore security implications</li>
-                <li>• Don't lose sight of project requirements</li>
+                <li>• <strong>Clear Scope:</strong> Each task takes 30-120 minutes</li>
+                <li>• <strong>Full Context:</strong> Include all necessary references</li>
+                <li>• <strong>External Documentation:</strong> Use Context7 for third-party APIs</li>
+                <li>• <strong>Define "Done":</strong> Clear success criteria</li>
+                <li>• <strong>Maintain Flexibility:</strong> Update as requirements change</li>
               </ul>
             </CardContent>
           </Card>
         </div>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Quality Assurance Checklist</h3>
-            <div className="space-y-3">
-              <label className="flex items-center space-x-3">
-                <input type="checkbox" className="rounded" />
-                <span className="text-sm">AI-generated code reviewed by human developer</span>
-              </label>
-              <label className="flex items-center space-x-3">
-                <input type="checkbox" className="rounded" />
-                <span className="text-sm">Comprehensive tests written and passing</span>
-              </label>
-              <label className="flex items-center space-x-3">
-                <input type="checkbox" className="rounded" />
-                <span className="text-sm">Security implications assessed</span>
-              </label>
-              <label className="flex items-center space-x-3">
-                <input type="checkbox" className="rounded" />
-                <span className="text-sm">Performance impact evaluated</span>
-              </label>
-              <label className="flex items-center space-x-3">
-                <input type="checkbox" className="rounded" />
-                <span className="text-sm">Documentation updated</span>
-              </label>
-              <label className="flex items-center space-x-3">
-                <input type="checkbox" className="rounded" />
-                <span className="text-sm">Code follows project standards</span>
-              </label>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Execution Phase</h3>
+              <ul className="space-y-2 text-sm">
+                <li>• <strong>Trust but Verify:</strong> Review AI-generated code</li>
+                <li>• <strong>Maintain Standards:</strong> Ensure consistency with team patterns</li>
+                <li>• <strong>Test Coverage:</strong> Validate all implementations</li>
+                <li>• <strong>Document Decisions:</strong> Track why choices were made</li>
+              </ul>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">General Guidelines</h3>
+              <ul className="space-y-2 text-sm">
+                <li>• <strong>Start Small:</strong> Begin with low-risk features</li>
+                <li>• <strong>Iterate Frequently:</strong> Refine prompts and processes</li>
+                <li>• <strong>Share Knowledge:</strong> Document successful patterns</li>
+                <li>• <strong>Measure Impact:</strong> Track productivity improvements</li>
+                <li>• <strong>Stay Current:</strong> Use Context7 to keep documentation up-to-date</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
       </section>
 
       <section id="resources-community" className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Resources & Community</h2>
-        <p className="text-muted-foreground mb-6">
-          Connect with the AI-powered development community and access additional resources to enhance your workflow.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-6">
+        
+        <div className="grid md:grid-cols-3 gap-6 mb-6">
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-3">📚 Learning Resources</h3>
               <ul className="space-y-2 text-sm">
-                <li>• AI Development Patterns Guide</li>
-                <li>• Video Tutorial Series</li>
-                <li>• Interactive Workshops</li>
-                <li>• Case Study Collection</li>
+                <li>• <a href="https://forum.cursor.sh/" className="text-primary hover:underline">Cursor Forum</a> - Best practices and use cases</li>
+                <li>• <a href="https://github.com/modelcontextprotocol/servers" className="text-primary hover:underline">MCP Server Registry</a> - Available integrations</li>
+                <li>• <a href="https://github.com/eyaltoledano/task-master" className="text-primary hover:underline">Task Master Documentation</a> - PRD to task automation</li>
+                <li>• <a href="https://github.com/upstash/context7" className="text-primary hover:underline">Context7</a> - Documentation injection for AI context</li>
               </ul>
             </CardContent>
           </Card>
           
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3">🛠️ Tools & Templates</h3>
+              <h3 className="text-lg font-semibold mb-3">👥 Key Figures to Follow</h3>
               <ul className="space-y-2 text-sm">
-                <li>• Project Templates</li>
-                <li>• Workflow Configurations</li>
-                <li>• Custom AI Prompts</li>
-                <li>• Integration Scripts</li>
+                <li>• @mntruell - Cursor CEO, development workflows</li>
+                <li>• @amanrsanger - Cursor co-founder, implementation patterns</li>
+                <li>• @sualehasif996 - Architecture insights</li>
+                <li>• @arvidxyz - Startup workflows and AI toolchains</li>
+                <li>• @eyaltoledano - Task Master creator, agent development</li>
+                <li>• Andrej Karpathy (YouTube) - Understanding LLM architecture</li>
               </ul>
             </CardContent>
           </Card>
           
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3">👥 Community</h3>
+              <h3 className="text-lg font-semibold mb-3">🌐 Communities</h3>
               <ul className="space-y-2 text-sm">
-                <li>• Discord Community</li>
-                <li>• GitHub Discussions</li>
-                <li>• Monthly Meetups</li>
-                <li>• Expert Office Hours</li>
+                <li>• Cursor Forum - Sort by "Top" for key discussions</li>
+                <li>• Cursor Reddit - Community updates and feedback</li>
+                <li>• AI Development Discord servers</li>
+                <li>• Tool-specific Slack workspaces</li>
               </ul>
             </CardContent>
           </Card>
