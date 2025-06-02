@@ -9,9 +9,9 @@ export const BlogHeader = () => {
     <header className="max-w-4xl mx-auto">
       <div className="mb-6">
         <Button variant="ghost" asChild className="mb-4">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/blog" className="flex items-center gap-2">
             <ArrowLeft className="h-4 w-4" />
-            Back to Home
+            Back to Blog
           </Link>
         </Button>
       </div>
