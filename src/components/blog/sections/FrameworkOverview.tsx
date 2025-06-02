@@ -145,27 +145,29 @@ export const FrameworkOverview = () => {
           ))}
         </div>
 
-        {/* Tabbed Content Area */}
+        {/* Tabbed Content Area with Sticky Tabs */}
         {activeTab && (
           <div className="w-full">
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsList className="grid w-full grid-cols-5 bg-slate-800/50 border border-slate-700/50">
-                {coreComponents.map((item) => (
-                  <TabsTrigger 
-                    key={item.value} 
-                    value={item.value}
-                    className="text-xs sm:text-sm data-[state=active]:bg-blue-600/20 data-[state=active]:text-blue-300 text-slate-400 hover:text-slate-200"
-                  >
-                    {item.title.split(' ')[0]}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
+              <div className="sticky top-0 z-10 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700/50 pb-4 mb-6">
+                <TabsList className="grid w-full grid-cols-5 bg-slate-800/50 border border-slate-700/50">
+                  {coreComponents.map((item) => (
+                    <TabsTrigger 
+                      key={item.value} 
+                      value={item.value}
+                      className="text-xs sm:text-sm data-[state=active]:bg-blue-600/20 data-[state=active]:text-blue-300 text-slate-400 hover:text-slate-200"
+                    >
+                      {item.title.split(' ')[0]}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
               
               {coreComponents.map((item) => (
                 <TabsContent 
                   key={item.value} 
                   value={item.value} 
-                  className="mt-6 w-full"
+                  className="w-full"
                 >
                   <div className="bg-slate-900/40 rounded-lg p-6 border border-slate-700/30">
                     {renderTabContent(item.value)}
