@@ -1,11 +1,6 @@
 
 import {
   FrameworkOverview,
-  EnvironmentPreparation,
-  AIAssistedPlanning,
-  TaskDecomposition,
-  ExecutionWorkflow,
-  BestPractices,
   ResourcesCommunity
 } from "./sections";
 
@@ -94,26 +89,6 @@ export const BlogContent = () => {
       <div className="space-y-16">
         <section className="section-spacing">
           <FrameworkOverview />
-        </section>
-        
-        <section className="section-spacing">
-          <EnvironmentPreparation />
-        </section>
-        
-        <section className="section-spacing">
-          <AIAssistedPlanning />
-        </section>
-        
-        <section className="section-spacing">
-          <TaskDecomposition />
-        </section>
-        
-        <section className="section-spacing">
-          <ExecutionWorkflow />
-        </section>
-        
-        <section className="section-spacing">
-          <BestPractices />
         </section>
         
         <section className="section-spacing">
