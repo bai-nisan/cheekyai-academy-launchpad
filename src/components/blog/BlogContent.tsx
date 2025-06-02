@@ -14,8 +14,8 @@ export const BlogContent = () => {
   return (
     <article className="prose prose-lg max-w-none prose-slate prose-invert">
       {/* Custom prose styles for gradient headings */}
-      <style jsx>{`
-        article :global(h2) {
+      <style>{`
+        article h2 {
           background: linear-gradient(135deg, #3B82F6, #8B5CF6);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -25,7 +25,7 @@ export const BlogContent = () => {
           margin-bottom: 1.5rem;
         }
         
-        article :global(h3) {
+        article h3 {
           background: linear-gradient(135deg, #06B6D4, #3B82F6);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -35,18 +35,18 @@ export const BlogContent = () => {
           margin-bottom: 1rem;
         }
         
-        article :global(p) {
+        article p {
           color: #CBD5E1;
           line-height: 1.75;
           margin-bottom: 1.25rem;
         }
         
-        article :global(strong) {
+        article strong {
           color: #F1F5F9;
           font-weight: 600;
         }
         
-        article :global(code) {
+        article code {
           background: #1E293B;
           color: #06B6D4;
           padding: 0.125rem 0.375rem;
@@ -55,7 +55,7 @@ export const BlogContent = () => {
           border: 1px solid #334155;
         }
         
-        article :global(blockquote) {
+        article blockquote {
           border-left: 4px solid #3B82F6;
           background: #1E293B/50;
           padding: 1rem 1.5rem;
@@ -64,15 +64,15 @@ export const BlogContent = () => {
           backdrop-filter: blur(10px);
         }
         
-        article :global(ul) {
+        article ul {
           color: #CBD5E1;
         }
         
-        article :global(li) {
+        article li {
           margin: 0.5rem 0;
         }
         
-        article :global(li::marker) {
+        article li::marker {
           color: #3B82F6;
         }
       `}</style>
