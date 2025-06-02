@@ -1,4 +1,5 @@
 
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Wrench, Info, ChevronRight, CheckCircle2, AlertCircle, Lightbulb, FolderOpen, FileText, Settings, Database, Code, GitBranch } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -28,8 +29,6 @@ export const EnvironmentPreparation = () => {
       <CodebaseIndexing />
       <RepositoryDocumentation />
       <AIContextRules />
-      <PuttingItTogether />
-      <RealWorldResults />
     </section>
   );
 };
@@ -411,131 +410,3 @@ DROP TABLE IF EXISTS user_preferences;`}
   </>
 );
 
-const PuttingItTogether = () => (
-  <div id="putting-it-together" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
-      <ChevronRight className="h-6 w-6 text-blue-400" />
-      Putting It All Together
-    </h3>
-    
-    <p className="text-slate-300 mb-6 leading-relaxed">
-      The beauty of this system is how these three components work together:
-    </p>
-
-    <div className="grid md:grid-cols-3 gap-4 mb-8">
-      {[
-        {
-          num: "1",
-          title: ".cursorignore",
-          desc: "ensures AI only sees relevant, current code",
-          icon: FolderOpen,
-          color: "blue"
-        },
-        {
-          num: "2", 
-          title: "Repomix documentation",
-          desc: "provides AI with a comprehensive understanding of your codebase",
-          icon: FileText,
-          color: "green"
-        },
-        {
-          num: "3",
-          title: "MDC rules",
-          desc: "guide AI to follow your specific patterns and standards",
-          icon: Settings,
-          color: "purple"
-        }
-      ].map((step) => (
-        <Card key={step.num} className="bg-slate-800/40 backdrop-blur-sm border-slate-700/50">
-          <CardContent className="p-6">
-            <div className="flex items-start gap-3">
-              <Badge variant="secondary" className={`bg-${step.color}-500/20 text-${step.color}-300 border-${step.color}-500/30`}>
-                {step.num}
-              </Badge>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <step.icon className="h-4 w-4 text-slate-400" />
-                  <h4 className="font-semibold text-slate-200">{step.title}</h4>
-                </div>
-                <p className="text-sm text-slate-400">{step.desc}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-
-    <h4 className="text-xl font-medium mb-4 text-slate-200">Complete Implementation Workflow</h4>
-
-    <CodeBlock
-      title="Complete Setup Workflow"
-      code={`# Step 1: Clean up the context
-echo "Creating .cursorignore..." 
-# Add your exclusion patterns
-
-# Step 2: Generate documentation
-repomix --output "codebase-docs.md" \\
-  --include "src/**/*.ts,src/**/*.tsx" \\
-  --exclude "node_modules,dist,coverage"
-
-# Step 3: Create initial rules from your code
-"Using @codebase-docs.md, identify the most common patterns and create:
-1. Three MDC rule files for our top patterns
-2. A project context document
-3. Suggestions for additional rules we should add"
-
-# Step 4: Test the setup
-"Following our rules in @.cursor/rules/**, implement a new user profile component"`}
-      language="bash"
-      collapsible={true}
-    />
-  </div>
-);
-
-const RealWorldResults = () => (
-  <div id="real-world-results" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
-      <CheckCircle2 className="h-6 w-6 text-green-400" />
-      Real-World Results
-    </h3>
-    
-    <p className="text-slate-300 mb-6 leading-relaxed">
-      After implementing this setup in a 100k+ line codebase:
-    </p>
-
-    <div className="grid md:grid-cols-2 gap-4 mb-8">
-      {[
-        { metric: "90% reduction", desc: "in AI suggesting deprecated patterns" },
-        { metric: "3x faster", desc: "feature implementation with AI assistance" },
-        { metric: "Consistent code style", desc: "across all AI-generated code" },
-        { metric: "50% less time", desc: "spent correcting AI suggestions" }
-      ].map((result, idx) => (
-        <Card key={idx} className="bg-slate-800/40 backdrop-blur-sm border-slate-700/50">
-          <CardContent className="p-4 flex items-center gap-3">
-            <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
-            <div>
-              <div className="font-semibold text-slate-200">{result.metric}</div>
-              <div className="text-sm text-slate-400">{result.desc}</div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-
-    <Alert className="mb-6 bg-green-950/30 border-green-500/30">
-      <CheckCircle2 className="h-4 w-4 text-green-400" />
-      <AlertTitle className="text-green-200 flex items-center gap-2">
-        <Lightbulb className="h-4 w-4" />
-        Next Steps
-      </AlertTitle>
-      <AlertDescription className="text-green-100/80 mt-3">
-        <p className="mb-3">
-          Start small. Pick your most painful inconsistency - maybe it's error handling or component structure - and create one MDC rule for it. Use Repomix to understand your codebase better, and gradually expand your <code className="bg-slate-800 px-2 py-1 rounded text-blue-300">.cursorignore</code> as you identify more patterns to exclude.
-        </p>
-        <p>
-          Remember: AI is only as good as the context you provide. Invest time in environment preparation, and watch your AI assistant transform from an unpredictable intern into a seasoned team member who knows your codebase inside and out.
-        </p>
-      </AlertDescription>
-    </Alert>
-  </div>
-);
