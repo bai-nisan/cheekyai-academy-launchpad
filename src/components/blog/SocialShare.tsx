@@ -22,9 +22,9 @@ export const SocialShare = () => {
   };
 
   return (
-    <Card>
+    <Card className="bg-slate-900/30 backdrop-blur-sm border-slate-700/50 shadow-xl">
       <CardHeader>
-        <CardTitle className="text-base flex items-center gap-2">
+        <CardTitle className="text-base flex items-center gap-2 text-slate-200">
           <Share2 className="h-4 w-4" />
           Share
         </CardTitle>
@@ -33,7 +33,7 @@ export const SocialShare = () => {
         <Button
           variant="outline"
           size="sm"
-          className="w-full justify-start"
+          className="w-full justify-start bg-slate-800/40 border-slate-700/50 text-slate-300 hover:bg-slate-700/60 hover:text-slate-100 hover:border-slate-600"
           asChild
         >
           <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer">
@@ -45,7 +45,7 @@ export const SocialShare = () => {
         <Button
           variant="outline"
           size="sm"
-          className="w-full justify-start"
+          className="w-full justify-start bg-slate-800/40 border-slate-700/50 text-slate-300 hover:bg-slate-700/60 hover:text-slate-100 hover:border-slate-600"
           asChild
         >
           <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer">
@@ -57,7 +57,7 @@ export const SocialShare = () => {
         <Button
           variant="outline"
           size="sm"
-          className="w-full justify-start"
+          className="w-full justify-start bg-slate-800/40 border-slate-700/50 text-slate-300 hover:bg-slate-700/60 hover:text-slate-100 hover:border-slate-600"
           onClick={copyLink}
         >
           <Link className="h-4 w-4 mr-2" />

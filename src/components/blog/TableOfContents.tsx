@@ -27,9 +27,9 @@ export const TableOfContents = ({ activeSection }: TableOfContentsProps) => {
   };
 
   return (
-    <Card className="w-full bg-slate-800/80 backdrop-blur-sm border-slate-700 shadow-lg">
+    <Card className="w-full bg-slate-900/30 backdrop-blur-sm border-slate-700/50 shadow-xl">
       <CardHeader className="pb-4">
-        <CardTitle className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        <CardTitle className="text-lg font-semibold text-slate-200">
           Table of Contents
         </CardTitle>
       </CardHeader>
@@ -43,8 +43,8 @@ export const TableOfContents = ({ activeSection }: TableOfContentsProps) => {
                 section.level === 3 ? "ml-4 text-xs" : ""
               } ${
                 activeSection === section.id
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
-                  : "hover:bg-slate-700 text-slate-300 hover:text-slate-200"
+                  ? "bg-slate-700/60 text-slate-100 shadow-md border border-slate-600/50"
+                  : "hover:bg-slate-800/40 text-slate-300 hover:text-slate-200"
               }`}
             >
               {section.title}

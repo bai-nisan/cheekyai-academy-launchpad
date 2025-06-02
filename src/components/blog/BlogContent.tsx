@@ -1,4 +1,3 @@
-
 import { CodeBlock } from "./CodeBlock";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,62 +5,62 @@ import { ChevronDown } from "lucide-react";
 
 export const BlogContent = () => {
   return (
-    <article className="prose prose-lg max-w-none dark:prose-invert">
+    <article className="prose prose-lg max-w-none prose-slate prose-invert">
       <section id="framework-overview" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Framework Overview</h2>
-        <p className="text-muted-foreground mb-4">
+        <h2 className="text-3xl font-bold mb-6 text-slate-100">Framework Overview</h2>
+        <p className="text-slate-300 mb-4 leading-relaxed">
           This framework outlines a comprehensive approach to integrating AI-first development workflows 
           across any codebase and planning process. It guides technical leads and senior developers in 
           establishing environment standards, aligning processes, and enabling AI-powered task execution.
         </p>
         
-        <Card className="mb-6">
+        <Card className="mb-6 bg-slate-800/40 backdrop-blur-sm border-slate-700/50 shadow-lg">
           <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Core Components</h3>
-            <ol className="space-y-2 list-decimal list-inside">
-              <li><strong>Environment Preparation</strong> - Standardizing your codebase for AI assistance</li>
-              <li><strong>AI-Assisted Planning</strong> - Creating technical specifications with AI</li>
-              <li><strong>Task Decomposition</strong> - Breaking down work into AI-executable chunks</li>
-              <li><strong>Execution Workflow</strong> - Implementing tasks with AI assistance</li>
-              <li><strong>Best Practices</strong> - Ensuring quality and consistency</li>
+            <h3 className="text-xl font-semibold mb-4 text-slate-200">Core Components</h3>
+            <ol className="space-y-2 list-decimal list-inside text-slate-300">
+              <li><strong className="text-slate-200">Environment Preparation</strong> - Standardizing your codebase for AI assistance</li>
+              <li><strong className="text-slate-200">AI-Assisted Planning</strong> - Creating technical specifications with AI</li>
+              <li><strong className="text-slate-200">Task Decomposition</strong> - Breaking down work into AI-executable chunks</li>
+              <li><strong className="text-slate-200">Execution Workflow</strong> - Implementing tasks with AI assistance</li>
+              <li><strong className="text-slate-200">Best Practices</strong> - Ensuring quality and consistency</li>
             </ol>
           </CardContent>
         </Card>
       </section>
 
       <section id="environment-preparation" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Environment Preparation</h2>
+        <h2 className="text-3xl font-bold mb-6 text-slate-100">Environment Preparation</h2>
         
         <div id="tool-setup" className="mb-8">
-          <h3 className="text-2xl font-semibold mb-4">Tool Setup</h3>
-          <p className="text-muted-foreground mb-4">
+          <h3 className="text-2xl font-semibold mb-4 text-slate-200">Tool Setup</h3>
+          <p className="text-slate-300 mb-4">
             Ensure AI development tools are installed:
           </p>
           
-          <Card className="mb-6">
+          <Card className="mb-6 bg-slate-800/40 backdrop-blur-sm border-slate-700/50 shadow-lg">
             <CardContent className="p-6">
-              <ul className="space-y-2">
-                <li>• <strong>MCP Atlassian</strong> - For project management integration</li>
-                <li>• <strong>Context7</strong> - Knowledge and documentation injection for enhanced task context</li>
-                <li>• <strong>Task Master</strong> - PRD to subtask planning automation</li>
-                <li>• <strong>Cursor</strong> - AI-powered IDE with context awareness</li>
+              <ul className="space-y-2 text-slate-300">
+                <li>• <strong className="text-slate-200">MCP Atlassian</strong> - For project management integration</li>
+                <li>• <strong className="text-slate-200">Context7</strong> - Knowledge and documentation injection for enhanced task context</li>
+                <li>• <strong className="text-slate-200">Task Master</strong> - PRD to subtask planning automation</li>
+                <li>• <strong className="text-slate-200">Cursor</strong> - AI-powered IDE with context awareness</li>
               </ul>
             </CardContent>
           </Card>
         </div>
 
         <div id="standards-requirements" className="mb-8">
-          <h3 className="text-2xl font-semibold mb-4">Standards & Requirements</h3>
+          <h3 className="text-2xl font-semibold mb-4 text-slate-200">Standards & Requirements</h3>
           
-          <h4 className="text-xl font-medium mb-3">📁 Codebase Indexing</h4>
-          <p className="text-muted-foreground mb-4">
+          <h4 className="text-xl font-medium mb-3 text-slate-200">📁 Codebase Indexing</h4>
+          <p className="text-slate-300 mb-4">
             Create a `.cursorignore` file to prevent AI confusion in large codebases:
           </p>
           
-          <Card className="mb-6">
+          <Card className="mb-6 bg-slate-800/40 backdrop-blur-sm border-slate-700/50 shadow-lg">
             <CardContent className="p-6">
-              <p className="mb-3">Exclude redundant, deprecated, or legacy code that could mislead Cursor's agent:</p>
-              <ul className="space-y-1 text-sm">
+              <p className="mb-3 text-slate-300">Exclude redundant, deprecated, or legacy code that could mislead Cursor's agent:</p>
+              <ul className="space-y-1 text-sm text-slate-300">
                 <li>• Old feature implementations that are no longer used</li>
                 <li>• Deprecated API endpoints or services</li>
                 <li>• Legacy migration files or outdated scripts</li>
@@ -71,28 +70,28 @@ export const BlogContent = () => {
             </CardContent>
           </Card>
 
-          <h4 className="text-xl font-medium mb-3">📄 Repository Documentation</h4>
-          <ul className="space-y-2 mb-6">
-            <li>• Use <a href="https://repomix.com/guide/prompt-examples" className="text-primary hover:underline">Repomix</a> to generate comprehensive codebase documentation</li>
+          <h4 className="text-xl font-medium mb-3 text-slate-200">📄 Repository Documentation</h4>
+          <ul className="space-y-2 mb-6 text-slate-300">
+            <li>• Use <a href="https://repomix.com/guide/prompt-examples" className="text-blue-400 hover:text-blue-300 underline transition-colors">Repomix</a> to generate comprehensive codebase documentation</li>
             <li>• Create contextual prompts for AI interactions</li>
             <li>• Maintain up-to-date architectural documentation</li>
           </ul>
 
-          <h4 className="text-xl font-medium mb-3">🧩 AI Context Rules (MDC Files)</h4>
-          <p className="text-muted-foreground mb-4">
+          <h4 className="text-xl font-medium mb-3 text-slate-200">🧩 AI Context Rules (MDC Files)</h4>
+          <p className="text-slate-300 mb-4">
             Create comprehensive Cursor rules files to standardize your development practices:
           </p>
           
           <Collapsible>
-            <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 hover:text-primary">
+            <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 text-slate-200 hover:text-blue-400 transition-colors">
               <ChevronDown className="h-5 w-5" />
               Rule Categories
             </CollapsibleTrigger>
             <CollapsibleContent>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <Card>
+                <Card className="bg-slate-800/40 backdrop-blur-sm border-slate-700/50">
                   <CardContent className="p-4">
-                    <ul className="space-y-1 text-sm">
+                    <ul className="space-y-1 text-sm text-slate-300">
                       <li>• Code Conventions</li>
                       <li>• Boilerplate Rules</li>
                       <li>• Refactoring Guidelines</li>
@@ -103,9 +102,9 @@ export const BlogContent = () => {
                     </ul>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-slate-800/40 backdrop-blur-sm border-slate-700/50">
                   <CardContent className="p-4">
-                    <ul className="space-y-1 text-sm">
+                    <ul className="space-y-1 text-sm text-slate-300">
                       <li>• Database Patterns</li>
                       <li>• Testing Strategies</li>
                       <li>• DevOps & Deployment</li>
@@ -122,9 +121,9 @@ export const BlogContent = () => {
         </div>
 
         <div id="implementation" className="mb-8">
-          <h3 className="text-2xl font-semibold mb-4">Implementation</h3>
+          <h3 className="text-2xl font-semibold mb-4 text-slate-200">Implementation</h3>
           
-          <h4 className="text-xl font-medium mb-3">🚀 Quick Start: Repository Documentation with Repomix</h4>
+          <h4 className="text-xl font-medium mb-3 text-slate-200">🚀 Quick Start: Repository Documentation with Repomix</h4>
           
           <CodeBlock
             title="Generate Complete Repository Overview"
@@ -172,7 +171,7 @@ Create:
           />
 
           <Collapsible>
-            <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 hover:text-primary">
+            <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 text-slate-200 hover:text-blue-400 transition-colors">
               <ChevronDown className="h-5 w-5" />
               Example MDC Rule Files
             </CollapsibleTrigger>
@@ -237,14 +236,14 @@ Create:
       </section>
 
       <section id="ai-assisted-planning" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">AI-Assisted Planning</h2>
+        <h2 className="text-3xl font-bold mb-6 text-slate-100">AI-Assisted Planning</h2>
         
-        <h3 className="text-2xl font-semibold mb-4">Creating Technical Specifications</h3>
+        <h3 className="text-2xl font-semibold mb-4 text-slate-200">Creating Technical Specifications</h3>
         
-        <Card className="mb-6">
+        <Card className="mb-6 bg-slate-800/40 backdrop-blur-sm border-slate-700/50 shadow-lg">
           <CardContent className="p-6">
-            <h4 className="text-xl font-semibold mb-4">🎯 Methodology</h4>
-            <ol className="list-decimal list-inside space-y-2">
+            <h4 className="text-xl font-semibold mb-4 text-slate-200">🎯 Methodology</h4>
+            <ol className="list-decimal list-inside space-y-2 text-slate-300">
               <li><strong>Gather Requirements</strong> - Feature tickets, technical constraints, acceptance criteria</li>
               <li><strong>Leverage AI Context</strong> - Use reasoning models, reference patterns, include documentation</li>
               <li><strong>Generate Specifications</strong> - Technical approach, API contracts, component architecture, testing strategy</li>
@@ -252,7 +251,7 @@ Create:
           </CardContent>
         </Card>
 
-        <h4 className="text-xl font-medium mb-3">🔄 Workflow Process</h4>
+        <h4 className="text-xl font-medium mb-3 text-slate-200">🔄 Workflow Process</h4>
         
         <div className="space-y-4 mb-6">
           <div className="flex items-start gap-3">
@@ -306,15 +305,15 @@ Create:
       </section>
 
       <section id="task-decomposition" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Task Decomposition</h2>
+        <h2 className="text-3xl font-bold mb-6 text-slate-100">Task Decomposition</h2>
         
         <p className="text-muted-foreground mb-6">
           Transform specifications into executable, self-contained tasks that can be completed independently.
         </p>
 
-        <Card className="mb-6">
+        <Card className="mb-6 bg-slate-800/40 backdrop-blur-sm border-slate-700/50 shadow-lg">
           <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">🔄 Workflow Process</h3>
+            <h3 className="text-xl font-semibold mb-4 text-slate-200">🔄 Workflow Process</h3>
             <div className="space-y-4">
               <div>
                 <h4 className="font-semibold mb-2">1. Parse Specifications</h4>
@@ -359,7 +358,7 @@ scripts/specifications/feature_spec.md
         />
 
         <Collapsible>
-          <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 hover:text-primary">
+          <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium mb-4 text-slate-200 hover:text-blue-400 transition-colors">
             <ChevronDown className="h-5 w-5" />
             Using Context7 for Task Enhancement
           </CollapsibleTrigger>
@@ -386,15 +385,15 @@ Update the task file with all relevant context"
       </section>
 
       <section id="execution-workflow" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Execution Workflow</h2>
+        <h2 className="text-3xl font-bold mb-6 text-slate-100">Execution Workflow</h2>
         
         <p className="text-muted-foreground mb-6">
           Developers use AI assistance to complete each self-contained task efficiently.
         </p>
 
-        <Card className="mb-6">
+        <Card className="mb-6 bg-slate-800/40 backdrop-blur-sm border-slate-700/50 shadow-lg">
           <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">⚡ Process</h3>
+            <h3 className="text-xl font-semibold mb-4 text-slate-200">⚡ Process</h3>
             <div className="space-y-4">
               <div>
                 <h4 className="font-semibold mb-2">1. Task Selection</h4>
@@ -437,13 +436,13 @@ Then implement the notification service following our patterns"
       </section>
 
       <section id="best-practices" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Best Practices</h2>
+        <h2 className="text-3xl font-bold mb-6 text-slate-100">Best Practices</h2>
         
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Planning Phase</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-slate-200">Planning Phase</h3>
+              <ul className="space-y-2 text-sm text-slate-300">
                 <li>• <strong>Rich Context = Better Results:</strong> Include all relevant documentation</li>
                 <li>• <strong>Use Strong Examples:</strong> Good templates guide AI output</li>
                 <li>• <strong>Set Clear Boundaries:</strong> Be explicit about planning vs. coding</li>
@@ -454,8 +453,8 @@ Then implement the notification service following our patterns"
           
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Task Decomposition</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-slate-200">Task Decomposition</h3>
+              <ul className="space-y-2 text-sm text-slate-300">
                 <li>• <strong>Clear Scope:</strong> Each task takes 30-120 minutes</li>
                 <li>• <strong>Full Context:</strong> Include all necessary references</li>
                 <li>• <strong>External Documentation:</strong> Use Context7 for third-party APIs</li>
@@ -469,8 +468,8 @@ Then implement the notification service following our patterns"
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Execution Phase</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-slate-200">Execution Phase</h3>
+              <ul className="space-y-2 text-sm text-slate-300">
                 <li>• <strong>Trust but Verify:</strong> Review AI-generated code</li>
                 <li>• <strong>Maintain Standards:</strong> Ensure consistency with team patterns</li>
                 <li>• <strong>Test Coverage:</strong> Validate all implementations</li>
@@ -481,8 +480,8 @@ Then implement the notification service following our patterns"
           
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">General Guidelines</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-slate-200">General Guidelines</h3>
+              <ul className="space-y-2 text-sm text-slate-300">
                 <li>• <strong>Start Small:</strong> Begin with low-risk features</li>
                 <li>• <strong>Iterate Frequently:</strong> Refine prompts and processes</li>
                 <li>• <strong>Share Knowledge:</strong> Document successful patterns</li>
@@ -495,13 +494,13 @@ Then implement the notification service following our patterns"
       </section>
 
       <section id="resources-community" className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Resources & Community</h2>
+        <h2 className="text-3xl font-bold mb-6 text-slate-100">Resources & Community</h2>
         
         <div className="grid md:grid-cols-3 gap-6 mb-6">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3">📚 Learning Resources</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold mb-3 text-slate-200">📚 Learning Resources</h3>
+              <ul className="space-y-2 text-sm text-slate-300">
                 <li>• <a href="https://forum.cursor.sh/" className="text-primary hover:underline">Cursor Forum</a> - Best practices and use cases</li>
                 <li>• <a href="https://github.com/modelcontextprotocol/servers" className="text-primary hover:underline">MCP Server Registry</a> - Available integrations</li>
                 <li>• <a href="https://github.com/eyaltoledano/task-master" className="text-primary hover:underline">Task Master Documentation</a> - PRD to task automation</li>
@@ -512,8 +511,8 @@ Then implement the notification service following our patterns"
           
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3">👥 Key Figures to Follow</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold mb-3 text-slate-200">👥 Key Figures to Follow</h3>
+              <ul className="space-y-2 text-sm text-slate-300">
                 <li>• @mntruell - Cursor CEO, development workflows</li>
                 <li>• @amanrsanger - Cursor co-founder, implementation patterns</li>
                 <li>• @sualehasif996 - Architecture insights</li>
@@ -526,8 +525,8 @@ Then implement the notification service following our patterns"
           
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-3">🌐 Communities</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold mb-3 text-slate-200">🌐 Communities</h3>
+              <ul className="space-y-2 text-sm text-slate-300">
                 <li>• Cursor Forum - Sort by "Top" for key discussions</li>
                 <li>• Cursor Reddit - Community updates and feedback</li>
                 <li>• AI Development Discord servers</li>
