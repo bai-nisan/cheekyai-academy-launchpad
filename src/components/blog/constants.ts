@@ -1,3 +1,4 @@
+
 import { BlogSection } from './types';
 
 export const BLOG_SECTIONS: BlogSection[] = [
@@ -9,7 +10,6 @@ export const BLOG_SECTIONS: BlogSection[] = [
   { id: "ai-assisted-planning", title: "AI-Assisted Planning", level: 2 },
   { id: "task-decomposition", title: "Task Decomposition", level: 2 },
   { id: "execution-workflow", title: "Execution Workflow", level: 2 },
-  { id: "best-practices", title: "Best Practices", level: 2 },
   { id: "resources-community", title: "Resources & Community", level: 2 },
 ];
 
@@ -34,4 +34,4 @@ export const LEARNING_RESOURCES = [
   { text: "MCP Server Registry", link: "https://github.com/modelcontextprotocol/servers", desc: "Available integrations" },
   { text: "Task Master Documentation", link: "https://github.com/eyaltoledano/task-master", desc: "PRD to task automation" },
   { text: "Context7", link: "https://github.com/upstash/context7", desc: "Documentation injection for AI context" }
-]; 
+];

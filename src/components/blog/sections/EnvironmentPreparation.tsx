@@ -21,13 +21,14 @@ export const EnvironmentPreparation = () => {
         </p>
         
         <p className="text-slate-300 mb-4 leading-relaxed">
-          This guide covers the three essential steps to prepare any codebase for AI assistance: smart indexing, comprehensive documentation, and context rules. Let's dive in.
+          This guide covers the essential steps to prepare any codebase for AI assistance: smart indexing, comprehensive documentation, context rules, and planning best practices. Let's dive in.
         </p>
       </div>
       
       <CodebaseIndexing />
       <RepositoryDocumentation />
       <AIContextRules />
+      <PlanningBestPractices />
     </section>
   );
 };
@@ -404,4 +405,89 @@ DROP TABLE IF EXISTS user_preferences;`}
       </TabsContent>
     </Tabs>
   </>
+);
+
+const PlanningBestPractices = () => (
+  <div id="planning-best-practices" className="mb-12">
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200">
+      Planning Best Practices
+    </h3>
+    
+    <p className="text-slate-300 mb-6 leading-relaxed">
+      Effective environment preparation requires understanding how to optimize your planning phase for AI assistance. These practices ensure your preparation work translates into productive development cycles.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div className="p-6 bg-slate-800/20 rounded-lg border border-slate-700/30">
+        <h4 className="font-semibold text-slate-200 mb-4">Rich Context = Better Results</h4>
+        <div className="space-y-3 text-sm text-slate-300">
+          <div><strong>Documentation:</strong> Include all relevant documentation and specifications</div>
+          <div><strong>Examples:</strong> Provide concrete examples of desired patterns and outcomes</div>
+          <div><strong>Constraints:</strong> Clearly articulate technical and business limitations</div>
+          <div><strong>Dependencies:</strong> Document all external services and API requirements</div>
+        </div>
+      </div>
+
+      <div className="p-6 bg-slate-800/20 rounded-lg border border-slate-700/30">
+        <h4 className="font-semibold text-slate-200 mb-4">Use Strong Examples</h4>
+        <div className="space-y-3 text-sm text-slate-300">
+          <div><strong>Template Quality:</strong> Good templates guide AI output effectively</div>
+          <div><strong>Pattern Consistency:</strong> Show existing patterns AI should follow</div>
+          <div><strong>Best Practices:</strong> Include examples of your team's best implementations</div>
+          <div><strong>Anti-patterns:</strong> Document what to avoid and why</div>
+        </div>
+      </div>
+
+      <div className="p-6 bg-slate-800/20 rounded-lg border border-slate-700/30">
+        <h4 className="font-semibold text-slate-200 mb-4">Set Clear Boundaries</h4>
+        <div className="space-y-3 text-sm text-slate-300">
+          <div><strong>Planning vs. Coding:</strong> Be explicit about planning vs. implementation phases</div>
+          <div><strong>Scope Definition:</strong> Clearly define what's in and out of scope</div>
+          <div><strong>Decision Points:</strong> Identify when human input is required</div>
+          <div><strong>Quality Gates:</strong> Define validation checkpoints throughout the process</div>
+        </div>
+      </div>
+
+      <div className="p-6 bg-slate-800/20 rounded-lg border border-slate-700/30">
+        <h4 className="font-semibold text-slate-200 mb-4">Model Selection</h4>
+        <div className="space-y-3 text-sm text-slate-300">
+          <div><strong>Reasoning Models:</strong> Use reasoning models for complex planning tasks</div>
+          <div><strong>Context Windows:</strong> Consider token limits when providing documentation</div>
+          <div><strong>Iteration Cycles:</strong> Plan for multiple refinement passes</div>
+          <div><strong>Validation Methods:</strong> Establish how to verify planning outputs</div>
+        </div>
+      </div>
+    </div>
+
+    <Alert className="mb-6 bg-blue-950/30 border-blue-500/30">
+      <CheckCircle2 className="h-4 w-4 text-blue-400" />
+      <AlertTitle className="text-blue-200">Implementation Success Pattern</AlertTitle>
+      <AlertDescription className="text-blue-100/80 mt-3">
+        <div className="space-y-2">
+          <p>Teams that excel at AI-assisted development follow this pattern:</p>
+          <div className="text-sm space-y-1">
+            <div>• <strong>Start Small:</strong> Begin with low-risk features to establish patterns</div>
+            <div>• <strong>Iterate Frequently:</strong> Refine prompts and processes based on results</div>
+            <div>• <strong>Document Success:</strong> Capture what works for future reference</div>
+            <div>• <strong>Share Knowledge:</strong> Distribute successful patterns across the team</div>
+          </div>
+        </div>
+      </AlertDescription>
+    </Alert>
+
+    <CodeBlock
+      title="Planning Phase Example"
+      code={`# Effective planning preparation
+"Based on our environment setup:
+1. Review @codebase-docs.md for current patterns
+2. Reference @.cursor/rules/ for coding standards
+3. Use Context7 to load latest API documentation
+4. Create task breakdown following our decomposition methodology
+
+Goal: Implement user authentication system
+Constraints: Must integrate with existing session management
+Context: @docs/auth-requirements.md, @services/session/*"`}
+      language="bash"
+    />
+  </div>
 );

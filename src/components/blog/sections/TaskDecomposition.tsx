@@ -21,13 +21,13 @@ export const TaskDecomposition = () => {
         </p>
         
         <p className="text-slate-300 mb-4 leading-relaxed">
-          This guide covers the essential methodology for transforming any specification into AI-executable tasks: structured breakdown, comprehensive context integration, and systematic refinement. Let's dive in.
+          This guide covers the essential methodology for transforming any specification into AI-executable tasks: structured breakdown, comprehensive context integration, systematic refinement, and proven task management practices. Let's dive in.
         </p>
       </div>
       
       <BreakingDownWork />
       <ImplementationWorkflow />
-      <TaskManagementBestPractices />
+      <EnhancedTaskManagementBestPractices />
     </section>
   );
 };
@@ -278,14 +278,14 @@ Update the task file with all relevant context"
   </>
 );
 
-const TaskManagementBestPractices = () => (
+const EnhancedTaskManagementBestPractices = () => (
   <div id="task-management-best-practices" className="mb-12">
     <h3 className="text-2xl font-semibold mb-4 text-slate-200">
       Task Management Best Practices
     </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
-      Effective task decomposition extends beyond initial breakdown. Successful implementation requires ongoing management of scope, dependencies, and quality assurance to ensure AI-assisted development maintains both velocity and coherence.
+      Effective task decomposition extends beyond initial breakdown. Successful implementation requires ongoing management of scope, dependencies, quality assurance, and the integration of proven best practices that ensure AI-assisted development maintains both velocity and coherence.
     </p>
 
     <Tabs defaultValue="scope" className="mb-6">
@@ -293,7 +293,7 @@ const TaskManagementBestPractices = () => (
         <TabsTrigger value="scope">Scope Management</TabsTrigger>
         <TabsTrigger value="dependencies">Dependencies</TabsTrigger>
         <TabsTrigger value="quality">Quality Assurance</TabsTrigger>
-        <TabsTrigger value="example">Practice Example</TabsTrigger>
+        <TabsTrigger value="practices">Core Practices</TabsTrigger>
       </TabsList>
       
       <TabsContent value="scope">
@@ -365,59 +365,101 @@ const TaskManagementBestPractices = () => (
         </Card>
       </TabsContent>
       
-      <TabsContent value="example">
+      <TabsContent value="practices">
         <Card className="bg-slate-800/40 backdrop-blur-sm border-slate-700/50">
           <CardHeader>
-            <CardTitle className="text-lg text-slate-200">Task Decomposition in Practice</CardTitle>
+            <CardTitle className="text-lg text-slate-200">Essential Task Decomposition Practices</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-slate-300 mb-4">
-              <strong>Example: User Authentication Implementation</strong>
-            </p>
-            <p className="text-slate-300 mb-4 text-sm">
-              Demonstrating complete task breakdown from specification to executable tasks:
-            </p>
-            
-            <div className="mb-4">
-              <h5 className="text-sm font-medium text-slate-200 mb-2">Specification Input:</h5>
-              <ul className="text-sm text-slate-400 space-y-1 mb-4">
-                <li>• User registration and login system</li>
-                <li>• JWT token implementation with refresh logic</li>
-                <li>• Social authentication integration</li>
-                <li>• Role-based access control</li>
-              </ul>
-            </div>
-
-            <CodeBlock
-              code={`Task 001: Database user schema and migration
-Task 002: JWT service implementation with refresh tokens
-Task 003: Password hashing and validation service
-Task 004: OAuth integration for social providers
-Task 005: Frontend authentication components
-Task 006: API middleware for route protection
-Task 007: End-to-end authentication testing`}
-              language="bash"
-            />
-
-            <div className="mt-4">
-              <h5 className="text-sm font-medium text-slate-200 mb-2">Task Enhancement Process:</h5>
-              <ul className="text-sm text-slate-400 space-y-1">
-                <li>• Each task enriched with Context7 documentation</li>
-                <li>• External API patterns included (Auth0, OAuth providers)</li>
-                <li>• Internal security standards referenced</li>
-                <li>• Clear testing and validation criteria defined</li>
-              </ul>
+            <div className="space-y-4">
+              <div>
+                <h5 className="font-medium text-slate-200 mb-2">Clear Scope Definition</h5>
+                <ul className="text-sm text-slate-300 space-y-1">
+                  <li>• Each task takes 30-120 minutes for optimal focus and completion</li>
+                  <li>• Clear boundaries prevent scope creep and maintain focus</li>
+                  <li>• Buffer time included for testing and integration validation</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h5 className="font-medium text-slate-200 mb-2">Full Context Integration</h5>
+                <ul className="text-sm text-slate-300 space-y-1">
+                  <li>• Include all necessary file references using @ mentions</li>
+                  <li>• Link relevant documentation and specification sections</li>
+                  <li>• Embed dependency information and integration requirements</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h5 className="font-medium text-slate-200 mb-2">External Documentation Management</h5>
+                <ul className="text-sm text-slate-300 space-y-1">
+                  <li>• Use Context7 to inject third-party API documentation</li>
+                  <li>• Keep external API context current and accessible</li>
+                  <li>• Include security and compliance requirements from external sources</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h5 className="font-medium text-slate-200 mb-2">Success Criteria & Flexibility</h5>
+                <ul className="text-sm text-slate-300 space-y-1">
+                  <li>• Define "done" with clear, measurable success criteria</li>
+                  <li>• Maintain flexibility to update as requirements change</li>
+                  <li>• Include validation methods and testing approaches</li>
+                </ul>
+              </div>
             </div>
           </CardContent>
         </Card>
       </TabsContent>
     </Tabs>
 
-    <Alert className="mb-6 bg-amber-950/30 border-amber-500/30">
+    <div className="mt-8">
+      <h4 className="text-xl font-medium mb-4 text-slate-200">Task Decomposition in Practice</h4>
+      
+      <p className="text-slate-300 mb-4">
+        <strong>Example: User Authentication Implementation</strong>
+      </p>
+      <p className="text-slate-300 mb-4 text-sm">
+        Demonstrating complete task breakdown from specification to executable tasks:
+      </p>
+      
+      <div className="mb-4">
+        <h5 className="text-sm font-medium text-slate-200 mb-2">Specification Input:</h5>
+        <ul className="text-sm text-slate-400 space-y-1 mb-4">
+          <li>• User registration and login system</li>
+          <li>• JWT token implementation with refresh logic</li>
+          <li>• Social authentication integration</li>
+          <li>• Role-based access control</li>
+        </ul>
+      </div>
+
+      <CodeBlock
+        code={`Task 001: Database user schema and migration
+Task 002: JWT service implementation with refresh tokens
+Task 003: Password hashing and validation service
+Task 004: OAuth integration for social providers
+Task 005: Frontend authentication components
+Task 006: API middleware for route protection
+Task 007: End-to-end authentication testing`}
+        language="bash"
+      />
+
+      <div className="mt-4">
+        <h5 className="text-sm font-medium text-slate-200 mb-2">Task Enhancement Process:</h5>
+        <ul className="text-sm text-slate-400 space-y-1">
+          <li>• Each task enriched with Context7 documentation</li>
+          <li>• External API patterns included (Auth0, OAuth providers)</li>
+          <li>• Internal security standards referenced</li>
+          <li>• Clear testing and validation criteria defined</li>
+        </ul>
+      </div>
+    </div>
+
+    <Alert className="mt-8 bg-amber-950/30 border-amber-500/30">
       <AlertCircle className="h-4 w-4 text-amber-400" />
       <AlertTitle className="text-amber-200">Implementation Success</AlertTitle>
       <AlertDescription className="text-amber-100/80">
-        Teams that follow this systematic approach to task decomposition report 3x faster development cycles and significantly reduced integration issues. The key is maintaining discipline in task scoping and ensuring comprehensive context in every work unit.
+        Teams that follow this systematic approach to task decomposition report 3x faster development cycles and significantly reduced integration issues. The key is maintaining discipline in task scoping, ensuring comprehensive context in every work unit, and integrating proven practices throughout the decomposition process.
       </AlertDescription>
     </Alert>
   </div>

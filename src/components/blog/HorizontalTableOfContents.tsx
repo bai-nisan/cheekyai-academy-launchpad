@@ -33,13 +33,13 @@ export const HorizontalTableOfContents = ({ activeSection }: HorizontalTableOfCo
                     onClick={() => scrollToSection(section.id)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
                       activeSection === section.id
-                        ? "bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-slate-100 shadow-lg border border-blue-500/40 backdrop-blur-sm"
+                        ? "bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-slate-100 shadow-lg border border-blue-500/30 backdrop-blur-sm"
                         : "hover:bg-slate-800/60 text-slate-300 hover:text-slate-100 hover:shadow-md hover:border hover:border-slate-600/30 bg-slate-800/20"
                     }`}
                   >
                     <span className={`relative ${
                       activeSection === section.id 
-                        ? "bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold" 
+                        ? "bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-medium" 
                         : "group-hover:text-slate-100"
                     }`}>
                       {section.title}
@@ -47,7 +47,7 @@ export const HorizontalTableOfContents = ({ activeSection }: HorizontalTableOfCo
                     
                     {/* Active Section Indicator */}
                     {activeSection === section.id && (
-                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-6 bg-gradient-to-b from-blue-400 to-purple-400 rounded-r-full"></div>
                     )}
                   </button>
                 ))}
