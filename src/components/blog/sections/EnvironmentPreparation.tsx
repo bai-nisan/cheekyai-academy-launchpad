@@ -1,5 +1,3 @@
-
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Wrench, Info, ChevronRight, CheckCircle2, AlertCircle, Lightbulb, FolderOpen, FileText, Settings, Database, Code, GitBranch } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -13,7 +11,7 @@ export const EnvironmentPreparation = () => {
     <section id="environment-preparation" className="mb-12">
       <h2 className="text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3">
         <Wrench className="h-8 w-8 text-blue-400" />
-        Setting Up Your Codebase for AI-Powered Development
+        Environment Preparation
       </h2>
       
       <div className="mb-8">
@@ -37,7 +35,7 @@ const CodebaseIndexing = () => (
   <div id="codebase-indexing" className="mb-12">
     <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
       <FolderOpen className="h-6 w-6 text-blue-400" />
-      Codebase Indexing: Teaching AI What to Ignore
+      Codebase Indexing
     </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
@@ -114,7 +112,7 @@ const RepositoryDocumentation = () => (
   <div id="repository-documentation" className="mb-12">
     <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
       <FileText className="h-6 w-6 text-green-400" />
-      Repository Documentation: Creating AI-Readable Context
+      Repository Documentation
     </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
@@ -209,7 +207,7 @@ const AIContextRules = () => (
   <div id="ai-context-rules" className="mb-12">
     <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
       <Settings className="h-6 w-6 text-purple-400" />
-      AI Context Rules: Setting Standards with MDC Files
+      Cursor Rules
     </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
@@ -409,4 +407,3 @@ DROP TABLE IF EXISTS user_preferences;`}
     </Tabs>
   </>
 );
-
