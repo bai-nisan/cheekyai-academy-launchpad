@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wrench, Info, ChevronRight, CheckCircle2, AlertCircle, Lightbulb, FolderOpen, FileText, Settings } from "lucide-react";
+import { Wrench, Info, ChevronRight, CheckCircle2, AlertCircle, Lightbulb, FolderOpen, FileText, Settings, Database, Code, GitBranch } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -38,7 +38,7 @@ const CodebaseIndexing = () => (
   <div id="codebase-indexing" className="mb-12">
     <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
       <FolderOpen className="h-6 w-6 text-blue-400" />
-      📁 Codebase Indexing: Teaching AI What to Ignore
+      Codebase Indexing: Teaching AI What to Ignore
     </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
@@ -115,7 +115,7 @@ const RepositoryDocumentation = () => (
   <div id="repository-documentation" className="mb-12">
     <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
       <FileText className="h-6 w-6 text-green-400" />
-      📄 Repository Documentation: Creating AI-Readable Context
+      Repository Documentation: Creating AI-Readable Context
     </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
@@ -210,7 +210,7 @@ const AIContextRules = () => (
   <div id="ai-context-rules" className="mb-12">
     <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
       <Settings className="h-6 w-6 text-purple-400" />
-      🧩 AI Context Rules: Setting Standards with MDC Files
+      AI Context Rules: Setting Standards with MDC Files
     </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
@@ -413,7 +413,10 @@ DROP TABLE IF EXISTS user_preferences;`}
 
 const PuttingItTogether = () => (
   <div id="putting-it-together" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200">🚀 Putting It All Together</h3>
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
+      <ChevronRight className="h-6 w-6 text-blue-400" />
+      Putting It All Together
+    </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
       The beauty of this system is how these three components work together:
@@ -425,18 +428,21 @@ const PuttingItTogether = () => (
           num: "1",
           title: ".cursorignore",
           desc: "ensures AI only sees relevant, current code",
+          icon: FolderOpen,
           color: "blue"
         },
         {
           num: "2", 
           title: "Repomix documentation",
           desc: "provides AI with a comprehensive understanding of your codebase",
+          icon: FileText,
           color: "green"
         },
         {
           num: "3",
           title: "MDC rules",
-          desc: "guide AI to follow your specific patterns and standards", 
+          desc: "guide AI to follow your specific patterns and standards",
+          icon: Settings,
           color: "purple"
         }
       ].map((step) => (
@@ -447,7 +453,10 @@ const PuttingItTogether = () => (
                 {step.num}
               </Badge>
               <div className="flex-1">
-                <h4 className="font-semibold text-slate-200 mb-2">{step.title}</h4>
+                <div className="flex items-center gap-2 mb-2">
+                  <step.icon className="h-4 w-4 text-slate-400" />
+                  <h4 className="font-semibold text-slate-200">{step.title}</h4>
+                </div>
                 <p className="text-sm text-slate-400">{step.desc}</p>
               </div>
             </div>
@@ -485,7 +494,10 @@ repomix --output "codebase-docs.md" \\
 
 const RealWorldResults = () => (
   <div id="real-world-results" className="mb-12">
-    <h3 className="text-2xl font-semibold mb-4 text-slate-200">📊 Real-World Results</h3>
+    <h3 className="text-2xl font-semibold mb-4 text-slate-200 flex items-center gap-3">
+      <CheckCircle2 className="h-6 w-6 text-green-400" />
+      Real-World Results
+    </h3>
     
     <p className="text-slate-300 mb-6 leading-relaxed">
       After implementing this setup in a 100k+ line codebase:
@@ -512,7 +524,10 @@ const RealWorldResults = () => (
 
     <Alert className="mb-6 bg-green-950/30 border-green-500/30">
       <CheckCircle2 className="h-4 w-4 text-green-400" />
-      <AlertTitle className="text-green-200">🎯 Next Steps</AlertTitle>
+      <AlertTitle className="text-green-200 flex items-center gap-2">
+        <Lightbulb className="h-4 w-4" />
+        Next Steps
+      </AlertTitle>
       <AlertDescription className="text-green-100/80 mt-3">
         <p className="mb-3">
           Start small. Pick your most painful inconsistency - maybe it's error handling or component structure - and create one MDC rule for it. Use Repomix to understand your codebase better, and gradually expand your <code className="bg-slate-800 px-2 py-1 rounded text-blue-300">.cursorignore</code> as you identify more patterns to exclude.
