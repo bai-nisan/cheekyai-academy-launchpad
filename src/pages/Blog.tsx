@@ -25,7 +25,7 @@ const mockPosts: BlogPost[] = [
     id: "1",
     title: "🚀 AI-Powered Development Workflow Framework",
     excerpt: "A comprehensive guide to integrating AI-first development workflows across any codebase",
-    author: "Lovable Team",
+    author: "CheakyAI Academy Team",
     date: new Date().toLocaleDateString(),
     readingTime: "25 min",
     tags: ["AI Development", "Workflow", "Best Practices"],
@@ -110,7 +110,7 @@ const Blog = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Lovable
+              CheakyAI Academy
             </Link>
             
             <nav className="hidden md:flex items-center space-x-8">
@@ -130,7 +130,7 @@ const Blog = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Lovable Blog
+              CheakyAI Blog
             </h1>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
               Insights on AI development, best practices, and workflow optimization
@@ -274,7 +274,7 @@ const Blog = () => {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              Lovable
+              CheakyAI Academy
             </div>
             <p className="text-slate-400 mb-6">
               Empowering developers with AI-driven workflows

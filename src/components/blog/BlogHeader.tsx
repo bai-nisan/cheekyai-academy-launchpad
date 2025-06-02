@@ -36,7 +36,7 @@ export const BlogHeader = () => {
         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <User className="h-4 w-4" />
-            <span>CheakyAI Team</span>
+            <span>CheakyAI Academy Team</span>
           </div>
           <div className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
