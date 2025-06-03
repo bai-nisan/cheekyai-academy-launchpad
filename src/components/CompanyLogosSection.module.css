@@ -1,55 +1,28 @@
-/* Animation keyframes for company logos scrolling */
-@keyframes scrollLogos {
+/* Company Logos Section Styles */
+
+.scrollAnimation {
+  animation: scroll linear infinite;
+  will-change: transform;
+}
+
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    /* Move exactly one set of logos */
-    transform: translateX(calc(-50%));
+    transform: translateX(-50%);
   }
 }
 
-/* Base animation class */
-.scrollAnimation {
-  animation-name: scrollLogos;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-  /* Ensure smooth animation */
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+/* Performance optimizations */
+.scrollAnimation:hover {
+  animation-play-state: paused;
 }
 
-/* Respect user's motion preferences */
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .scrollAnimation {
-    animation-play-state: paused;
-  }
-  
-  /* Show static grid instead for accessibility */
-  .scrollAnimation {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
     animation: none;
-    transform: none;
+    overflow-x: auto;
   }
-}
-
-/* Support for manual animation control via CSS custom property */
-:root {
-  --animation-play-state: running;
-}
-
-/* Hover to pause functionality */
-.scrollAnimation:hover {
-  --animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-/* Focus management for accessibility */
-.scrollAnimation:focus-within {
-  --animation-play-state: paused;
-  animation-play-state: paused;
 } 
