@@ -3,13 +3,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const CompanyLogosSection = () => {
-  // Company logos data with your uploaded logos (no duplicates)
+  // Company logos data with your new uploaded logos
   const companies = [
-    { name: "LUDANTECH", logo: "/lovable-uploads/f6e934e8-18ea-40f7-84f1-d85fcf5b36c8.png" },
-    { name: "Mamanidoo", logo: "/lovable-uploads/4b1042a5-af25-45c1-9e66-762eed039df4.png" },
-    { name: "Neuronics", logo: "/lovable-uploads/20831caf-5fb2-48f2-86ae-04f6c0eb3774.png" },
-    { name: "Yad2", logo: "/lovable-uploads/89f611f4-e528-4158-a945-5af8a7ae3b8b.png" },
-    { name: "AMIMON", logo: "/lovable-uploads/764f8afe-0cb8-4f89-8648-0ecf06de90db.png" },
+    { name: "AMIMON", logo: "/lovable-uploads/8e3b3ffe-b885-461b-9ad5-a83e81af986b.png" },
+    { name: "LUDANTECH", logo: "/lovable-uploads/9067bc25-56cc-450d-8738-7c337f961b01.png" },
+    { name: "Neuronics", logo: "/lovable-uploads/8ca33ebd-a1d9-4d0f-a2db-e47c35c3d34d.png" },
   ];
 
   // Duplicate the companies array for seamless infinite scroll
@@ -44,7 +42,7 @@ const CompanyLogosSection = () => {
                   key={`${company.name}-${index}`}
                   className="flex-shrink-0 mx-8 transition-all duration-300 group"
                 >
-                  <div className="w-32 h-16 flex items-center justify-center bg-slate-700/30 rounded-lg border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300">
+                  <div className="w-32 h-16 flex items-center justify-center bg-transparent rounded-lg border border-transparent hover:border-slate-500/50 transition-all duration-300">
                     <img
                       src={company.logo}
                       alt={`${company.name} logo`}
