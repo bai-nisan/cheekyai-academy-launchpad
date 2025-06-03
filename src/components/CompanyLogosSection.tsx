@@ -40,13 +40,13 @@ const CompanyLogosSection = () => {
               {duplicatedCompanies.map((company, index) => (
                 <div
                   key={`${company.name}-${index}`}
-                  className="flex-shrink-0 mx-8 transition-all duration-300 group"
+                  className="flex-shrink-0 mx-8"
                 >
-                  <div className="w-32 h-16 flex items-center justify-center bg-transparent rounded-lg border border-transparent hover:border-slate-500/50 transition-all duration-300">
+                  <div className="w-64 h-32 flex items-center justify-center bg-transparent rounded-lg">
                     <img
                       src={company.logo}
                       alt={`${company.name} logo`}
-                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                      className="max-w-full max-h-full object-contain"
                     />
                   </div>
                 </div>
