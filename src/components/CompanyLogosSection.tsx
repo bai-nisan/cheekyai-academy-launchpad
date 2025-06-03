@@ -34,7 +34,7 @@ const COMPANY_LOGOS = [
 
 // Configuration constants
 const ANIMATION_CONFIG = {
-  duration: 12.5, // 2x faster than before
+  duration: 20, // 2x faster than before
   repetitions: 15,
 } as const;
 
