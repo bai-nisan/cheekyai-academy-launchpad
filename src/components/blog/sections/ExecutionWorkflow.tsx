@@ -26,6 +26,7 @@ export const ExecutionWorkflow = () => {
       <FourPhaseFramework />
       <Context7IntegratedWorkflow />
       <QualityControlGuidelines />
+      <TrustedByCompaniesSection />
     </section>
   );
 };
@@ -477,3 +478,62 @@ Next phase: API middleware integration (Tasks 16-18)"`}
     </Alert>
   </div>
 );
+
+const TrustedByCompaniesSection = () => {
+  const companies = [
+    { name: "GitHub", logo: "🐙" },
+    { name: "Vercel", logo: "▲" },
+    { name: "Supabase", logo: "⚡" },
+    { name: "Stripe", logo: "💳" },
+    { name: "Linear", logo: "📐" },
+    { name: "Notion", logo: "📝" },
+    { name: "Figma", logo: "🎨" },
+    { name: "Discord", logo: "🎮" },
+    { name: "Slack", logo: "💬" },
+    { name: "Airbnb", logo: "🏠" },
+    { name: "Spotify", logo: "🎵" },
+    { name: "Netflix", logo: "📺" }
+  ];
+
+  return (
+    <section className="py-16 bg-slate-800/30">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+            Trusted by Leading Development Teams
+          </h2>
+          
+          <div className="relative overflow-hidden">
+            {/* Fade gradients */}
+            <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-slate-800/30 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-slate-800/30 to-transparent z-10"></div>
+            
+            {/* Scrolling container */}
+            <div className="flex animate-scroll-left">
+              {/* First set of logos */}
+              {companies.map((company, index) => (
+                <div
+                  key={`first-${index}`}
+                  className="flex items-center justify-center min-w-[120px] h-16 mx-5 text-slate-400 hover:text-slate-200 transition-colors duration-300 grayscale hover:grayscale-0"
+                >
+                  <div className="text-2xl mr-2">{company.logo}</div>
+                  <span className="font-semibold text-sm whitespace-nowrap">{company.name}</span>
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {companies.map((company, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="flex items-center justify-center min-w-[120px] h-16 mx-5 text-slate-400 hover:text-slate-200 transition-colors duration-300 grayscale hover:grayscale-0"
+                >
+                  <div className="text-2xl mr-2">{company.logo}</div>
+                  <span className="font-semibold text-sm whitespace-nowrap">{company.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
