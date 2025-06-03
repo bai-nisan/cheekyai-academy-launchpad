@@ -9,6 +9,7 @@ const CompanyLogosSection = () => {
     { name: "LUDANTECH", logo: "/lovable-uploads/9067bc25-56cc-450d-8738-7c337f961b01.png" },
     { name: "Neuronics", logo: "/lovable-uploads/8ca33ebd-a1d9-4d0f-a2db-e47c35c3d34d.png" },
     { name: "Yad2", logo: "/lovable-uploads/cca2477d-2c7f-4227-aa69-034f69118ea6.png" },
+    { name: "Maman", logo: "/lovable-uploads/8b962aea-2cf6-4e5d-891b-27e5fc2ae42c.png" },
   ];
 
   // Duplicate the companies array for seamless infinite scroll
@@ -30,12 +31,6 @@ const CompanyLogosSection = () => {
 
           {/* Carousel Container */}
           <div className="relative overflow-hidden">
-            {/* Left fade gradient */}
-            <div className="absolute left-0 top-0 w-10 h-full bg-gradient-to-r from-slate-800 to-transparent z-10 pointer-events-none"></div>
-            
-            {/* Right fade gradient */}
-            <div className="absolute right-0 top-0 w-10 h-full bg-gradient-to-l from-slate-800 to-transparent z-10 pointer-events-none"></div>
-
             {/* Scrolling logos container */}
             <div className="flex animate-scroll-logos">
               {duplicatedCompanies.map((company, index) => (
