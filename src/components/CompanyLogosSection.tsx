@@ -1,3 +1,4 @@
+
 import React, { memo, useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './CompanyLogosSection.module.css';
@@ -48,13 +49,17 @@ const CompanyLogo = memo(({ company, index }: CompanyLogoProps) => {
   const [imageLoading, setImageLoading] = useState(true);
 
   const handleImageError = () => {
+    console.log(`Image error for ${company.name} logo:`, company.logo);
     setImageError(true);
     setImageLoading(false);
   };
 
   const handleImageLoad = () => {
+    console.log(`Image loaded successfully for ${company.name} logo:`, company.logo);
     setImageLoading(false);
   };
+
+  console.log(`Rendering logo component for ${company.name}`, { imageError, imageLoading });
 
   if (imageError) {
     return (
@@ -99,6 +104,9 @@ const CompanyLogosSection = memo(() => {
   };
 
   const circularCompanies = createCircularPattern();
+  
+  console.log('Total companies in pattern:', circularCompanies.length);
+  console.log('Maman instances in pattern:', circularCompanies.filter(c => c.name === 'Maman').length);
 
   return (
     <section className="py-32 bg-black" aria-label="Companies that trust our development teams">
