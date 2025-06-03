@@ -1,0 +1,50 @@
+/* Animation keyframes for company logos scrolling */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Base animation class */
+.scrollAnimation {
+  animation-name: scrollLogos;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .scrollAnimation {
+    animation-play-state: paused;
+  }
+  
+  /* Show static grid instead for accessibility */
+  .scrollAnimation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Support for manual animation control via CSS custom property */
+:root {
+  --animation-play-state: running;
+}
+
+/* Hover to pause functionality */
+.scrollAnimation:hover {
+  --animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+/* Focus management for accessibility */
+.scrollAnimation:focus-within {
+  --animation-play-state: paused;
+  animation-play-state: paused;
+} 
