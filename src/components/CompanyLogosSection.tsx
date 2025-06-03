@@ -34,7 +34,7 @@ const COMPANY_LOGOS = [
 
 // Configuration constants
 const ANIMATION_CONFIG = {
-  duration: 25, // Slower for better UX
+  duration: 12.5, // 2x faster than before
   repetitions: 15,
 } as const;
 
@@ -63,7 +63,7 @@ const CompanyLogo = memo(({ company, index }: CompanyLogoProps) => {
 
   if (imageError) {
     return (
-      <div className="flex-shrink-0 mx-12">
+      <div className="flex-shrink-0 mx-2">
         <div className="w-96 h-48 flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 rounded-lg">
           <span className="text-white/60 text-sm">{company.name}</span>
         </div>
@@ -72,20 +72,24 @@ const CompanyLogo = memo(({ company, index }: CompanyLogoProps) => {
   }
 
   return (
-    <div className="flex-shrink-0 mx-12">
-      <div className="w-96 h-48 flex items-center justify-center bg-transparent rounded-lg">
+    <div className="flex-shrink-0 mx-2">
+      <div className="w-96 h-48 relative flex items-center justify-center bg-transparent rounded-lg">
         {imageLoading && (
           <div className="absolute inset-0 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg animate-pulse" />
         )}
-        <img
-          src={company.logo}
-          alt={company.alt}
-          className="max-w-full max-h-full object-contain filter grayscale transition-opacity duration-300"
-          onError={handleImageError}
-          onLoad={handleImageLoad}
-          loading="lazy"
-          style={{ opacity: imageLoading ? 0 : 1 }}
-        />
+        <div className="w-72 h-36 relative flex items-center justify-center">
+          <img
+            src={company.logo}
+            alt={company.alt}
+            className="max-w-full max-h-full object-contain filter grayscale transition-opacity duration-300 absolute inset-0 m-auto"
+            onError={handleImageError}
+            onLoad={handleImageLoad}
+            loading="lazy"
+            style={{ 
+              opacity: imageLoading ? 0 : 1,
+            }}
+          />
+        </div>
       </div>
     </div>
   );
@@ -96,11 +100,8 @@ CompanyLogo.displayName = 'CompanyLogo';
 const CompanyLogosSection = memo(() => {
   // Create circular pattern with configurable repetitions
   const createCircularPattern = () => {
-    const pattern = [];
-    for (let i = 0; i < ANIMATION_CONFIG.repetitions; i++) {
-      pattern.push(COMPANY_LOGOS[i % COMPANY_LOGOS.length]);
-    }
-    return pattern;
+    // Create two sets of logos for seamless loop
+    return [...COMPANY_LOGOS, ...COMPANY_LOGOS];
   };
 
   const circularCompanies = createCircularPattern();
@@ -122,18 +123,19 @@ const CompanyLogosSection = memo(() => {
             Trusted by Leading Development Teams
           </h2>
 
-          {/* Carousel Container */}
+          {/* Carousel Container with overflow mask */}
           <div 
             className="relative overflow-hidden"
             role="region"
             aria-label="Company logos carousel"
           >
-            {/* Scrolling logos container with respectful animation */}
+            {/* Scrolling logos container */}
             <div 
               className={`flex ${styles.scrollAnimation}`}
               style={{
                 animationDuration: `${ANIMATION_CONFIG.duration}s`,
-                animationPlayState: 'var(--animation-play-state, running)'
+                animationPlayState: 'var(--animation-play-state, running)',
+                width: 'fit-content' // Allow container to fit all logos
               }}
             >
               {circularCompanies.map((company, index) => (
