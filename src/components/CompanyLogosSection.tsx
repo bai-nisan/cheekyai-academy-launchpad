@@ -60,7 +60,7 @@ const CompanyLogosSection = () => {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes scroll-logos-fast {
           0% {
             transform: translateX(0);
