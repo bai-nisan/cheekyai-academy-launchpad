@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowRight, Menu, X, Target, Rocket, Trophy, GraduationCap, Wrench, BarChart } from 'lucide-react';
@@ -246,7 +245,7 @@ const WhyThisMattersSection = () => <section id="program" className="bg-slate-80
   </section>;
 
 // Three Stages Section Component
-const ThreeStagesSection = () => <section id="stages" className="py-32 bg-gradient-to-br from-slate-900 to-gray-900">
+const ThreeStagesSection = () => <section id="stages" className="py-32 bg-slate-800/50">
     <div className="container mx-auto px-6">
       <motion.div initial={{
       opacity: 0,
