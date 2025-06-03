@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Zap, Shield, ChartBar, Smile, TrendingUp, Calendar, Check, Star, ArrowRight, Menu, X, Target, Rocket, Trophy, GraduationCap, Wrench, BarChart } from 'lucide-react';
@@ -1023,10 +1024,10 @@ const Index = () => {
       <WhyThisMattersSection />
       {/* Three Stages Section Component */}
       <ThreeStagesSection />
-      {/* Company Logos Section Component */}
-      <CompanyLogosSection />
       {/* Pricing Section Component */}
       <PricingSection onOpenForm={handleOpenForm} />
+      {/* Company Logos Section Component - Moved here */}
+      <CompanyLogosSection />
       {/* Your Journey Timeline Section Component */}
       <YourJourneyTimelineSection />
       {/* Final CTA Section Component */}
