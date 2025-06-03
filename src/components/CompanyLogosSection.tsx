@@ -27,7 +27,7 @@ const COMPANY_LOGOS = [
   },
   { 
     name: "Maman", 
-    logo: "/lovable-uploads/dc8979ab-e518-4d97-92c5-eed0af94e199.png",
+    logo: "/lovable-uploads/8c3edef5-591d-4b78-9040-3e49ec3265cd.png",
     alt: "Maman company logo - educational services"
   },
 ];
