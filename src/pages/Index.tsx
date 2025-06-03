@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { DiscoveryCallForm } from '@/components/DiscoveryCallForm';
+import CompanyLogosSection from '@/components/CompanyLogosSection';
 import { Link } from 'react-router-dom';
 
 // Animated Counter Component
@@ -526,104 +527,6 @@ const ThreeStagesSection = () => <section id="stages" className="py-32 bg-gradie
             </div>
           </motion.div>
         </div>
-
-        {/* Success Quote - Enhanced styling */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.8,
-        delay: 0.6
-      }} className="mt-20 text-center">
-          <div className="bg-[#1a2332] backdrop-blur-md border border-[#2a3442] rounded-xl p-8 max-w-4xl mx-auto shadow-lg">
-            <div className="flex justify-center mb-4">
-              <div className="flex text-yellow-400">
-                {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-current" />)}
-              </div>
-            </div>
-            <p className="text-lg italic text-slate-300 mb-4 leading-relaxed">
-              "After Stage 2, our AI started suggesting code that actually followed our patterns. It was like having a senior dev who had read our entire codebase."
-            </p>
-            <p className="text-sm text-slate-400 font-medium">— Team Lead, 15-developer team</p>
-          </div>
-        </motion.div>
-      </motion.div>
-    </div>
-  </section>;
-
-// Success Metrics Section Component
-const SuccessMetricsSection = () => <section className="py-32 bg-slate-800/50">
-    <div className="container mx-auto px-6">
-      <motion.div initial={{
-      opacity: 0,
-      y: 30
-    }} whileInView={{
-      opacity: 1,
-      y: 0
-    }} viewport={{
-      once: true
-    }} transition={{
-      duration: 0.8
-    }} className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent leading-[1.2] pb-2">
-          Proven Results
-        </h2>
-
-        <div className="grid md:grid-cols-5 gap-8 overflow-visible">
-          {[{
-          icon: Zap,
-          value: 60,
-          suffix: "%",
-          label: "Faster Development"
-        }, {
-          icon: Shield,
-          value: 90,
-          suffix: "%",
-          label: "Code Standards"
-        }, {
-          icon: ChartBar,
-          value: 85,
-          suffix: "%",
-          label: "Test Coverage"
-        }, {
-          icon: Smile,
-          value: 95,
-          suffix: "%",
-          label: "Team Satisfaction"
-        }, {
-          icon: TrendingUp,
-          value: 40,
-          suffix: "%",
-          label: "KPI Improvement"
-        }].map((metric, index) => <motion.div key={index} initial={{
-          opacity: 0,
-          scale: 0.8
-        }} whileInView={{
-          opacity: 1,
-          scale: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.8,
-          delay: index * 0.1
-        }} className="text-center">
-              <Card className="bg-slate-800/70 backdrop-blur-md border border-slate-600/50 p-6 hover:bg-slate-700/50 hover:scale-105 transition-all duration-300 overflow-visible shadow-xl">
-                <CardContent className="p-0">
-                  <metric.icon className="w-12 h-12 mx-auto mb-4 text-blue-400" />
-                  <div className="text-4xl font-bold text-white mb-2">
-                    <AnimatedCounter end={metric.value} />
-                    {metric.suffix}
-                  </div>
-                  <p className="text-slate-300 text-sm whitespace-nowrap">{metric.label}</p>
-                </CardContent>
-              </Card>
-            </motion.div>)}
-        </div>
       </motion.div>
     </div>
   </section>;
@@ -994,6 +897,13 @@ const YourJourneyTimelineSection = () => <section className="py-32 bg-slate-800/
     </div>
   </section>;
 
+// Company Logos Section Component
+// This section replaces the testimonial and proven results sections
+// It features a continuous horizontal scrolling carousel of company logos
+// with grayscale to color hover effect and fade gradients on sides
+// Responsive display shows different number of logos per breakpoint
+// Logos are placeholders representing tech companies
+
 // Final CTA Section Component
 const FinalCTASection = ({
   onOpenForm
@@ -1052,6 +962,7 @@ const Footer = () => <footer className="py-16 border-t border-slate-700/50 bg-sl
       </div>
     </div>
   </footer>;
+
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -1112,8 +1023,8 @@ const Index = () => {
       <WhyThisMattersSection />
       {/* Three Stages Section Component */}
       <ThreeStagesSection />
-      {/* Success Metrics Section Component */}
-      <SuccessMetricsSection />
+      {/* Company Logos Section Component */}
+      <CompanyLogosSection />
       {/* Pricing Section Component */}
       <PricingSection onOpenForm={handleOpenForm} />
       {/* Your Journey Timeline Section Component */}
