@@ -8,6 +8,7 @@ const CompanyLogosSection = () => {
     { name: "AMIMON", logo: "/lovable-uploads/8e3b3ffe-b885-461b-9ad5-a83e81af986b.png" },
     { name: "LUDANTECH", logo: "/lovable-uploads/9067bc25-56cc-450d-8738-7c337f961b01.png" },
     { name: "Neuronics", logo: "/lovable-uploads/8ca33ebd-a1d9-4d0f-a2db-e47c35c3d34d.png" },
+    { name: "Yad2", logo: "/lovable-uploads/cca2477d-2c7f-4227-aa69-034f69118ea6.png" },
   ];
 
   // Duplicate the companies array for seamless infinite scroll
@@ -46,7 +47,7 @@ const CompanyLogosSection = () => {
                     <img
                       src={company.logo}
                       alt={`${company.name} logo`}
-                      className="max-w-full max-h-full object-contain"
+                      className="max-w-full max-h-full object-contain filter grayscale"
                     />
                   </div>
                 </div>
