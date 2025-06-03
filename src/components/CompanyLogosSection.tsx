@@ -3,16 +3,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const CompanyLogosSection = () => {
-  // Company logos data with placeholder images that represent tech companies
+  // Company logos data with your uploaded logos
   const companies = [
-    { name: "TechCorp", logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop&crop=center" },
-    { name: "DevSolutions", logo: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=120&h=60&fit=crop&crop=center" },
-    { name: "CodeFlow", logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=120&h=60&fit=crop&crop=center" },
-    { name: "AITech", logo: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=120&h=60&fit=crop&crop=center" },
-    { name: "DataSync", logo: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=120&h=60&fit=crop&crop=center" },
-    { name: "CloudBase", logo: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=120&h=60&fit=crop&crop=center" },
-    { name: "InnovateHub", logo: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=120&h=60&fit=crop&crop=center" },
-    { name: "ScaleUp", logo: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=120&h=60&fit=crop&crop=center" },
+    { name: "LUDANTECH", logo: "/lovable-uploads/f6e934e8-18ea-40f7-84f1-d85fcf5b36c8.png" },
+    { name: "Mamanidoo", logo: "/lovable-uploads/4b1042a5-af25-45c1-9e66-762eed039df4.png" },
+    { name: "Neuronics", logo: "/lovable-uploads/20831caf-5fb2-48f2-86ae-04f6c0eb3774.png" },
+    { name: "Yad2", logo: "/lovable-uploads/89f611f4-e528-4158-a945-5af8a7ae3b8b.png" },
+    { name: "LUDANTECH", logo: "/lovable-uploads/f6e934e8-18ea-40f7-84f1-d85fcf5b36c8.png" },
+    { name: "Mamanidoo", logo: "/lovable-uploads/4b1042a5-af25-45c1-9e66-762eed039df4.png" },
+    { name: "Neuronics", logo: "/lovable-uploads/20831caf-5fb2-48f2-86ae-04f6c0eb3774.png" },
+    { name: "Yad2", logo: "/lovable-uploads/89f611f4-e528-4158-a945-5af8a7ae3b8b.png" },
   ];
 
   // Duplicate the companies array for seamless infinite scroll
